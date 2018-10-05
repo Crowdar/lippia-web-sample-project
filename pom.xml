@@ -36,11 +36,11 @@
             </properties>
         </profile>
         <profile>
-            <id>QA</id>
+            <id>Jenkins</id>
             <activation>
             </activation>
             <properties>
-                <crowdar.cucumber.browser>CHROMEDYNAMIC</crowdar.cucumber.browser>
+                <crowdar.cucumber.browser></crowdar.cucumber.browser>
                 <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
                 <crowdar.extent.report.name>comafiReport</crowdar.extent.report.name>
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
