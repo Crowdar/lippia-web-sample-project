@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.crowdar</groupId>
         <artifactId>Crowd-Root-Framework</artifactId>
-        <version>1.0.1</version>
+        <version>1.4</version>
     </parent>
     
     <artifactId>Example-Cucumber-Crowdar</artifactId>
@@ -16,6 +16,13 @@
         <crowd.project.name>Example-Cucumber-Crowdar</crowd.project.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <crowdar.cucumber.filter>@Smoke</crowdar.cucumber.filter>
+        <cucumber.runner>testngParallel.xml</cucumber.runner>
+        <crowdar.gridhub></crowdar.gridhub>
+        <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
+        <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
+        <crowdar.extent.host.name>LocalMachine</crowdar.extent.host.name>
+        <crowdar.extent.environment>Local</crowdar.extent.environment>
+        <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
     </properties>
     <profiles>
         <profile>
@@ -27,12 +34,6 @@
                 <crowdar.cucumber.browser>CHROMEDYNAMIC</crowdar.cucumber.browser>
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar/examples --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags ~@Ignore --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-                <crowdar.gridhub></crowdar.gridhub>
-                <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-                <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
-                <crowdar.extent.host.name>LocalMachine</crowdar.extent.host.name>
-                <crowdar.extent.environment>Local</crowdar.extent.environment>
-                <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
             </properties>
         </profile>
         <profile>
@@ -61,9 +62,26 @@
         <dependency>
                 <groupId>com.crowdar</groupId>
                 <artifactId>Crowd-Core-Framework</artifactId>
-                <version>1.0.1</version>
+                <version>1.4.2</version>
         </dependency>
      </dependencies>
+    <build>
+        <filters>
+            <filter>src/main/resources/cucumber.properties</filter>
+        </filters>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${cucumber.runner}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <repositories>
         <repository>
             <id>crowdarRepo</id>

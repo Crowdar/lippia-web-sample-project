@@ -7,3 +7,15 @@ Feature: Como potencial cliente
   Given El cliente esta en la pagina de crowdar
   When El cliente presiona el menu "Inicio"
   Then El cliente observa la informacion relevante sobre crowdar
+
+  @Smoke
+  Scenario: El cliente inicia en la pagia y va al inicio para ver informacion 1
+  Given El cliente esta en la pagina de crowdar
+  When El cliente presiona el menu "Inicio"
+  Then El cliente observa la informacion relevante sobre crowdar
+
+  @Smoke
+  Scenario: El cliente inicia en la pagia y va al inicio para ver informacion2
+  Given El cliente esta en la pagina de crowdar
+  When El cliente presiona el menu "Inicio"
+  Then El cliente observa la informacion relevante sobre crowdar
