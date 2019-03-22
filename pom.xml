@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.crowdar</groupId>
         <artifactId>Crowd-Root-Framework</artifactId>
-        <version>1.4</version>
+        <version>1.5</version>
     </parent>
     
     <artifactId>Example-Cucumber-Crowdar</artifactId>
@@ -32,7 +32,7 @@
             </activation>
             <properties>
                 <crowdar.cucumber.browser>CHROMEDYNAMIC</crowdar.cucumber.browser>
-                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar/examples --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags ~@Ignore --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
+                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags ~@Ignore --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
             </properties>
         </profile>
@@ -47,7 +47,7 @@
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
                 <crowdar.extent.environment>QA</crowdar.extent.environment>
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
-                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar/examples --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
+                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.gridhub>http://hub:4444/wd/hub</crowdar.gridhub>
             </properties>
@@ -62,7 +62,7 @@
         <dependency>
                 <groupId>com.crowdar</groupId>
                 <artifactId>Crowd-Core-Framework</artifactId>
-                <version>1.4.2</version>
+                <version>1.5</version>
         </dependency>
      </dependencies>
     <build>

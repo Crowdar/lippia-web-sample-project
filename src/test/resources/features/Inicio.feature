@@ -3,19 +3,36 @@ Feature: Como potencial cliente
          asi no tengo que llamarlos para saber de que se trata
 
   @Smoke
-  Scenario: El cliente inicia en la pagia y va al inicio para ver informacion
-  Given El cliente esta en la pagina de crowdar
-  When El cliente presiona el menu "Inicio"
+  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+  Given El cliente esta en la pagina de google
+  When El cliente ingresa la palabra "Wikipedia"
   Then El cliente observa la informacion relevante sobre crowdar
 
-  @Smoke
-  Scenario: El cliente inicia en la pagia y va al inicio para ver informacion 1
-  Given El cliente esta en la pagina de crowdar
-  When El cliente presiona el menu "Inicio"
-  Then El cliente observa la informacion relevante sobre crowdar
 
   @Smoke
-  Scenario: El cliente inicia en la pagia y va al inicio para ver informacion2
-  Given El cliente esta en la pagina de crowdar
-  When El cliente presiona el menu "Inicio"
-  Then El cliente observa la informacion relevante sobre crowdar
+  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+    Given El cliente esta en la pagina de google
+    When El cliente ingresa la palabra "Wikipedia"
+    Then El cliente observa la informacion relevante sobre crowdar
+
+
+  @Smoke
+  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+    Given El cliente esta en la pagina de google
+    When El cliente ingresa la palabra "Wikipedia"
+    Then El cliente observa la informacion relevante sobre crowdar
+
+
+
+  @Smoke
+  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+    Given El cliente esta en la pagina de google
+    When El cliente ingresa la palabra "Wikipedia"
+    Then El cliente observa la informacion relevante sobre crowdar
+
+
+  @Smoke
+  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+    Given El cliente esta en la pagina de google
+    When El cliente ingresa la palabra "Wikipedia"
+    Then El cliente observa la informacion relevante sobre crowdar

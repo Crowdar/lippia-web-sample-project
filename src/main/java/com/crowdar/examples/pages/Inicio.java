@@ -8,6 +8,8 @@ public class Inicio extends PageBaseExamples{
 
     public WebElement inicioMenuLink(){return getWebElement(By.xpath("//a[@href='#home']"));}
     public WebElement verMasLink(){return getWebElement(By.xpath("//a[@href='#brief']"));}
+    public WebElement googleInput(){return getWebElement(By.xpath("//input[@class='gLFyf gsfi']"));}
+    public WebElement googleSearchBtn(){return getWebElement(By.name("btnK"));}
 
     public Inicio(SharedDriver driver){
         super(driver);
@@ -16,8 +18,18 @@ public class Inicio extends PageBaseExamples{
 
     public void navegarAlInicio(){
         navigateToIt();
-        sleep(15000);
     }
+
+    public void ingresarPalabra(String palabra){
+        googleInput().clear();
+        googleInput().sendKeys(palabra);
+    }
+
+    public void presionarBotonDeBusqueda(){
+        googleSearchBtn().clear();
+    }
+
+
 
 
 }

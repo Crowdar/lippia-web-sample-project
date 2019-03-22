@@ -17,20 +17,19 @@ public class InicioSteps extends PageSteps {
         inicio = new Inicio(driver);
     }
 
-    @Given("El cliente esta en la pagina de crowdar")
-    public void elClienteEstaEnLaPaginaDeCrowdar(){
+    @Given("El cliente esta en la pagina de google")
+    public void elClienteEstaEnLaPaginaDeGoogle(){
         inicio.navegarAlInicio();
     }
 
-    @When("El cliente presiona el menu (.*)")
-    public void elClientePresionaElMenu(String menu){
-       switch (menu){
-           case "Inicio" : inicio.inicioMenuLink().click();
-       }
+    @When("El cliente ingresa la palabra (.*)")
+    public void elClienteIngresaUnaPalabraABuscar(String palabra){
+        inicio.ingresarPalabra(palabra);
+
     }
 
     @Then("El cliente observa la informacion relevante sobre crowdar")
     public void elClienteObservaLaInformacionRelevanteSobreCrowdar(){
-        Assert.assertTrue(inicio.verMasLink().isDisplayed(),"Error el Link ver mas no es mostrado en el inicio");
+
     }
 }
