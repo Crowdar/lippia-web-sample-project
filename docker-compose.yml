@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  selenium-hub:
+    image: selenium/hub:3.141.59-palladium
+    container_name: selenium-hub
+    environment:
+      - GRID_MAX_SESSION=20
+      - GRID_DEBUG=true
+      - GRID_BROWSER_TIMEOUT=3000
+      - GRID_TIMEOUT=3000
+    ports:
+      - "4444:4444"
+  chrome:
+    image: selenium/node-chrome:3.141.59-palladium
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=1
+      - NODE_MAX_SESSION=1
