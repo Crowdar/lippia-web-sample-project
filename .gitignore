@@ -63,4 +63,7 @@ atlassian-ide-plugin.xml
 # Cursive Clojure plugin
 .idea/replstate.xml
 
+#vagrant files
+.vagrant/*
+
 target/
