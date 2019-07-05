@@ -6,14 +6,14 @@
         <version>1.6</version>
     </parent>
     
-    <artifactId>Example-Cucumber-Crowdar</artifactId>
+    <artifactId>Lippia-web-example-project</artifactId>
     <url>http://maven.apache.org</url>
     <packaging>jar</packaging>
-    <name>Example-Cucumber-Crowdar</name>
+    <name>Lippia-web-example-project</name>
     <version>1.0.0</version>
 
     <properties>
-        <crowd.project.name>Example-Cucumber-Crowdar</crowd.project.name>
+        <crowd.project.name>Lippia-web-example-project</crowd.project.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <crowdar.cucumber.filter>@Smoke</crowdar.cucumber.filter>
         <cucumber.runner>testng.xml</cucumber.runner>
@@ -51,7 +51,7 @@
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-                <crowdar.driverHub>http://172.18.0.2:4444/wd/hub</crowdar.driverHub>
+                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
             </properties>
         </profile>
@@ -68,7 +68,7 @@
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-                <crowdar.driverHub>http://172.18.0.2:4444/wd/hub</crowdar.driverHub>
+                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
             </properties>
         </profile>
@@ -85,7 +85,7 @@
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-                <crowdar.driverHub>http://172.18.0.2:4444/wd/hub</crowdar.driverHub>
+                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.projectType>WEB_CHROME_HEADLESS</crowdar.projectType>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
             </properties>
@@ -121,12 +121,24 @@
             </plugin>
         </plugins>
     </build>
+	
     <repositories>
-        <repository>
-            <id>crowdarRepo</id>
-            <name>crowdar-repository-s3</name>
-            <url>http://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-s3/</url>
-        </repository>
-    </repositories>
+    	<repository>
+            <id>atlassian-repo</id>
+            <url>https://maven.atlassian.com/content/repositories/atlassian-public/</url>
+        </repository>  
+
+    	<repository>
+            <id>atlassian-pack</id>
+            <url>https://packages.atlassian.com/maven-public/</url>
+        </repository>  
+        
+        
+		<repository>
+			<id>crowdarRepo</id>
+			<name>crowdar-repository</name>
+			<url>http://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+		</repository>
+	</repositories>
     
 </project>
