@@ -22,8 +22,8 @@
 - run command : sudo docker-compose up --scale chrome=10 -d
 
 ## Executing tests
-- go to root project folder and you witll find pom.xml file
-- mvn clean -P GridParallel test
+- go to root project folder and you will find a pom.xml file
+- run commant : mvn clean -P GridParallel test
 
 
 
