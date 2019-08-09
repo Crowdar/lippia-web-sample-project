@@ -111,6 +111,14 @@
     <scope>provided</scope>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/com.atlassian.connect/ac-play-java -->
+<dependency>
+    <groupId>com.atlassian.connect</groupId>
+    <artifactId>ac-play-java_2.10</artifactId>
+    <version>0.10.1</version>
+</dependency>
+
+
      </dependencies>
     <build>
         <filters>
