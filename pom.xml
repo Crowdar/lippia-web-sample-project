@@ -118,6 +118,14 @@
     <version>0.10.1</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/com.atlassian.connect/atlassian-connect-spring-boot-api -->
+<dependency>
+    <groupId>com.atlassian.connect</groupId>
+    <artifactId>atlassian-connect-spring-boot-api</artifactId>
+    <version>1.5.1</version>
+</dependency>
+
+
 
      </dependencies>
     <build>
