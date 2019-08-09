@@ -103,30 +103,6 @@
                 <artifactId>Crowd-Core-Framework</artifactId>
                 <version>1.6.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.atlassian.jwt/jwt-api -->
-<dependency>
-    <groupId>com.atlassian.jwt</groupId>
-    <artifactId>jwt-api</artifactId>
-    <version>3.1.0</version>
-    <scope>provided</scope>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/com.atlassian.connect/ac-play-java -->
-<dependency>
-    <groupId>com.atlassian.connect</groupId>
-    <artifactId>ac-play-java_2.10</artifactId>
-    <version>0.10.1</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/com.atlassian.connect/atlassian-connect-spring-boot-api -->
-<dependency>
-    <groupId>com.atlassian.connect</groupId>
-    <artifactId>atlassian-connect-spring-boot-api</artifactId>
-    <version>1.5.1</version>
-</dependency>
-
-
-
      </dependencies>
     <build>
         <filters>
