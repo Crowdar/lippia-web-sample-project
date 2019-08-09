@@ -1,9 +1,10 @@
 pipeline {
-    stages {
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+  agent any
+  stages {
+    stage('TESTS') {
+      steps {
+        sh 'mvn clean test'
+      }
     }
+  }
 }
