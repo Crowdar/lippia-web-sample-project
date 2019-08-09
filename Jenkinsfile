@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn -B clean test'
+        sh 'mvn clean -P GridParallel test'
       }
     }
   }
