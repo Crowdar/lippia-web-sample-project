@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: olamy
+Build-Jdk: 1.8.0_222
+Extension-Name: sse-gateway
+Specification-Title: Server Sent Events (SSE) Gateway Plugin
+Implementation-Title: sse-gateway
+Implementation-Version: 1.19
+Group-Id: org.jenkins-ci.plugins
+Short-Name: sse-gateway
+Long-Name: Server Sent Events (SSE) Gateway Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/SSE+Gateway+Plugin
+Plugin-Version: 1.19
+Hudson-Version: 2.60.3
+Jenkins-Version: 2.60.3
+Plugin-Dependencies: pubsub-light:1.6
+Plugin-Developers: 
+

@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: cyrilleleclerc
+Build-Jdk: 1.8.0_211
+Extension-Name: h2-api
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: h2-api
+Implementation-Version: 1.4.199
+Group-Id: io.jenkins.plugins
+Short-Name: h2-api
+Long-Name: H2 API Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/H2+API+Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.4.199
+Hudson-Version: 2.89.4
+Jenkins-Version: 2.89.4
+Plugin-Developers: Cyrille Le Clerc:cleclerc:cleclerc@cloudbees.com
+Support-Dynamic-Loading: true
+

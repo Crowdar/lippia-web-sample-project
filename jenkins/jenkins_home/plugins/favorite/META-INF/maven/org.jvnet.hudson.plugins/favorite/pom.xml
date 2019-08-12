@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>2.17</version>
+    </parent>
+
+    <groupId>org.jvnet.hudson.plugins</groupId>
+    <artifactId>favorite</artifactId>
+    <version>2.3.2</version>
+    <packaging>hpi</packaging>
+
+    <name>Favorite</name>
+    <url>https://wiki.jenkins.io/display/JENKINS/Favorite+Plugin</url>
+
+    <licenses>
+       <license>
+          <name>MIT License</name>
+          <url>https://opensource.org/licenses/MIT</url>
+          <distribution>repo</distribution>
+       </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>lshatzer</id>
+            <name>Larry Shatzer, Jr.</name>
+            <email>larrys@gmail.com</email>
+        </developer>
+        <developer>
+            <id>jamesdumay</id>
+            <name>James Dumay</name>
+            <email>jdumay@cloudbees.com</email>
+        </developer>
+        <developer>
+            <id>michaelneale</id>
+            <name>Michael Neale</name>
+            <email>mneale@cloudbees.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:jenkinsci/favorite-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:jenkinsci/favorite-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/favorite-plugin</url>
+      <tag>favorite-2.3.2</tag>
+  </scm>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>mailer</artifactId>
+            <version>1.18</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>matrix-project</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>token-macro</artifactId>
+            <version>2.0</version>
+        </dependency>
+    </dependencies>
+
+</project>  
+<!--
+   TODOs:
+    * Add "Auto Favorite" feature
+      * If you contribute to a build, you favorite it automatically.
+    * Clean up look and feel of user config page.
+-->

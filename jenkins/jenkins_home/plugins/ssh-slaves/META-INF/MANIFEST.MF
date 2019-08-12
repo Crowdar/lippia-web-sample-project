@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: inifc
+Build-Jdk: 11.0.2
+Extension-Name: ssh-slaves
+Specification-Title: Allows to launch agents over SSH, using a Java im
+ plementation of the SSH protocol
+Implementation-Title: ssh-slaves
+Implementation-Version: 1.30.1
+Plugin-Class: hudson.plugins.sshslaves.PluginImpl
+Group-Id: org.jenkins-ci.plugins
+Short-Name: ssh-slaves
+Long-Name: Jenkins SSH Slaves plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/SSH+Slaves+plugin
+Compatible-Since-Version: 1.30.0
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.30.1
+Hudson-Version: 2.150.1
+Jenkins-Version: 2.150.1
+Plugin-Dependencies: credentials:2.2.0,ssh-credentials:1.16
+Plugin-Developers: Stephen Connolly:stephenconnolly:,Kohsuke Kawaguchi
+ :kohsuke:,Olivier Lamy:olamy:,Michael Clarke:mc1arke:,Oleg Nenashev:o
+ leg_nenashev:,Ivan Fernandez Calvo:ifernandezcalvo:
+
