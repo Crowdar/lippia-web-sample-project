@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.crowdar</groupId>
         <artifactId>Crowd-Root-Framework</artifactId>
-        <version>1.6</version>
+        <version>1.6.4</version>
     </parent>
     
     <artifactId>Lippia-web-example-project</artifactId>
@@ -101,8 +101,9 @@
         <dependency>
                 <groupId>com.crowdar</groupId>
                 <artifactId>Crowd-Core-Framework</artifactId>
-                <version>1.6.2</version>
+                <version>1.6.4</version>
         </dependency>
+        		        
      </dependencies>
     <build>
         <filters>
@@ -123,17 +124,6 @@
     </build>
 	
     <repositories>
-    	<repository>
-            <id>atlassian-repo</id>
-            <url>https://maven.atlassian.com/content/repositories/atlassian-public/</url>
-        </repository>  
-
-    	<repository>
-            <id>atlassian-pack</id>
-            <url>https://packages.atlassian.com/maven-public/</url>
-        </repository>  
-        
-        
 		<repository>
 			<id>crowdarRepo</id>
 			<name>crowdar-repository</name>
