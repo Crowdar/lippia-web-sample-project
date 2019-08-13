@@ -23,7 +23,7 @@ services:
       - NODE_MAX_SESSION=1
 
   jenkins:
-    image: jenkinsci/blueocean
+    image: jenkinsci/blueocean:1.18.0
     privileged: true
     ports:
       - 8080:8080

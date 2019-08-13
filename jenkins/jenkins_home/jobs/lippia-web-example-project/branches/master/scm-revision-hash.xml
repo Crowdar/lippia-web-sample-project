@@ -1,11 +1,7 @@
 <?xml version='1.1' encoding='UTF-8'?>
-<com.cloudbees.jenkins.plugins.bitbucket.BitbucketGitSCMRevision plugin="cloudbees-bitbucket-branch-source@2.4.5">
-  <head class="com.cloudbees.jenkins.plugins.bitbucket.BranchSCMHead">
+<jenkins.plugins.git.GitBranchSCMRevision plugin="git@3.11.0">
+  <head class="jenkins.plugins.git.GitBranchSCMHead">
     <name>master</name>
-    <repositoryType>GIT</repositoryType>
   </head>
-  <hash>b73f0e671c468da6b40064105fbafcd43bc38267</hash>
-  <message>finalizacion de pruebas pipeline</message>
-  <author>Juan Manuel Carames &lt;juan.carames@crowdaronline.com&gt;</author>
-  <date>2019-08-09 13:32:32.0 UTC</date>
-</com.cloudbees.jenkins.plugins.bitbucket.BitbucketGitSCMRevision>
+  <hash>ca833ce05f24a6a3628ef50552e62ef505ab1fe9</hash>
+</jenkins.plugins.git.GitBranchSCMRevision>

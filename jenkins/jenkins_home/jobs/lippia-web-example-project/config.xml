@@ -1,16 +1,6 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@2.21">
-  <properties>
-    <io.jenkins.blueocean.rest.impl.pipeline.credential.BlueOceanCredentialsProvider_-FolderPropertyImpl plugin="blueocean-pipeline-scm-api@1.18.1">
-      <domain plugin="credentials@2.2.1">
-        <name>blueocean-folder-credential-domain</name>
-        <description>Blue Ocean Folder Credentials domain</description>
-        <specifications/>
-      </domain>
-      <user>admin</user>
-      <id>bitbucket-cloud</id>
-    </io.jenkins.blueocean.rest.impl.pipeline.credential.BlueOceanCredentialsProvider_-FolderPropertyImpl>
-  </properties>
+  <properties/>
   <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.5.4">
     <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
   </folderViews>
@@ -32,30 +22,18 @@
   <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.5.4">
     <data>
       <jenkins.branch.BranchSource>
-        <source class="com.cloudbees.jenkins.plugins.bitbucket.BitbucketSCMSource" plugin="cloudbees-bitbucket-branch-source@2.4.5">
+        <source class="jenkins.plugins.git.GitSCMSource" plugin="git@3.11.0">
           <id>blueocean</id>
-          <serverUrl>https://bitbucket.org</serverUrl>
-          <credentialsId>bitbucket-cloud</credentialsId>
-          <repoOwner>{6e2d431d-2d07-4685-8124-ea08b0e526a4}</repoOwner>
-          <repository>lippia-web-example-project</repository>
+          <remote>https://bitbucket.org/crowdarautomation/lippia-web-example-project.git</remote>
           <traits>
-            <com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait>
-              <strategyId>3</strategyId>
-            </com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait>
-            <com.cloudbees.jenkins.plugins.bitbucket.ForkPullRequestDiscoveryTrait>
-              <strategyId>1</strategyId>
-              <trust class="com.cloudbees.jenkins.plugins.bitbucket.ForkPullRequestDiscoveryTrait$TrustTeamForks"/>
-            </com.cloudbees.jenkins.plugins.bitbucket.ForkPullRequestDiscoveryTrait>
-            <com.cloudbees.jenkins.plugins.bitbucket.OriginPullRequestDiscoveryTrait>
-              <strategyId>1</strategyId>
-            </com.cloudbees.jenkins.plugins.bitbucket.OriginPullRequestDiscoveryTrait>
-            <jenkins.plugins.git.traits.CleanBeforeCheckoutTrait plugin="git@3.11.0">
+            <jenkins.plugins.git.traits.BranchDiscoveryTrait/>
+            <jenkins.plugins.git.traits.CleanBeforeCheckoutTrait>
               <extension class="hudson.plugins.git.extensions.impl.CleanBeforeCheckout"/>
             </jenkins.plugins.git.traits.CleanBeforeCheckoutTrait>
-            <jenkins.plugins.git.traits.CleanAfterCheckoutTrait plugin="git@3.11.0">
+            <jenkins.plugins.git.traits.CleanAfterCheckoutTrait>
               <extension class="hudson.plugins.git.extensions.impl.CleanCheckout"/>
             </jenkins.plugins.git.traits.CleanAfterCheckoutTrait>
-            <jenkins.plugins.git.traits.LocalBranchTrait plugin="git@3.11.0">
+            <jenkins.plugins.git.traits.LocalBranchTrait>
               <extension class="hudson.plugins.git.extensions.impl.LocalBranch">
                 <localBranch>**</localBranch>
               </extension>

@@ -1,3 +1,0 @@
-2019-08-09 12:02:55 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VERSION" not found; SQL statement:
-SELECT * FROM VERSION [42102-199]
