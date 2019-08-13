@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <crowdar.cucumber.filter>@Smoke</crowdar.cucumber.filter>
         <cucumber.runner>testng.xml</cucumber.runner>
-        <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
+        <crowdar.driverHub>http://selenium-hub:4444/wd/hub</crowdar.driverHub>
         <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
         <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
         <crowdar.extent.host.name>LocalMachine</crowdar.extent.host.name>
