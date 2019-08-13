@@ -4,22 +4,10 @@
     <entry>
       <string>blueocean</string>
       <list>
-        <com.cloudbees.jenkins.plugins.bitbucket.BitbucketRepoMetadataAction plugin="cloudbees-bitbucket-branch-source@2.4.5">
-          <scm>git</scm>
-        </com.cloudbees.jenkins.plugins.bitbucket.BitbucketRepoMetadataAction>
-        <com.cloudbees.jenkins.plugins.bitbucket.BitbucketDefaultBranch plugin="cloudbees-bitbucket-branch-source@2.4.5">
-          <repoOwner>{6e2d431d-2d07-4685-8124-ea08b0e526a4}</repoOwner>
-          <repository>lippia-web-example-project</repository>
-          <defaultBranch>master</defaultBranch>
-        </com.cloudbees.jenkins.plugins.bitbucket.BitbucketDefaultBranch>
-        <com.cloudbees.jenkins.plugins.bitbucket.BitbucketLink plugin="cloudbees-bitbucket-branch-source@2.4.5">
-          <iconClassName>icon-bitbucket-repo</iconClassName>
-          <url>https://bitbucket.org/%7B6e2d431d-2d07-4685-8124-ea08b0e526a4%7D/lippia-web-example-project</url>
-        </com.cloudbees.jenkins.plugins.bitbucket.BitbucketLink>
-        <jenkins.scm.api.metadata.ObjectMetadataAction plugin="scm-api@2.6.3">
-          <objectDisplayName>lippia-web-example-project</objectDisplayName>
-          <objectUrl>https://bitbucket.org/%7B6e2d431d-2d07-4685-8124-ea08b0e526a4%7D/lippia-web-example-project</objectUrl>
-        </jenkins.scm.api.metadata.ObjectMetadataAction>
+        <jenkins.plugins.git.GitRemoteHeadRefAction plugin="git@3.11.0">
+          <remote>https://bitbucket.org/crowdarautomation/lippia-web-example-project.git</remote>
+          <name>master</name>
+        </jenkins.plugins.git.GitRemoteHeadRefAction>
       </list>
     </entry>
   </sourceActions>
