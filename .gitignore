@@ -75,6 +75,8 @@ jenkins/jenkins_home/caches
 jenkins/jenkins_home/.queue.xml
 jenkins/jenkins_home/fingerPrints/
 jenkins/jenkins_home/logs
+jenkins/jenkins_home/updates
+jenkins/jenkins_home/jobs/lippia-web-example-project/branches
 
 #eclipse
 .settings
