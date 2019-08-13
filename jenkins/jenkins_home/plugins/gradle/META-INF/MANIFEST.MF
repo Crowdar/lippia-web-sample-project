@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Plugin-Dependencies: structs:1.5,workflow-api:2.20,workflow-cps:2.24,w
+ orkflow-job:2.9,workflow-basic-steps:2.3,workflow-durable-task-step:2
+ .8,workflow-step-api:2.10
+Long-Name: Gradle Plugin
+Compatible-Since-Version: 1.0
+Plugin-Developers: Stefan Wolf:wolfs:
+Group-Id: org.jenkins-ci.plugins
+Extension-Name: gradle
+Plugin-Version: 1.33
+Jenkins-Version: 2.60.3
+Url: https://wiki.jenkins.io/display/JENKINS/Gradle+Plugin
+Short-Name: gradle
+

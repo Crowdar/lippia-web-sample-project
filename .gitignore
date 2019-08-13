@@ -67,3 +67,16 @@ atlassian-ide-plugin.xml
 .vagrant/*
 
 target/
+
+#jenkins-home
+.metadata
+jenkins/jenkins_home/.m2
+jenkins/jenkins_home/caches
+jenkins/jenkins_home/.queue.xml
+jenkins/jenkins_home/fingerPrints/
+jenkins/jenkins_home/logs
+
+#eclipse
+.settings
+.classpath
+.project

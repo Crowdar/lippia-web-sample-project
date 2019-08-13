@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: cyrilleleclerc
+Build-Jdk: 1.8.0_211
+Extension-Name: pipeline-maven
+Specification-Title: This plugin provides integration with Pipeline, c
+ onfigures maven environment to use within a pipeline job by calling s
+ h mvn or bat mvn.
+     The selected maven installation will be configured and prepended 
+ to the path.
+Implementation-Title: pipeline-maven
+Implementation-Version: 3.8.1
+Group-Id: org.jenkins-ci.plugins
+Short-Name: pipeline-maven
+Long-Name: Pipeline Maven Integration Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Maven+Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 3.8.1
+Hudson-Version: 2.138.4
+Jenkins-Version: 2.138.4
+Plugin-Dependencies: h2-api:1.4.199,mysql-api:8.0.16;resolution:=optio
+ nal,postgresql-api:42.2.5;resolution:=optional,maven-plugin:3.1.2;res
+ olution:=optional,workflow-api:2.32,workflow-job:2.29,workflow-step-a
+ pi:2.16,branch-api:2.0.20.1,cloudbees-folder:6.6,config-file-provider
+ :3.5,credentials:2.1.19,htmlpublisher:1.16;resolution:=optional,jacoc
+ o:3.0.3;resolution:=optional,jgiven:0.15.1;resolution:=optional,junit
+ -attachments:1.4.2;resolution:=optional,junit:1.26.1;resolution:=opti
+ onal,matrix-project:1.14;resolution:=optional,maven-invoker-plugin:2.
+ 4;resolution:=optional,pipeline-build-step:2.7;resolution:=optional,s
+ cript-security:1.54.1,structs:1.17,findbugs:4.70;resolution:=optional
+ ,tasks:4.51;resolution:=optional
+Plugin-Developers: Cyrille Le Clerc:cleclerc:cleclerc@cloudbees.com,Al
+ varo Lobato:alvarolobato:alobato@cloudbees.com
+
