@@ -54,9 +54,9 @@ Folder's description:
 
 |Path   |Description    |
 |-------|----------------|
-|main\java\...\examples\pages\*.java|Folder with all the **PageObjects** matching steps with java code|
-|main\java\...\examples\steps\*Steps.java|Folder with all the **steps** wich match with Gherkin Test Scenarios |
-|test\resources\features\*.feature|Folder with all the **feature** files ** containing **Test Scenarios** and **Sample Data** |
+|main\java\\...\examples\pages\\\*.java|Folder with all the **PageObjects** matching steps with java code|
+|main\java\\...\examples\steps\\\*Steps.java|Folder with all the **steps** wich match with Gherkin Test Scenarios |
+|test\resources\features\\\*.feature|Folder with all the **feature** files ** containing **Test Scenarios** and **Sample Data** |
 |main\resources|Folder with all configuration needed to run Lippia |
 
 In this example, *Inicio* is the first web page, the framework will interact with. The **steps** defined in *InicioSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
