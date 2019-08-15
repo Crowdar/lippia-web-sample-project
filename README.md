@@ -70,7 +70,8 @@ In this example, *Inicio* is the first web page the framework will interact with
 
 
 ###Docker stack
-The following project includes the basic Docker Lippia Containers to run this  web sample project. To install and start your local instalation please read ![Lippia Docker Web Readme file](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/lippia_docker_web_readme.md)
+The following project includes the basic Docker Lippia Containers to run this  web sample project. To install and start your local instalation please read 
+Lippia Docker Web Readme file at https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/lippia_docker_web_readme.md
 
 
 ###Test Scenarios
