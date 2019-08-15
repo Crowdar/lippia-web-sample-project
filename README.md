@@ -1,8 +1,8 @@
-#Lippia Web sample project ([lippia.io])
+#Lippia Web sample project 
 
 ##System Requirements :
 - git client: https://www.atlassian.com/git/tutorials/install-git
-- JDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   
++ JDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   
 	  https://openjdk.java.net/install/   
 + maven 3.X: https://maven.apache.org/download.cgi   
 + docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/
@@ -16,14 +16,52 @@ This project has the intention of show in a practical way how to use Lippia Auto
 
 A typical Lippia Test Automation project usually looks like this 
 
+```
+	.
+├── main
+│   ├── java
+│   │   └── com
+│   │       └── crowdar
+│   │           └── examples
+│   │               ├── pages
+│   │               │   ├── Inicio.java
+│   │               │   └── PageBaseExamples.java
+│   │               └── steps
+│   │                   └── InicioSteps.java
+│   └── resources
+│       ├── config.properties
+│       ├── cucumber.properties
+│       └── webdrivermanager.properties
+└── test
+    ├── java
+    │   ├── CrowdTestNgParallelRunner.java
+    │   ├── CrowdTestNgRunner.java
+    │   └── com
+    │       └── crowdar
+    │           ├── Hooks.java
+    │           ├── examples
+    │           │   └── testng
+    │           │       └── StepDefinitions.java
+    │           └── integration
+    │               └── tests
+    │                   └── ZapiTests.java
+    └── resources
+        └── features
+            └── Inicio.feature
+```
 
+Files to be used:
+
+|File   | Description    |
+|-------|----------------|
+|PageBaseExamples.java   | Code to support the behaviour of each step coded into the feature files. |
 
 
 
 ###Containers
 The following project includes the following Lippia architecture components
 
-![Lippia Architecture Web](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/architecture_web_lippia.png =200x)
+![Lippia Architecture Web](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/architecture_web_lippia.png =70x)
 
 The docker containers are included in the **docker-compose.yml** as you can see:
 
@@ -60,7 +98,6 @@ The docker containers are included in the **docker-compose.yml** as you can see:
 	      - 8080:8080
 	      - 8443:8443
 	      - 50000:50000
-	    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
 	    volumes:
 	      - ./jenkins/jenkins_home:/var/jenkins_home
 	  
@@ -71,7 +108,7 @@ The docker containers are included in the **docker-compose.yml** as you can see:
 
 The Test Scenarios can be written using BDD metodology. This project includes Cucumber as BDD interpreter which is supported by Lippia by default. On each declared step you can insert the calls defined from service classes
 
-![Lippia gherkin Web](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/gherkin.png)
+![Lippia gherkin Web](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/gherkin.png =100x)
 
 
 ### Reports 
@@ -88,8 +125,6 @@ You just need to open it and navigate for all the report page to earn the much i
 ### Start Selenium grid container 
 After downloading the project from repository you can see the following files into your local folder
 
-
-```yml
 
 
 - To start the containers, simply run the following command : 
