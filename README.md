@@ -27,7 +27,7 @@ The following project includes the following Lippia architecture components
 
 The docker containers are included in the **docker-compose.yml** as you can see:
 
-
+```yml
 	version: "3.3"
 
 	services:
