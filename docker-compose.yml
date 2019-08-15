@@ -32,5 +32,3 @@ services:
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     volumes:
       - ./jenkins/jenkins_home:/var/jenkins_home
-      - ./home:/home
-      - /var/run/docker.sock:/var/run/docker.sock
