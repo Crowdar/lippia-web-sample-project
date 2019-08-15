@@ -50,12 +50,23 @@ A typical Lippia Test Automation project usually looks like this
             └── Inicio.feature
 ```
 
-Files to be used:
+Folder's description:
+
+|Path   |Description    |
+|-------|----------------|
+|main\java\...\examples\pages\*.java|Folder with all the **PageObjects** matching steps with java code|
+|main\java\...\examples\steps\*Steps.java|Folder with all the **steps** wich match with Gherkin Test Scenarios |
+|test\resources\features\*.feature|Folder with all the **feature** files ** containing **Test Scenarios** and **Sample Data** |
+|main\resources|Folder with all configuration needed to run Lippia |
+
+In this example, *Inicio* is the first web page, the framework will interact with. The **steps** defined in *InicioSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
+
 
 |File   | Description    |
 |-------|----------------|
-|PageBaseExamples.java   | Code to support the behaviour of each step coded into the feature files. |
-
+|Inicio.java   | Map between each element in the webpage *Inicio* you want to interact with. You need to add one new file for each page you want to navigate in your tests. |
+|InicioSteps.java   | Code to support the behaviour of each **step** coded into the feature files for the *Inicio* web page. This code executes the interaction between the Framework and the web application and match the steps with the code who run interactions. |
+|Inicio.feature| Definition of the **Test Scenarios** with all the **steps** written in Gherkin format |
 
 
 ###Containers
