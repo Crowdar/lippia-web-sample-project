@@ -68,11 +68,10 @@ In this example, *Inicio* is the first web page the framework will interact with
 |InicioSteps.java   | Code to support the behaviour of each **step** coded into the feature files for the *Inicio* web page. This code executes the interaction between the Framework and the web application and match the steps with the code who run interactions. |
 |Inicio.feature| Definition of the **Test Scenarios** with all the **steps** written in Gherkin format |
 
-
 ###Docker stack
-The following project includes the basic Docker Lippia Containers to run this  web sample project. To install and start your local instalation please read 
-Lippia Docker Web Readme file at https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/lippia_docker_web_readme.md
 
+The following project includes the basic Docker Lippia Containers to run this  web sample project. You can choose to run the code from your favourite IDE, run from console or from Jenkins using the Docker Stack.
+To install and start a local instalation with Docker containers following the ![Lippia Docker Web Readme] https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/lippia_docker_web_readme.md
 
 ###Test Scenarios
 
@@ -87,37 +86,38 @@ By default Lippia expose Test results using Extent Report Community Edition (htt
 In order to see test results this project includes extent report that show you the result of each run. This kind of reporting is really easy to understand. 
 You just need to open it and navigate for all the report page to earn the much information as you can for every run.
 
-![Lippi Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/reporteExtent.png)
+![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/reporteExtent.png)
 
 
 #Run Test sample from console
 ##Linux
-### Start Selenium grid container 
+### Start Docker containers 
 After downloading the project from repository you can see the following files into your local folder
 
-
-
 - To start the containers, simply run the following command : 
-
 ```
 	sudo docker-compose up --scale chrome=10 -d
-```	
+```
+
 
 ### Executing tests
 - go to root project folder and you will find a pom.xml file
-- run commant : mvn clean -P GridParallel test
-
-
+- run the following command : 
+```
+mvn clean -P GridParallel test
+```
 
 ##Windows
-from command lines as administrator execute:
+If you use Microsoft Windows, open a console (remember to chose **Run as administrator**) 
 
-1- go to root project directory
-
-2- run the following command wait to virtualbox instance start, this operation will be take several minutes.
+- go to root project directory
+- run the following command wait to virtualbox instance start, this operation will be take several minutes. This will provision the Docker containers inside a Virtual Box managed by Vagrant.
 `vagrant up --provision `
 
-3- mvn clean -P GridParallel test    (execution of tests against selenium grid instance of the sandbox)
+- run the following command 
+`mvn clean -P GridParallel test`
 
-4- vagrant halt (to stop and close vagrant service)
+- to end vagrant execute 
+`vagrant halt`
+`
 
