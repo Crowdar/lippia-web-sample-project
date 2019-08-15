@@ -56,10 +56,10 @@ Folder's description:
 |-------|----------------|
 |main\java\\...\examples\pages\\\*.java|Folder with all the **PageObjects** matching steps with java code|
 |main\java\\...\examples\steps\\\*Steps.java|Folder with all the **steps** wich match with Gherkin Test Scenarios |
-|test\resources\features\\\*.feature|Folder with all the **feature** files ** containing **Test Scenarios** and **Sample Data** |
+|test\resources\features\\\*.feature|Folder with all the **feature files** containing **Test Scenarios** and **Sample Data** |
 |main\resources|Folder with all configuration needed to run Lippia |
 
-In this example, *Inicio* is the first web page, the framework will interact with. The **steps** defined in *InicioSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
+In this example, *Inicio* is the first web page the framework will interact with. The **steps** defined in *InicioSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
 
 
 |File   | Description    |
@@ -69,50 +69,8 @@ In this example, *Inicio* is the first web page, the framework will interact wit
 |Inicio.feature| Definition of the **Test Scenarios** with all the **steps** written in Gherkin format |
 
 
-###Containers
-The following project includes the following Lippia architecture components
-
-![Lippia Architecture Web](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/architecture_web_lippia.png =70x)
-
-The docker containers are included in the **docker-compose.yml** as you can see:
-
-```yml
-	version: "3.3"
-
-	services:
-	  selenium-hub:
-	    image: selenium/hub:3.141.59-palladium
-	    container_name: selenium-hub
-	    environment:
-	      - GRID_MAX_SESSION=20
-	      - GRID_DEBUG=true
-	      - GRID_BROWSER_TIMEOUT=3000
-	      - GRID_TIMEOUT=3000
-	    ports:
-	      - "4444:4444"
-	  chrome:
-	    image: selenium/node-chrome:3.141.59-palladium
-	    volumes:
-	      - /dev/shm:/dev/shm
-	    depends_on:
-	      - selenium-hub
-	    environment:
-	      - HUB_HOST=selenium-hub
-	      - HUB_PORT=4444
-	      - NODE_MAX_INSTANCES=1
-	      - NODE_MAX_SESSION=1
-
-	  jenkins:
-	    image: jenkinsci/blueocean:1.18.0
-	    privileged: true
-	    ports:
-	      - 8080:8080
-	      - 8443:8443
-	      - 50000:50000
-	    volumes:
-	      - ./jenkins/jenkins_home:/var/jenkins_home
-	  
-```
+###Docker stack
+The following project includes the basic Docker Lippia Containers to run this  web sample project. To install and start your local instalation please read ![Lippia Docker Web Readme file](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/lippia_docker_web_readme.md)
 
 
 ###Test Scenarios
