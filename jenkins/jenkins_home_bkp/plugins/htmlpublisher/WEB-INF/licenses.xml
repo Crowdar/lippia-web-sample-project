@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='htmlpublisher' version='1.18'><l:dependency name='HTML Publisher plugin' groupId='org.jenkins-ci.plugins' artifactId='htmlpublisher' version='1.18' url='http://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin'><l:description>This plugin publishes HTML reports.</l:description><l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>
