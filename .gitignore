@@ -75,3 +75,4 @@ jenkins/jenkins_home/workspace
 .settings
 .classpath
 .project
+/.metadata/
