@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.jenkins.blueocean</groupId>
   <artifactId>blueocean-events</artifactId>
-  <version>1.18.1</version>
+  <version>1.18.0</version>
   <packaging>hpi</packaging>
   <name>Events API for Blue Ocean</name>
   <description>The Jenkins Plugins Parent POM Project</description>
@@ -82,7 +82,7 @@
   <scm>
     <connection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/blueocean-events</connection>
     <developerConnection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/blueocean-events</developerConnection>
-    <tag>blueocean-parent-1.18.1</tag>
+    <tag>blueocean-parent-1.18.0</tag>
     <url>https://github.com/jenkinsci/blueocean-plugin/blueocean-events</url>
   </scm>
   <distributionManagement>
@@ -105,13 +105,13 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>sse-gateway</artifactId>
-      <version>1.17</version>
+      <version>1.18</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-pipeline-api-impl</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

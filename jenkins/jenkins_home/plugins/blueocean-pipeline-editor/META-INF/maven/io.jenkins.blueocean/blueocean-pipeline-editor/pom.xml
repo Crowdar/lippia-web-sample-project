@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.jenkins.blueocean</groupId>
   <artifactId>blueocean-pipeline-editor</artifactId>
-  <version>1.18.1</version>
+  <version>1.18.0</version>
   <packaging>hpi</packaging>
   <name>Blue Ocean Pipeline Editor</name>
   <description>The Blue Ocean Pipeline Editor is the simplest way for anyone wanting to get started with creating Pipelines in Jenkins</description>
@@ -33,7 +33,7 @@
   <scm>
     <connection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/blueocean-pipeline-editor</connection>
     <developerConnection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/blueocean-pipeline-editor</developerConnection>
-    <tag>blueocean-parent-1.18.1</tag>
+    <tag>blueocean-parent-1.18.0</tag>
     <url>https://github.com/jenkinsci/blueocean-plugin/blueocean-pipeline-editor</url>
   </scm>
   <distributionManagement>
@@ -50,25 +50,25 @@
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-rest</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-dashboard</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-commons</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-pipeline-api-impl</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

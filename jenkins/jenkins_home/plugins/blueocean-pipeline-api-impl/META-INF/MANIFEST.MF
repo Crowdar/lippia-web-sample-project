@@ -6,17 +6,17 @@ Build-Jdk: 1.8.0_191
 Extension-Name: blueocean-pipeline-api-impl
 Specification-Title: The Jenkins Plugins Parent POM Project
 Implementation-Title: blueocean-pipeline-api-impl
-Implementation-Version: 1.18.1
+Implementation-Version: 1.18.0
 Group-Id: io.jenkins.blueocean
 Short-Name: blueocean-pipeline-api-impl
 Long-Name: Pipeline implementation for Blue Ocean
 Url: https://wiki.jenkins-ci.org/display/JENKINS/Blue+Ocean+Plugin
 Minimum-Java-Version: 1.8
-Plugin-Version: 1.18.1
+Plugin-Version: 1.18.0
 Hudson-Version: 2.138.4
 Jenkins-Version: 2.138.4
-Plugin-Dependencies: blueocean-pipeline-scm-api:1.18.1,blueocean-rest-
- impl:1.18.1,workflow-api:2.34,workflow-cps:2.66,workflow-durable-task
+Plugin-Dependencies: blueocean-pipeline-scm-api:1.18.0,blueocean-rest-
+ impl:1.18.0,workflow-api:2.34,workflow-cps:2.66,workflow-durable-task
  -step:2.26,workflow-job:2.32,workflow-multibranch:2.20,workflow-step-
  api:2.19,workflow-support:3.2,branch-api:2.0.20,credentials:2.1.16,gi
  t:3.8.0,github-branch-source:2.3.2,htmlpublisher:1.14,pipeline-build-

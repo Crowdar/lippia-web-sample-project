@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.jenkins.blueocean</groupId>
   <artifactId>blueocean-web</artifactId>
-  <version>1.18.1</version>
+  <version>1.18.0</version>
   <packaging>hpi</packaging>
   <name>Web for Blue Ocean</name>
   <description>The Jenkins Plugins Parent POM Project</description>
@@ -82,7 +82,7 @@
   <scm>
     <connection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/blueocean-web</connection>
     <developerConnection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/blueocean-web</developerConnection>
-    <tag>blueocean-parent-1.18.1</tag>
+    <tag>blueocean-parent-1.18.0</tag>
     <url>https://github.com/jenkinsci/blueocean-plugin/blueocean-web</url>
   </scm>
   <distributionManagement>
@@ -99,7 +99,7 @@
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-rest</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -111,13 +111,13 @@
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>jenkins-design-language</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.jenkins.blueocean</groupId>
       <artifactId>blueocean-core-js</artifactId>
-      <version>1.18.1</version>
+      <version>1.18.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

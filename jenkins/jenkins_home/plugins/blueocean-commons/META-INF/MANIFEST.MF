@@ -6,13 +6,13 @@ Build-Jdk: 1.8.0_191
 Extension-Name: blueocean-commons
 Specification-Title: The Jenkins Plugins Parent POM Project
 Implementation-Title: blueocean-commons
-Implementation-Version: 1.18.1
+Implementation-Version: 1.18.0
 Group-Id: io.jenkins.blueocean
 Short-Name: blueocean-commons
 Long-Name: Common API for Blue Ocean
 Url: https://wiki.jenkins-ci.org/display/JENKINS/Blue+Ocean+Plugin
 Minimum-Java-Version: 1.8
-Plugin-Version: 1.18.1
+Plugin-Version: 1.18.0
 Hudson-Version: 2.138.4
 Jenkins-Version: 2.138.4
 Plugin-Dependencies: jackson2-api:2.9.8

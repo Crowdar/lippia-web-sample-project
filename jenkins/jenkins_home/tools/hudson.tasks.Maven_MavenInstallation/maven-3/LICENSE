@@ -205,7 +205,6 @@
 Apache Maven includes a number of components and libraries with separate 
 copyright notices and license terms. Your use of those components are 
 subject to the terms and conditions of the following licenses: 
-#
 
 - AOP alliance (http://aopalliance.sourceforge.net) aopalliance:aopalliance:jar:1.0
     License: Public Domain

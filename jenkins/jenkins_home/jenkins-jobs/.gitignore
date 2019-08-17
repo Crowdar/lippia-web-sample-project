@@ -1,4 +1,0 @@
-*.trace.db
-*.lock.db
-*.mv.db
-/jenkins-jobs.trace.db

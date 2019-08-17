@@ -6,13 +6,13 @@ Build-Jdk: 1.8.0_191
 Extension-Name: jenkins-design-language
 Specification-Title: The Jenkins Plugins Parent POM Project
 Implementation-Title: jenkins-design-language
-Implementation-Version: 1.18.1
+Implementation-Version: 1.18.0
 Group-Id: io.jenkins.blueocean
 Short-Name: jenkins-design-language
 Long-Name: Jenkins Design Language
 Url: https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Design+Language
 Minimum-Java-Version: 1.8
-Plugin-Version: 1.18.1
+Plugin-Version: 1.18.0
 Hudson-Version: 2.138.4
 Jenkins-Version: 2.138.4
 Plugin-Developers: Thorsten Iberian Sumurai:scherler:,Cliff Meyers:cli

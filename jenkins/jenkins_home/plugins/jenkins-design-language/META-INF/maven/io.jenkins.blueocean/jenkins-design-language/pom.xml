@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.jenkins.blueocean</groupId>
   <artifactId>jenkins-design-language</artifactId>
-  <version>1.18.1</version>
+  <version>1.18.0</version>
   <packaging>hpi</packaging>
   <name>Jenkins Design Language</name>
   <description>The Jenkins Plugins Parent POM Project</description>
@@ -82,7 +82,7 @@
   <scm>
     <connection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/jenkins-design-language</connection>
     <developerConnection>scm:git:https://github.com/jenkinsci/blueocean-plugin.git/jenkins-design-language</developerConnection>
-    <tag>blueocean-parent-1.18.1</tag>
+    <tag>blueocean-parent-1.18.0</tag>
     <url>https://github.com/jenkinsci/blueocean-plugin/jenkins-design-language</url>
   </scm>
   <distributionManagement>
