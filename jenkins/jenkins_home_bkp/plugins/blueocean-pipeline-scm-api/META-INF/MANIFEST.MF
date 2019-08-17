@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: root
+Build-Jdk: 1.8.0_191
+Extension-Name: blueocean-pipeline-scm-api
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: blueocean-pipeline-scm-api
+Implementation-Version: 1.18.0
+Group-Id: io.jenkins.blueocean
+Short-Name: blueocean-pipeline-scm-api
+Long-Name: Pipeline SCM API for Blue Ocean
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Blue+Ocean+Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.18.0
+Hudson-Version: 2.138.4
+Jenkins-Version: 2.138.4
+Plugin-Dependencies: blueocean-rest:1.18.0,workflow-multibranch:2.20,b
+ ranch-api:2.0.20,credentials:2.1.16,pubsub-light:1.12
+Plugin-Developers: Thorsten Iberian Sumurai:scherler:,Cliff Meyers:cli
+ ffmeyers:,Tom Fennelly:tfennelly:,Vivek Pandey:vivek:,Kohsuke:kohsuke
+ :,Josh McDonald:sophistifunk:,Ivan Meredith:imeredith:,Michael Neale:
+ michaelneale:,Keith Zantow:kzantow:,James Dumay:i386:,Marc:marcesher:
+ ,Paul Dragoonis:dragoonis:,Ivan Santos:pragmaticivan:,Peter Dave Hell
+ o:PeterDaveHello:,Alexandru Somai:alexsomai:
+

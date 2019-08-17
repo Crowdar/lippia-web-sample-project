@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: root
+Build-Jdk: 1.8.0_191
+Extension-Name: blueocean-rest-impl
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: blueocean-rest-impl
+Implementation-Version: 1.18.0
+Group-Id: io.jenkins.blueocean
+Short-Name: blueocean-rest-impl
+Long-Name: REST Implementation for Blue Ocean
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Blue+Ocean+Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.18.0
+Hudson-Version: 2.138.4
+Jenkins-Version: 2.138.4
+Plugin-Dependencies: blueocean-jwt:1.18.0,blueocean-rest:1.18.0,blueoc
+ ean-web:1.18.0,workflow-cps:2.66,cloudbees-folder:6.3,credentials:2.1
+ .16,display-url-api:2.3.0,junit:1.23,mailer:1.20,favorite:2.3.1
+Plugin-Developers: Thorsten Iberian Sumurai:scherler:,Cliff Meyers:cli
+ ffmeyers:,Tom Fennelly:tfennelly:,Vivek Pandey:vivek:,Kohsuke:kohsuke
+ :,Josh McDonald:sophistifunk:,Ivan Meredith:imeredith:,Michael Neale:
+ michaelneale:,Keith Zantow:kzantow:,James Dumay:i386:,Marc:marcesher:
+ ,Paul Dragoonis:dragoonis:,Ivan Santos:pragmaticivan:,Peter Dave Hell
+ o:PeterDaveHello:,Alexandru Somai:alexsomai:
+

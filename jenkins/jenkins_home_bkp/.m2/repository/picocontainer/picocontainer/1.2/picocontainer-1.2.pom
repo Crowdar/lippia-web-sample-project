@@ -1,0 +1,111 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>picocontainer</groupId>
+  <artifactId>picocontainer</artifactId>
+  <name>PicoContainer Core</name>
+  <version>1.2</version>
+  <description>Please refer to the &lt;a href="http://picocontainer.org/">main website&lt;/a> for documentation.</description>
+  <url>http://www.picocontainer.org/</url>
+  <issueManagement>
+    <url>http://jira.codehaus.org/browse/PICO</url>
+  </issueManagement>
+  <inceptionYear>2003</inceptionYear>
+  <scm>
+    <connection>scm:svn:https://svn.picocontainer.codehaus.org/picocontainer/java/picocontainer/trunk</connection>
+    <developerConnection>scm:svn:https://svn.picocontainer.codehaus.org/picocontainer/java/picocontainer/trunk</developerConnection>
+    <url>https://svn.picocontainer.codehaus.org/picocontainer/java/picocontainer/trunk</url>
+  </scm>
+  <organization>
+    <name>Codehaus</name>
+    <url>http://codehaus.org/</url>
+  </organization>
+  <build>
+    <sourceDirectory>/Users/mauro/svn/picocontainer/container/src/java</sourceDirectory>
+    <testSourceDirectory>/Users/mauro/svn/picocontainer/container/src/test</testSourceDirectory>
+    <testResources>
+      <testResource>
+        <targetPath></targetPath>
+        <directory>/Users/mauro/svn/picocontainer/container/src/test</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </testResource>
+    </testResources>
+    <plugins>
+      <plugin>
+        <artifactId>surefire</artifactId>
+        <configuration>
+          <includes>
+            <include>**/*TestCase.java</include>
+          </includes>
+          <excludes>
+            <exclude>**/Abstract*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-artifact-plugin</artifactId>
+        <version>1.5.2</version>
+        <configuration />
+      </plugin>
+      <plugin>
+        <artifactId>maven-scm-plugin</artifactId>
+        <version>1.5</version>
+        <configuration />
+      </plugin>
+      <plugin>
+        <artifactId>maven-multiproject-plugin</artifactId>
+        <version>1.4.1</version>
+        <configuration />
+      </plugin>
+      <plugin>
+        <artifactId>maven-clover-plugin</artifactId>
+        <version>1.10</version>
+        <configuration />
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>1.0.b2</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>jmock</groupId>
+      <artifactId>jmock</artifactId>
+      <version>1.0.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>xstream</groupId>
+      <artifactId>xstream</artifactId>
+      <version>1.1.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>xpp3</groupId>
+      <artifactId>xpp3_min</artifactId>
+      <version>1.1.3.4-RC8</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>default</id>
+      <name>Default Repository</name>
+      <url>beaver.codehaus.org//dist</url>
+    </repository>
+    <site>
+      <id>default</id>
+      <name>Default Site</name>
+      <url>scp://beaver.codehaus.org//home/projects/picocontainer/public_html/picocontainer/1.2/picocontainer</url>
+    </site>
+  </distributionManagement>
+</project>

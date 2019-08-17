@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>2.10</version> <!-- CAUTION: do not go past 2.16 without doing something like https://github.com/jenkinsci/workflow-cps-plugin/pull/87 -->
+    <relativePath />
+  </parent>
+  <artifactId>sse-gateway</artifactId>
+  <version>1.19</version>
+  <packaging>hpi</packaging>
+
+  <properties>
+    <jenkins.version>2.60.3</jenkins.version>
+    <java.level>8</java.level>
+    <jenkins-test-harness.version>2.30</jenkins-test-harness.version>
+    <node.version>5.8.0</node.version>
+    <npm.version>3.7.3</npm.version>
+  </properties>
+
+  <name>Server Sent Events (SSE) Gateway Plugin</name>
+  <description>Server Sent Events (SSE) Gateway Plugin</description>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/SSE+Gateway+Plugin</url>
+
+  <scm>
+    <connection>scm:git:https://github.com/jenkinsci/sse-gateway-plugin.git</connection>
+    <developerConnection>scm:git:https://github.com/jenkinsci/sse-gateway-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/sse-gateway-plugin</url>
+    <tag>sse-gateway-1.19</tag>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>pubsub-light</artifactId>
+      <version>1.6</version>
+    </dependency>
+    
+    <!-- Test deps -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>1.10.19</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.eirslett</groupId>
+      <artifactId>frontend-plugin-core</artifactId>
+      <version>1.0</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+        <plugin>
+          <groupId>org.jenkins-ci.tools</groupId>
+          <artifactId>maven-hpi-plugin</artifactId>
+          <extensions>true</extensions>
+          <configuration>
+            <showDeprecation>true</showDeprecation>
+            <contextPath>/jenkins</contextPath>
+            <!-- TODO specify ${java.level} when JENKINS-20679 implemented -->
+            <disabledTestInjection>true</disabledTestInjection>
+          </configuration>
+        </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>3.0.5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M3</version>
+          <configuration>
+            <reuseForks>false</reuseForks>
+            <runOrder>alphabetical</runOrder>
+            <systemPropertyVariables>
+              <jenkins.test.timeout>90</jenkins.test.timeout>
+            </systemPropertyVariables>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  
+</project>
