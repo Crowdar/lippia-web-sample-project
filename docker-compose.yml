@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  selenium-hub:
+ selenium-hub:
     image: selenium/hub:3.141.59-palladium
     container_name: selenium-hub
     environment:
@@ -10,6 +10,7 @@ services:
       - GRID_TIMEOUT=3000
     ports:
       - "4444:4444"
+      
   chrome:
     image: selenium/node-chrome:3.141.59-palladium
     volumes:
@@ -23,8 +24,10 @@ services:
       - NODE_MAX_SESSION=1
 
   jenkins:
-    image: crowdar/jenkinscibo:demoWeb
+    image: crowdar/jenkinsbo:demoweb
     privileged: true
     ports:
       - 8080:8080
       - 50000:50000
+    volumes:
+    - ./jenkins_home:/var/jenkins_home
