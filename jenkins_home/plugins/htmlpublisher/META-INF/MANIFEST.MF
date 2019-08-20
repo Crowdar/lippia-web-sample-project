@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: Richard
+Build-Jdk: 1.8.0_161
+Extension-Name: htmlpublisher
+Specification-Title: This plugin publishes HTML reports.
+Implementation-Title: htmlpublisher
+Implementation-Version: 1.18
+Group-Id: org.jenkins-ci.plugins
+Short-Name: htmlpublisher
+Long-Name: HTML Publisher plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin
+Plugin-Version: 1.18
+Hudson-Version: 1.609.3
+Jenkins-Version: 1.609.3
+Plugin-Dependencies: workflow-step-api:1.14.2,matrix-project:1.0
+Plugin-Developers: Richard Bywater:r2b2_nz:,Michael Rooney:mcrooney:
+

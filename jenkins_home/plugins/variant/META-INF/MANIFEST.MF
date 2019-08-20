@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: tiste
+Build-Jdk: 1.8.0_131
+Extension-Name: variant
+Specification-Title: This user-invisible library plugin allows other m
+ ulti-modal plugins to behave differently depending on where they run.
+Implementation-Title: variant
+Implementation-Version: 1.3
+Group-Id: org.jenkins-ci.plugins
+Short-Name: variant
+Long-Name: Variant Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Variant+Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.3
+Hudson-Version: 2.60.3
+Jenkins-Version: 2.60.3
+Plugin-Developers: 
+

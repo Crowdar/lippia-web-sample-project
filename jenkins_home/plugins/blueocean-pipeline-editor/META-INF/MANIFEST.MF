@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: root
+Build-Jdk: 1.8.0_191
+Extension-Name: blueocean-pipeline-editor
+Specification-Title: The Blue Ocean Pipeline Editor is the simplest wa
+ y for anyone wanting to get started with creating Pipelines in Jenkins
+Implementation-Title: blueocean-pipeline-editor
+Implementation-Version: 1.18.0
+Group-Id: io.jenkins.blueocean
+Short-Name: blueocean-pipeline-editor
+Long-Name: Blue Ocean Pipeline Editor
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Blue+Ocean+Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.18.0
+Hudson-Version: 2.138.4
+Jenkins-Version: 2.138.4
+Plugin-Dependencies: blueocean-commons:1.18.0,blueocean-dashboard:1.18
+ .0,blueocean-pipeline-api-impl:1.18.0,blueocean-rest:1.18.0,pipeline-
+ model-definition:1.3.7
+Plugin-Developers: Josh McDonald:sophistifunk:,Keith Zantow:kzantow:,A
+ ndrew Bayer:abayer:
+

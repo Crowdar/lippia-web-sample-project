@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: danielbeck
+Build-Jdk: 1.8.0_121
+Extension-Name: matrix-auth
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: matrix-auth
+Implementation-Version: 2.4.2
+Group-Id: org.jenkins-ci.plugins
+Short-Name: matrix-auth
+Long-Name: Matrix Authorization Strategy Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Matrix+Authorization+
+ Strategy+Plugin
+Compatible-Since-Version: 2.0
+Minimum-Java-Version: 1.8
+Plugin-Version: 2.4.2
+Hudson-Version: 2.138.3
+Jenkins-Version: 2.138.3
+Plugin-Dependencies: configuration-as-code:1.12;resolution:=optional,c
+ loudbees-folder:6.1.0;resolution:=optional
+Plugin-Developers: 
+

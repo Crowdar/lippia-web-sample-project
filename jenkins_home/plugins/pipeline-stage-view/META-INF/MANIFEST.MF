@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: olamy
+Build-Jdk: 1.8.0_222
+Extension-Name: pipeline-stage-view
+Specification-Title: Provides a swimlane view of the different stages 
+ in a pipeline.
+Implementation-Title: pipeline-stage-view
+Implementation-Version: 2.12
+Plugin-Class: com.cloudbees.workflow.ui.view.PluginImpl
+Group-Id: org.jenkins-ci.plugins.pipeline-stage-view
+Short-Name: pipeline-stage-view
+Long-Name: Pipeline: Stage View Plugin
+Url: https://wiki.jenkins.io/display/JENKINS/Pipeline+Stage+View+Plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 2.12
+Hudson-Version: 2.60.3
+Jenkins-Version: 2.60.3
+Plugin-Dependencies: pipeline-rest-api:2.12,workflow-api:2.24,workflow
+ -job:2.12,handlebars:1.1.1,jquery-detached:1.2.1,momentjs:1.1
+Plugin-Developers: 
+
