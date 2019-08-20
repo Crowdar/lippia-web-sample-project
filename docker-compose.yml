@@ -23,11 +23,8 @@ services:
       - NODE_MAX_SESSION=1
 
   jenkins:
-    image: jenkinsci/blueocean:1.18.0
+    image: crowdar/jenkinscibo:demoWeb
     privileged: true
     ports:
       - 8080:8080
       - 50000:50000
-    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
-    volumes:
-      - ./jenkins/jenkins_home:/var/jenkins_home

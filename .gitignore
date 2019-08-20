@@ -68,9 +68,6 @@ atlassian-ide-plugin.xml
 
 target/
 
-#jenkins-home
-jenkins/jenkins_home/workspace
-
 #eclipse
 .settings
 .classpath
