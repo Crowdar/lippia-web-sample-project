@@ -1,6 +1,7 @@
 version: "3.3"
 services:
- selenium-hub:
+
+  selenium-hub:
     image: selenium/hub:3.141.59-palladium
     container_name: selenium-hub
     environment:
@@ -10,7 +11,7 @@ services:
       - GRID_TIMEOUT=3000
     ports:
       - "4444:4444"
-      
+
   chrome:
     image: selenium/node-chrome:3.141.59-palladium
     volumes:
