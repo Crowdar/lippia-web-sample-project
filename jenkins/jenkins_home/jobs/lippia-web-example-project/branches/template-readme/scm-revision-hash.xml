@@ -1,7 +1,0 @@
-<?xml version='1.1' encoding='UTF-8'?>
-<jenkins.plugins.git.GitBranchSCMRevision plugin="git@3.11.0">
-  <head class="jenkins.plugins.git.GitBranchSCMHead">
-    <name>template-readme</name>
-  </head>
-  <hash>14ab239b4ae6353f416be083d7367d23853dc6fe</hash>
-</jenkins.plugins.git.GitBranchSCMRevision>
