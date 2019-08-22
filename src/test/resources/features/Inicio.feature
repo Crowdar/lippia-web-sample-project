@@ -4,35 +4,31 @@ Feature: Como potencial cliente
 
   @Smoke
   Scenario: El cliente inicia en la busqueda de un wikipedia en google
-  Given El cliente esta en la pagina de google
-  When El cliente ingresa la palabra "Wikipedia"
-  Then El cliente observa la informacion relevante sobre crowdar
+  Given The client is in google page
+  When The client search for word "Wikipedia"
+  Then The client verify that results are shown properly
 
 
   @Smoke
   Scenario: El cliente inicia en la busqueda de un wikipedia en google
-    Given El cliente esta en la pagina de google
-    When El cliente ingresa la palabra "Wikipedia"
-    Then El cliente observa la informacion relevante sobre crowdar
-
-
-  @Smoke
-  Scenario: El cliente inicia en la busqueda de un wikipedia en google
-    Given El cliente esta en la pagina de google
-    When El cliente ingresa la palabra "Wikipedia"
-    Then El cliente observa la informacion relevante sobre crowdar
-
-
+    Given The client is in google page
+    When The client search for word "Wikipedia"
+    Then The client verify that results are shown properly
 
   @Smoke
   Scenario: El cliente inicia en la busqueda de un wikipedia en google
-    Given El cliente esta en la pagina de google
-    When El cliente ingresa la palabra "Wikipedia"
-    Then El cliente observa la informacion relevante sobre crowdar
-
+    Given The client is in google page
+    When The client search for word "Wikipedia"
+    Then The client verify that results are shown properly
 
   @Smoke
   Scenario: El cliente inicia en la busqueda de un wikipedia en google
-    Given El cliente esta en la pagina de google
-    When El cliente ingresa la palabra "Wikipedia"
-    Then El cliente observa la informacion relevante sobre crowdar
+    Given The client is in google page
+    When The client search for word "Wikipedia"
+    Then The client verify that results are shown properly
+
+  @Smoke
+  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+    Given The client is in google page
+    When The client search for word "Wikipedia"
+    Then The client verify that results are shown properly

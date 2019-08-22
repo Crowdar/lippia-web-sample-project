@@ -1,5 +1,6 @@
 version: "3.3"
 services:
+
   selenium-hub:
     image: selenium/hub:3.141.59-palladium
     container_name: selenium-hub
@@ -10,6 +11,7 @@ services:
       - GRID_TIMEOUT=3000
     ports:
       - "4444:4444"
+
   chrome:
     image: selenium/node-chrome:3.141.59-palladium
     volumes:
@@ -23,12 +25,10 @@ services:
       - NODE_MAX_SESSION=1
 
   jenkins:
-    image: jenkinsci/blueocean:1.18.0
+    image: crowdar/jenkinsbo:demoweb
     privileged: true
     ports:
       - 8080:8080
-      - 8443:8443
       - 50000:50000
-    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     volumes:
-      - ./jenkins/jenkins_home:/var/jenkins_home
+    - ./jenkins_home:/var/jenkins_home
