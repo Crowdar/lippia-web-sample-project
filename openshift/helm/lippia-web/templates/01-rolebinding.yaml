@@ -1,0 +1,14 @@
+kind: RoleBinding
+apiVersion: v1
+metadata:
+  name: system:deployer
+  namespace: {{ .Release.Namespace }}
+userNames:
+- system:serviceaccount:{{ .Release.Namespace }}:deployer
+groupNames: 
+subjects:
+- kind: ServiceAccount
+  namespace: {{ .Release.Namespace }}
+  name: deployer
+roleRef:
+  name: system:deployer
