@@ -73,3 +73,16 @@ target/
 .classpath
 .project
 /.metadata/
+
+# Jenkins
+docker/jenkins_home/plugins
+docker/jenkins_home/war/
+docker/jenkins_home/caches
+docker/jenkins_home/.m2/
+docker/jenkins_home/tools/
+docker/jenkins_home/logs/
+docker/jenkins_home/.cache/
+docker/jenkins_home/.java/
+docker/jenkins_home/userContent/
+docker/jenkins_home/workspace/
+
