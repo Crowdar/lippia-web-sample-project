@@ -20,21 +20,23 @@
 
 #### Local strategy
 ##### Executing tests in you local machine from command line
-- From terminal  execute
-```$ mvn clean test```
+- From terminal  execute  
+ `$ mvn clean test`
   
 *mostrar que pasa en la consola*
 > To see the result, go to the [report section](#Report) below.
 
 #### Stack strategy
 This strategy use docker containers to generate a context to execute the tests. 
-Through docker compose we configure the following:
--    Jenkins
--    Selenium hub
--    Browser nodes
+Through docker compose we configure the following  
+
+-	Jenkins  
+-	Selenium hub  
+-  	Browser nodes  
 
 ##### Starting stack
 To start the containers, simply run the following command from terminal:
+
 ```
 $ sudo docker-compose up --scale chrome=2
 ```
@@ -90,6 +92,7 @@ Password: **secret**
 ### Reports
 you can view this report by accesing to:
 
-- `/jenkins_home/workspace/nd-volume-needed-for-example-job/target/cucumber-report/example.html`
+- `[WORKSPACE_LOCATION]/jenkins_home/workspace/nd-volume-needed-for-example-job/target/cucumber-report/example.html`
+> "With each job build the report file is replaced"
 
 ![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/reporteExtent.png)
