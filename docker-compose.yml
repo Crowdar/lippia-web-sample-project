@@ -18,6 +18,8 @@ services:
       - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
+    ports:
+        - 5901:5900
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
@@ -31,4 +33,4 @@ services:
       - 8080:8080
       - 50000:50000
     volumes:
-    - ./jenkins_home:/var/jenkins_home
+    - ./docker/jenkins_home:/var/jenkins_home
