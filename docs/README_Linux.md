@@ -15,31 +15,29 @@
     ``` $ cd lippia-web-example-project ```
 ## Strategies to run
 ***
-- [Stack](#sarasa) (running docker-compose and only clicking "Build job" on jenkins)  
 - [Local](#local) (running tests building project with maven from command line)
-
+- [Stack](#sarasa) (running docker-compose and only clicking "Build job" on jenkins)  
 
 #### Local strategy
 ##### Executing tests in you local machine from command line
 - From terminal  execute
-   ```
-  $ mvn clean test
-  ```
+```$ mvn clean test```
+  
 *mostrar que pasa en la consola*
 > To see the result, go to the [report section](#Report) below.
 
 #### Stack strategy
-This strategy use docker containers to generate a context to execute the tests.
+This strategy use docker containers to generate a context to execute the tests. 
 Through docker compose we configure the following:
-- Jenkins
-- Selenium hub
-- Browser nodes
+-    Jenkins
+-    Selenium hub
+-    Browser nodes
 
 ##### Starting stack
 To start the containers, simply run the following command from terminal:
-    ```
-    $ sudo docker-compose up --scale chrome=2
-    ```
+```
+$ sudo docker-compose up --scale chrome=2
+```
 
 
  > This command, will start download the images needed to build all the containers and start them. It takes a while to download the images depending on your internet connection.
