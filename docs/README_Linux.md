@@ -3,9 +3,9 @@
 ## System Requirements :
 + JDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   
 	  https://openjdk.java.net/install/   
-+ maven 3.X: https://maven.apache.org/download.cgi   
-+ docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/
-+ docker compose 1.24: https://docs.docker.com/compose/install/
++ Maven 3.X: https://maven.apache.org/download.cgi   
++ Docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/
++ Docker compose 1.24: https://docs.docker.com/compose/install/
 
 # Getting started
  [Download]: <https://bitbucket.org/crowdarautomation/lippia-web-example-project/get/fdc35889edbf.zip>
@@ -21,9 +21,113 @@
 #### Local strategy
 ##### Executing tests in you local machine from command line
 - From terminal  execute  
- `$ mvn clean test`
-  
-*mostrar que pasa en la consola*
+ `$ mvn clean test`    
+ 
+```
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+WARNING: Found tags option '~@Ignore'. Support for '~@tag' will be removed from the next release of Cucumber-JVM. Please use 'not @tag' instead.
+TESTCASE El cliente inicia en la busqueda de un wikipedia en google STARTED EN HILO :12
+log4j:WARN No appenders could be found for logger (com.crowdar.report.ExtentReportManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+TEST STEP STARTED EN HILO :12
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Sep 04, 2019 12:38:01 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 76.0.3809.126 (d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/3809@{#1024}) on port 14439
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Sep 04, 2019 12:38:02 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TESTCASE El cliente inicia en la busqueda de un wikipedia en google STARTED EN HILO :12
+TEST STEP STARTED EN HILO :12
+Sep 04, 2019 12:38:04 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 76.0.3809.126 (d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/3809@{#1024}) on port 8281
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Sep 04, 2019 12:38:04 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TESTCASE El cliente inicia en la busqueda de un wikipedia en google STARTED EN HILO :12
+TEST STEP STARTED EN HILO :12
+Sep 04, 2019 12:38:08 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 76.0.3809.126 (d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/3809@{#1024}) on port 25377
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Sep 04, 2019 12:38:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TESTCASE El cliente inicia en la busqueda de un wikipedia en google STARTED EN HILO :12
+TEST STEP STARTED EN HILO :12
+Sep 04, 2019 12:38:12 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 76.0.3809.126 (d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/3809@{#1024}) on port 13831
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Sep 04, 2019 12:38:12 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TESTCASE El cliente inicia en la busqueda de un wikipedia en google STARTED EN HILO :12
+TEST STEP STARTED EN HILO :12
+Sep 04, 2019 12:38:16 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 76.0.3809.126 (d80a294506b4c9d18015e755cee48f953ddc3f2f-refs/branch-heads/3809@{#1024}) on port 20650
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Sep 04, 2019 12:38:16 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+TEST STEP STARTED EN HILO :12
+TEST STEP FINISHED EN HILO :12
+
+5 Scenarios (5 passed)
+15 Steps (15 passed)
+0m18.753s
+
+TEST STEP FINISHED EN HILO :12
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.439 s - in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22.870 s
+[INFO] Finished at: 2019-09-04T12:38:19-03:00
+[INFO] ------------------------------------------------------------------------
+```
+
+> This strategy consumes the bonigarcia solution to get the correct Driver to interact with your browser.
+In this case, Maven will be excute tests phase by using your local browser directly.
+
 > To see the result, go to the [report section](#Report) below.
 
 #### Stack strategy
