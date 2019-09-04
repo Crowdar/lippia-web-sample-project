@@ -22,7 +22,7 @@
 ##### Executing tests in you local machine from command line
 - From terminal  execute  
  `$ mvn clean test`    
- 
+   
 ```
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
@@ -124,11 +124,11 @@ TEST STEP FINISHED EN HILO :12
 [INFO] Finished at: 2019-09-04T12:38:19-03:00
 [INFO] ------------------------------------------------------------------------
 ```
-
+  
 > This strategy consumes the bonigarcia solution to get the correct Driver to interact with your browser.
-In this case, Maven will be excute tests phase by using your local browser directly.
+>In this case, Maven will be excute tests phase by using your local browser directly.
 
-> To see the result, go to the [report section](#Report) below.
+To see the result, go to the [report section](#Report) below.
 
 #### Stack strategy
 This strategy use docker containers to generate a context to execute the tests. 
@@ -181,9 +181,10 @@ Selenium Grid: http://localhost:4444/grid/console
 
 ### Run from Jenkins with Selenium Grid
 
-Enter Jenkins console http://localhost:8080 with the following credentials
-Username: **admin**
-Password: **secret**
+Enter Jenkins console http://localhost:8080 with the following credentials  
+
+- Username: **admin**  
+- Password: **secret**
 
 ### Build job
 
@@ -197,6 +198,6 @@ Password: **secret**
 you can view this report by accesing to:
 
 - `[WORKSPACE_LOCATION]/jenkins_home/workspace/nd-volume-needed-for-example-job/target/cucumber-report/example.html`
-> "With each job build the report file is replaced"
+> "With each job build the report file will be replaced"
 
 ![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/reporteExtent.png)
