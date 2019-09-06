@@ -18,7 +18,7 @@
 - [Stack](#sarasa) (running docker-compose with the help of Vegrant and just clicking on "Create Job" in Jenkins)  
 
 ### Local strategy  
-- To run local strategy see:   (Have no changes from windows users)    
+- To run local strategy see:   (Has no changes to Linux users)    
  [`Getting started - Linux User`](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/master/docs/README_Linux.md)
 
 ***
