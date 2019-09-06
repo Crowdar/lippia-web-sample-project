@@ -10,6 +10,8 @@ This project has the intention of show in a practical way how to use Lippia Auto
 The following project includes the basic Docker Lippia Containers to run this  web sample project. You can choose to run the code from your favourite IDE, run from console or from Jenkins using the Docker Stack.
 To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
 
+![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/c951c54b4a2e2debff0e7c1c4c89d1e3c42331c6/docs/img/architecture_web_lippia.png)
+
 ## Project structure
 
 A typical Lippia Test Automation project usually looks like this 
