@@ -15,7 +15,7 @@
 ## Strategies to run
 ***
 - [Local](#local) (running tests building project with maven from command line)
-- [Stack](#sarasa) (running docker-compose with the help of Vegrant and just clicking on "Create Job" in Jenkins)  
+- [Stack](#sarasa) (running docker-compose with the help of Vagrant and just clicking on "Create Job" in Jenkins)  
 
 ### Local strategy  
 - To run local strategy see:   (Has no changes to Linux users)    
