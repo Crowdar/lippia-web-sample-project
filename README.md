@@ -61,29 +61,89 @@ In this example, *Inicio* is the first web page the framework will interact with
 |Inicio.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
 
 
-## Page Object
-
-Descripcion de la clase page object
-
+## Page Object    
+***    
 ```
-   public Inicio(SharedDriver driver){
+public class SearchPage extends PageBaseExamples{
+
+    public WebElement googleInput(){return getWebElement(By.xpath("//input[@class='gLFyf gsfi']"));}
+    public WebElement googleSearchBtn(){return getWebElement(By.name("btnK"));}
+
+    public SearchPage(SharedDriver driver){
         super(driver);
         this.url = "";
     }
 
-    public void navegarAlInicio(){
+    public void goToInit(){
         navigateToIt();
     }
+
+    public void enterSearchCriteria(String palabra){
+        googleInput().clear();
+        googleInput().sendKeys(palabra);
+    }
+
+    public void clickSearchButton(){
+        googleSearchBtn().click();
+    }
+}   
 ```
 
-## Step Opject
+## Step Object   
+***
+    
+```
+public class SearchSteps extends PageSteps {
+
+    private SearchPage searchPage;
+
+    public SearchSteps(SharedDriver driver){
+        super(driver);
+        searchPage = new SearchPage(driver);
+    }
+
+    @When("The client search for word (.*)")
+    public void search(String criteria){
+        searchPage.enterSearchCriteria(criteria);
+		searchPage.clickSearchButton();
+    }
+}    
+```
 
 
 ## Feature File
+***
 
-The Test Scenarios can be written using BDD metodology. This project includes Cucumber as BDD interpreter which is supported by Lippia by default. On each declared step you can insert the calls defined from service classes
+The Test Scenarios can be written using BDD metodology. This project includes Cucumber as BDD interpreter which is supported by Lippia by default. On each declared step you can insert the calls defined from service classes            
+    
+```
+Feature: As a potential client i need to search in google to find a web site
 
-![Lippia gherkin Web](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/805effb96e514985af2815aa89a1537bb4fe44ba/gherkin.png =100x)
+  @Smoke
+  Scenario: The client search by "crowdar"
+    Given The client is in google page
+    When The client search for word crowdar
+    Then The client verify that results are shown properly
+    
+  @Smoke
+  Scenario: The client search by "automation"
+    Given The client is in google page
+    When The client search for word automation
+    Then The client verify that results are shown properly
+    
+  @Smoke
+  Scenario: The client search by "docker"
+    Given The client is in google page
+    When The client search for word docker
+    Then The client verify that results are shown properly
+	
+  @Smoke
+  Scenario: The client search by "vagrant"
+    Given The client is in google page
+    When The client search for word vagrant
+    Then The client verify that results are shown properly
+```
+
 
 ### Reports 
 
