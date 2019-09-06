@@ -17,18 +17,19 @@ public class SearchSteps extends PageSteps {
     }
 
     @Given("The client is in google page")
-    public void elClienteEstaEnLaPaginaDeGoogle(){
+    public void home(){
         searchPage.goToInit();
     }
 
     @When("The client search for word (.*)")
-    public void elClienteIngresaUnaPalabraABuscar(String palabra){
-        searchPage.ingresarPalabra(palabra);
+    public void search(String criteria){
+        searchPage.enterSearchCriteria(criteria);
+		searchPage.clickSearchButton();
 
     }
 
     @Then("The client verify that results are shown properly")
-    public void elClienteObservaLaInformacionRelevanteSobreCrowdar(){
-
+    public void verfication(){
+	
     }
 }

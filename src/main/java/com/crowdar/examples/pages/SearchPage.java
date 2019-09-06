@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class SearchPage extends PageBaseExamples{
 
-    public WebElement inicioMenuLink(){return getWebElement(By.xpath("//a[@href='#home']"));}
-    public WebElement verMasLink(){return getWebElement(By.xpath("//a[@href='#brief']"));}
     public WebElement googleInput(){return getWebElement(By.xpath("//input[@class='gLFyf gsfi']"));}
     public WebElement googleSearchBtn(){return getWebElement(By.name("btnK"));}
 
@@ -20,13 +18,13 @@ public class SearchPage extends PageBaseExamples{
         navigateToIt();
     }
 
-    public void ingresarPalabra(String palabra){
+    public void enterSearchCriteria(String palabra){
         googleInput().clear();
         googleInput().sendKeys(palabra);
     }
 
-    public void presionarBotonDeBusqueda(){
-        googleSearchBtn().clear();
+    public void clickSearchButton(){
+        googleSearchBtn().click();
     }
 
 
