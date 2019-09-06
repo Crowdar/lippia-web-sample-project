@@ -1,34 +1,32 @@
-Feature: Como potencial cliente
-         yo quiero ver informacion de la pagina de crowdar
-         asi no tengo que llamarlos para saber de que se trata
+Feature: As a potential client i need to search in google to find a web site
 
   @Smoke
-  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+  Scenario: The client search by "wikipedia"
   Given The client is in google page
-  When The client search for word "Wikipedia"
+  When The client search for word Wikipedia
   Then The client verify that results are shown properly
 
 
   @Smoke
-  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+  Scenario: The client search by "wikipedia"
     Given The client is in google page
-    When The client search for word "Wikipedia"
+    When The client search for word Wikipedia
     Then The client verify that results are shown properly
 
   @Smoke
-  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+  Scenario: The client search by "wikipedia"
     Given The client is in google page
-    When The client search for word "Wikipedia"
+    When The client search for word Wikipedia
     Then The client verify that results are shown properly
 
   @Smoke
-  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+  Scenario: The client search by "wikipedia"
     Given The client is in google page
-    When The client search for word "Wikipedia"
+    When The client search for word Wikipedia
     Then The client verify that results are shown properly
 
   @Smoke
-  Scenario: El cliente inicia en la busqueda de un wikipedia en google
+  Scenario: The client search by "wikipedia"
     Given The client is in google page
-    When The client search for word "Wikipedia"
+    When The client search for word Wikipedia
     Then The client verify that results are shown properly
