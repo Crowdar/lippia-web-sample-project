@@ -22,10 +22,11 @@ A typical Lippia Test Automation project usually looks like this
 │   │       └── crowdar
 │   │           └── examples
 │   │               ├── pages
-│   │               │   ├── Inicio.java
-│   │               │   └── PageBaseExamples.java
+│   │               │   ├── GoogleHomePage.java
+│   │               │   ├── GoogleSearchResultPage.java
+│   │               │   ├── PageBaseGoogle.java
 │   │               └── steps
-│   │                   └── InicioSteps.java
+│   │                   └── GoogleSteps.java
 │   └── resources
 │       ├── config.properties
 │       ├── cucumber.properties
@@ -36,10 +37,10 @@ A typical Lippia Test Automation project usually looks like this
     │   ├── CrowdTestNgRunner.java
     │   └── com
     │       └── crowdar
-    │           ├── Hooks.java
+    │           └── Hooks.java
     └── resources
         └── features
-            └── Inicio.feature
+            └── googleSearch.feature
 ```
 
 Folder's description:
@@ -51,30 +52,43 @@ Folder's description:
 |test\resources\features\\\*.feature|Folder with all the **feature files** containing **Test Scenarios** and **Sample Data** |
 |main\resources|Folder with all configuration needed to run Lippia |
 
-In this example, *Inicio* is the first web page the framework will interact with. The **steps** defined in *InicioSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
+In this example, *GoogleHomePage* is the first web page the framework will interact with. The **steps** defined in *GoogleSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
 
 
 |File   | Description    |
 |-------|----------------|
-|Inicio.java   | PageObject: between each element in the webpage *Inicio* you want to interact with. You need to add one new file for each page you want to navigate in your tests. |
-|InicioSteps.java   | StepOpject: Code to support the behaviour of each **step** coded into the feature files for the *Inicio* web page. This code executes the interaction between the Framework and the web application and match the steps with the code who run interactions. |
-|Inicio.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
+|PageBaseGoogle    | Define base URL to navigate. |
+|GoogleHomePage.java   | PageObject: between each element in the webpage *GoogleHomePage* you want to interact with. You need to add one new file for each page you want to navigate in your tests. |
+|GoogleSteps.java   | StepOpject: Code to support the behaviour of each **step** coded into the feature files for the *GoogleHomePage* web page. This code executes the interaction between the Framework and the web application and match the steps with the code who run interactions. |
+|googleSearch.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
+
+## Page base    
+***
+```
+public class PageBaseGoogle extends CucumberPageBase {
+
+    public PageBaseGoogle(SharedDriver driver){
+        super( driver);
+        BASE_URL = "http://www.google.com.ar";
+    }
+}
+```
 
 
 ## Page Object    
 ***    
 ```
-public class SearchPage extends PageBaseExamples{
+public class GoogleHomePage extends PageBaseGoogle{
 
-    public WebElement googleInput(){return getWebElement(By.xpath("//input[@class='gLFyf gsfi']"));}
-    public WebElement googleSearchBtn(){return getWebElement(By.name("btnK"));}
+    private WebElement googleInput(){return getWebElement(By.xpath("//input[@class='gLFyf gsfi']"));}
+    private WebElement googleSearchBtn(){return getWebElement(By.name("btnK"));}
 
-    public SearchPage(SharedDriver driver){
+    public GoogleHomePage(SharedDriver driver){
         super(driver);
-        this.url = "";
+        this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
     }
 
-    public void goToInit(){
+    public void go(){
         navigateToIt();
     }
 
@@ -86,28 +100,43 @@ public class SearchPage extends PageBaseExamples{
     public void clickSearchButton(){
         googleSearchBtn().click();
     }
-}   
+
+}
 ```
 
 ## Step Object   
 ***
     
 ```
-public class SearchSteps extends PageSteps {
+public class GoogleSteps extends PageSteps {
 
-    private SearchPage searchPage;
+    private GoogleHomePage homePage;
+    private GoogleSearchResultPage searchResultPage;
 
-    public SearchSteps(SharedDriver driver){
+    public GoogleSteps(SharedDriver driver){
         super(driver);
-        searchPage = new SearchPage(driver);
+        homePage = new GoogleHomePage(driver);
+        searchResultPage= new GoogleSearchResultPage(driver);
+    }
+
+    @Given("The client is in google page")
+    public void home(){
+    	homePage.go();
     }
 
     @When("The client search for word (.*)")
     public void search(String criteria){
-        searchPage.enterSearchCriteria(criteria);
-		searchPage.clickSearchButton();
+    	homePage.enterSearchCriteria(criteria);
+    	homePage.clickSearchButton();
+
     }
-}    
+
+    @Then("The client verify that results are shown properly")
+    public void statVerfication(){
+    	Assert.assertTrue(!searchResultPage.getStats().isEmpty());
+	
+    }
+}
 ```
 
 
