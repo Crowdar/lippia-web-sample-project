@@ -104,7 +104,7 @@ Now you can continue with the Linux user guide from the "Check Docker stack is u
 [`Getting started - Linux User`](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/master/docs/README_Linux.md)
 
 ***
-###Shutdown Vagrant
+### Shutdown Vagrant
 To shutdown vagrant execute this command from root project directory:
  ```$ vagrant halt```
  
