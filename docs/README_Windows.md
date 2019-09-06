@@ -4,8 +4,7 @@
 + JDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   
 	  https://openjdk.java.net/install/   
 + Maven 3.X: https://maven.apache.org/download.cgi   
-+ Docker 18.09: https://docs.docker.com/install/linux/docker-ce/ubuntu/
-+ Docker compose 1.24: https://docs.docker.com/compose/install/
++ vagrant 2.2.x: https://www.vagrantup.com/downloads.html
 
 # Getting started
  [Download]: <https://bitbucket.org/crowdarautomation/lippia-web-example-project/get/fdc35889edbf.zip>
