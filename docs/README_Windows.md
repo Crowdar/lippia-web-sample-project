@@ -105,7 +105,7 @@ Now you can continue with the Linux user guide from the "Check Docker stack is u
 
 ***
 ### Shutdown Vagrant
-To shutdown vagrant execute this command from root project directory:
+To shutdown vagrant execute this command from root project directory:   
  ```$ vagrant halt```
  
 ***
