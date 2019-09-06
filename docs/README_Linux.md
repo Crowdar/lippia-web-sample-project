@@ -200,4 +200,4 @@ you can view this report by accesing to:
 - `[WORKSPACE_LOCATION]/docker/jenkins_home/workspace/nd-volume-needed-for-example-job/target/cucumber-report/example.html`
 > "With each job build the report file will be replaced"
 
-![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/86b00e214ba15ebabeeb7894522ea47d67279e81/docs/img/reporteExtent.png)
+![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/dad86fd70511b170a88b3f4c7f86c2d6522d0f29/docs/img/reporteExtent.png)
