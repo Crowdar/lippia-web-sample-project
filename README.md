@@ -91,7 +91,7 @@ By default Lippia expose Test results using Extent Report Community Edition (htt
 In order to see test results this project includes extent report that show you the result of each run. This kind of reporting is really easy to understand. 
 You just need to open it and navigate for all the report page to earn the much information as you can for every run.
 
-![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/86b00e214ba15ebabeeb7894522ea47d67279e81/docs/img/reporteExtent.png)
+![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/dad86fd70511b170a88b3f4c7f86c2d6522d0f29/docs/img/reporteExtent.png)
 
 * * *
 * * *
