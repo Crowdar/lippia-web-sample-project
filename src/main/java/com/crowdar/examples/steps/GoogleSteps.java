@@ -35,7 +35,7 @@ public class GoogleSteps extends PageSteps {
     }
 
     @Then("The client verify that results are shown properly")
-    public void verfication(){
+    public void statVerfication(){
     	Assert.assertTrue(!searchResultPage.getStats().isEmpty());
 	
     }
