@@ -1,6 +1,7 @@
 ## Lippia Web sample project - Windows users
 
 ## System Requirements :
++ Windows Professional
 + JDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   
 	  https://openjdk.java.net/install/   
 + Maven 3.X: https://maven.apache.org/download.cgi   
@@ -19,7 +20,7 @@
 
 ### Local strategy  
 - To run local strategy see:   (Has no changes to Linux users)    
- [`Getting started - Linux User`](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/master/docs/README_Linux.md)
+ [`Getting started - Linux User`](/docs/README_Linux.md)
 
 ***
 ### Stack strategy
@@ -101,7 +102,7 @@ Creating sync_chrome_1_7ece9f1f55e6  ... done
 ``` 
 
 Now you can continue with the Linux user guide from the "Check Docker stack is up and running" section.  
-[`Getting started - Linux User`](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/master/docs/README_Linux.md)
+[`Getting started - Linux User`](/docs/README_Linux.md)
 
 ***
 ### Shutdown Vagrant
