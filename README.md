@@ -190,6 +190,6 @@ You just need to open it and navigate for all the report page to earn the much i
 # Getting started
     
 - If you are Linux user 
-    [`Getting started - Linux User`](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/master/docs/README_Linux.md)
+    [`Getting started - Linux User`](docs/README_Linux.md)
 - If you are Windws user
-    [`Getting started - Windows User`](https://bitbucket.org/crowdarautomation/lippia-web-example-project/src/master/docs/README_Windows.md)
+    [`Getting started - Windows User`](docs/README_Windows.md)
