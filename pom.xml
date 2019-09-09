@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.crowdar</groupId>
-        <artifactId>Crowd-Root-Framework</artifactId>
-        <version>1.6.4</version>
+       <groupId>com.crowdar.lippia</groupId>
+       <artifactId>root</artifactId>
+       <version>1.6.5</version>
     </parent>
-    
+
     <artifactId>Lippia-web-example-project</artifactId>
     <url>http://maven.apache.org</url>
     <packaging>jar</packaging>
@@ -98,12 +98,12 @@
         </profile>
     </profiles>
      <dependencies>
-        <dependency>
-                <groupId>com.crowdar</groupId>
-                <artifactId>Crowd-Core-Framework</artifactId>
-                <version>1.6.4</version>
+       <dependency>
+                <groupId>com.crowdar.lippia</groupId>
+                <artifactId>core</artifactId>
+                <version>1.6.5</version>
         </dependency>
-        		        
+
      </dependencies>
     <build>
         <filters>
@@ -122,7 +122,7 @@
             </plugin>
         </plugins>
     </build>
-	
+
     <repositories>
 		<repository>
 			<id>crowdarRepo</id>
@@ -130,5 +130,5 @@
 			<url>http://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
 		</repository>
 	</repositories>
-    
+
 </project>
