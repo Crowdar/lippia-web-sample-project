@@ -10,7 +10,7 @@ This project has the intention of show in a practical way how to use Lippia Auto
 The following project includes the basic Docker Lippia Containers to run this  web sample project. You can choose to run the code from your favourite IDE, run from console or from Jenkins using the Docker Stack.
 To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
 
-![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/c951c54b4a2e2debff0e7c1c4c89d1e3c42331c6/docs/img/architecture_web_lippia.png)
+![Lippia Extent Report](docs/img/architecture_web_lippia.png)
 
 ## Project structure
 
@@ -182,7 +182,7 @@ By default Lippia expose Test results using Extent Report Community Edition (htt
 In order to see test results this project includes extent report that show you the result of each run. This kind of reporting is really easy to understand. 
 You just need to open it and navigate for all the report page to earn the much information as you can for every run.
 
-![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/dad86fd70511b170a88b3f4c7f86c2d6522d0f29/docs/img/reporteExtent.png)
+![Lippia Extent Report](/docs/img/reporteExtent.png)
 
 * * *
 * * *
