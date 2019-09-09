@@ -148,7 +148,7 @@ $ sudo docker-compose up --scale chrome=2
 
  > This command, will start download the images needed to build all the containers and start them. It takes a while to download the images depending on your internet connection.
 
-![docker-compose](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/848727f5bcbd7fd08f5cc3d399a639839f1dcfcc/docs/img/docker-compose-up.png)
+![docker-compose](/docs/img/docker-compose-up.png)
 
  >You can change the number of instances to start from chrome by modifying the values of the "scale" parameter
 for example: `-scale chrome=9` (creating 9 chrome instances)
@@ -172,11 +172,11 @@ b2f7325d2fc5        jenkinsci/blueocean:1.18.0                "/sbin/tini -- /us
 After starting the stack you can see  and selenium grid following url:
 Jenkins: http://localhost:8080
 
-![jenkins](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/848727f5bcbd7fd08f5cc3d399a639839f1dcfcc/docs/img/jenkins.png)
+![jenkins](/docs/img/jenkins.png)
 
 Selenium Grid: http://localhost:4444/grid/console
 
-![grid_console](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/848727f5bcbd7fd08f5cc3d399a639839f1dcfcc/docs/img/Grid_Console.png)
+![grid_console](/docs/img/Grid_Console.png)
 ***
 
 ### Run from Jenkins with Selenium Grid
@@ -188,9 +188,9 @@ Enter Jenkins console http://localhost:8080 with the following credentials
 
 ### Build job
 
-![Jenkins_job](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/848727f5bcbd7fd08f5cc3d399a639839f1dcfcc/docs/img/jenkins_start_job.png)
+![Jenkins_job](/docs/img/jenkins_start_job.png)
 ***
-![jenkins build job](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/41c0617c8f6d8b7d2254339d96e50e74044ba3c4/docs/img/jenkins_job_build.png)
+![jenkins build job](/docs/img/jenkins_job_build.png)
 
 ***
 
@@ -200,4 +200,4 @@ you can view this report by accesing to:
 - `[WORKSPACE_LOCATION]/docker/jenkins_home/workspace/nd-volume-needed-for-example-job/target/cucumber-report/example.html`
 > "With each job build the report file will be replaced"
 
-![Lippia Extent Report](https://bitbucket.org/crowdarautomation/lippia-web-example-project/raw/dad86fd70511b170a88b3f4c7f86c2d6522d0f29/docs/img/reporteExtent.png)
+![Lippia Extent Report](/docs/img/reporteExtent.png)
