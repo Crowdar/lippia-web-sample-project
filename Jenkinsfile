@@ -10,6 +10,7 @@ pipeline {
 
     stage('Publish report') {
       steps {
+        echo "awesomeVersion: ${publishFolder}"
         sh 'mkdir ${publishFolder}'
         sh 'mv ./target/cucumber-report/example.html ${publishFolder}'
 
