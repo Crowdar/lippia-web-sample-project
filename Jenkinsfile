@@ -1,5 +1,3 @@
-def reportFolder = sh(script: 'echo $(date +%Y%m%d_%H%M%S)', returnStdout: true);
-def publishFolder  = "/var/jenkins_home/reportsVolume/${reportFolder}";
 
 pipeline {
   agent any
@@ -10,9 +8,8 @@ pipeline {
 
     stage('Publish report') {
       steps {
-        echo "awesomeVersion: ${publishFolder}"
-        sh 'mkdir ${publishFolder}'
-        sh 'mv ./target/cucumber-report/example.html ${publishFolder}'
+        sh 'mkdir ${currentBuild.startTimeInMillis}'
+        sh 'mv ./target/cucumber-report/example.html ${currentBuild.startTimeInMillis}'
 
       }
     }
