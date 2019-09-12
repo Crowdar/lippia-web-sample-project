@@ -11,7 +11,9 @@ pipeline {
     }
     stage('Publish report') {
       steps {
-        sh 'mkdir --parents /var/jenkins_home/reportsVolume/$(date +%Y%m%d_%H%M%S); mv ${workspace}/nd-volume-needed-for-example-job/target/cucumber-report/example.html $_'
+        sh 'echo pwd'
+        sh 'mkdir --parents /var/jenkins_home/reportsVolume/$(date +%Y%m%d_%H%M%S); mv ./target/cucumber-report/example.html $_'
+
       }
     }
   }
