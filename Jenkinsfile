@@ -7,7 +7,7 @@ pipeline {
 
     stage('Publish report') {
       steps {
-        sh 'echo pwd'
+        sh 'pwd | cat'
         sh 'mkdir --parents /var/jenkins_home/reportsVolume/$(date +%Y%m%d_%H%M%S); mv ./target/cucumber-report/example.html $_'
 
       }
