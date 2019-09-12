@@ -4,11 +4,7 @@ pipeline {
     maven 'maven-3'
   }
   stages {
-    stage('Build') {
-      steps {
-        sh 'mvn clean -P GridParallel test'
-      }
-    }
+
     stage('Publish report') {
       steps {
         sh 'echo pwd'
