@@ -7,8 +7,7 @@ pipeline {
 
     stage('Publish report') {
       steps {
-        def publishFolder = /var/jenkins_home/reportsVolume/$(date +%Y%m%d_%H%M%S);
-        sh 'mkdir ${publishFolder};
+        def publishFolder = sh(script: 'mkdir /var/jenkins_home/reportsVolume/$(date +%Y%m%d_%H%M%S)', returnStdout: true) 
         sh 'mv ./target/cucumber-report/example.html ${publishFolder}
 
       }
