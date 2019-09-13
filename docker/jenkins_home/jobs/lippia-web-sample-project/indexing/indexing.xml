@@ -1,0 +1,26 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<jenkins.branch.MultiBranchProject_-BranchIndexing plugin="branch-api@2.5.4">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+  </actions>
+  <result>
+    <name>SUCCESS</name>
+    <ordinal>0</ordinal>
+    <color>BLUE</color>
+    <completeBuild>true</completeBuild>
+  </result>
+  <durations>
+    <long>5330</long>
+  </durations>
+  <timestamp>1568304296701</timestamp>
+  <duration>5330</duration>
+</jenkins.branch.MultiBranchProject_-BranchIndexing>
