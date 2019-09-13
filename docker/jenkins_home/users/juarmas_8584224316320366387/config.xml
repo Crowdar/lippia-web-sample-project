@@ -21,7 +21,7 @@
     <hudson.plugins.favorite.user.FavoriteUserProperty plugin="favorite@2.3.2">
       <data class="concurrent-hash-map">
         <entry>
-          <string>lippia-web-example-project/add-jenkins-container-and-volume-needed-for-example-job</string>
+          <string>lippia-web-sample-project/master</string>
           <boolean>true</boolean>
         </entry>
       </data>
