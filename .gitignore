@@ -75,14 +75,14 @@ target/
 /.metadata/
 
 # Jenkins
-jenkins_home/plugins
-jenkins_home/war/
-jenkins_home/caches
-jenkins_home/.m2/
-jenkins_home/tools/
-jenkins_home/logs/
-jenkins_home/.cache/
-jenkins_home/.java/
-jenkins_home/userContent/
-jenkins_home/workspace/
+docker/jenkins_home/plugins
+docker/jenkins_home/war/
+docker/jenkins_home/caches
+docker/jenkins_home/.m2/
+docker/jenkins_home/tools/
+docker/jenkins_home/logs/
+docker/jenkins_home/.cache/
+docker/jenkins_home/.java/
+docker/jenkins_home/userContent/
+docker/jenkins_home/workspace/
 

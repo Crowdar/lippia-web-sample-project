@@ -1,9 +1,8 @@
 version: "3.3"
 services:
 
-  selenium-hub:
+  selenium-hub_web-sample:
     image: selenium/hub:3.141.59-palladium
-    container_name: selenium-hub
     environment:
       - GRID_MAX_SESSION=20
       - GRID_DEBUG=true
@@ -12,21 +11,47 @@ services:
     ports:
       - "4444:4444"
 
-  chrome:
-    image: selenium/node-chrome:3.141.59-palladium
+  # chrome_web-sample:
+  #   image: selenium/node-chrome:3.141.59-palladium
+  #   volumes:
+  #     - /dev/shm:/dev/shm
+  #   depends_on:
+  #     - selenium-hub_web-sample
+  #   ports:
+  #       - 5901:5900
+  #   environment:
+  #     - HUB_HOST=selenium-hub_web-sample
+  #     - HUB_PORT=4444
+  #     - NODE_MAX_INSTANCES=1
+  #     - NODE_MAX_SESSION=1
+
+  chrome_web-sample:
+    image: elgalu/selenium:3.141.59-p21
+    depends_on:
+      - selenium-hub_web-sample
+    ports:
+      # VNC: See what's going on by connecting your VNC client to 0.0.0.0:5900
+      - 5900:25900
+      # noVNC: See what's going on by hitting http://0.0.0.0:6080 in your browser
+      #        Important: http://127.0.0.1:6080 works but http://localhost:6080 doesn't
+      - 6081:26080
     volumes:
       - /dev/shm:/dev/shm
-    depends_on:
-      - selenium-hub
-    ports:
-        - 5901:5900
+    privileged: true
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-      - NODE_MAX_INSTANCES=1
-      - NODE_MAX_SESSION=1
+      - NOVNC=true
+      - SELENIUM_HUB_HOST=selenium-hub_web-sample
+      - SELENIUM_HUB_PORT=4444
+      - SELENIUM_NODE_HOST={{CONTAINER_IP}}
+      - SCREEN_WIDTH=1300
+      - SCREEN_HEIGHT=999
+      - VIDEO=false
+      - GRID=false
+      - CHROME=true
+      - FIREFOX=false
 
-  jenkins:
+
+  jenkins_web-sample:
     image: crowdar/jenkinsbo:demoweb
     privileged: true
     ports:
@@ -34,3 +59,13 @@ services:
       - 50000:50000
     volumes:
     - ./docker/jenkins_home:/var/jenkins_home
+
+  nginx_web-sample:
+    image: nginx:stable
+    volumes:
+      - ./docker/jenkins_home/reportsVolume:/usr/share/nginx/html
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8081:80
+    environment:
+      - TZ=America/Argentina/Buenos_Aires
