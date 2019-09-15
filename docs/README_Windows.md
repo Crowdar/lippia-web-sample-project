@@ -6,6 +6,7 @@
 	  https://openjdk.java.net/install/   
 + Maven 3.X: https://maven.apache.org/download.cgi   
 + Vagrant 2.2.x: https://www.vagrantup.com/downloads.html
++ Virtual Box https://www.virtualbox.org/wiki/Downloads
 
 # Getting started
  [Download]: <https://bitbucket.org/crowdarautomation/lippia-web-example-project/get/fdc35889edbf.zip>
