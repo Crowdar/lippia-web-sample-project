@@ -177,6 +177,11 @@ Jenkins: http://localhost:8080
 Selenium Grid: http://localhost:4444/grid/console
 
 ![grid_console](/docs/img/Grid_Console.png)
+
+Chrome desktop node novnc: http://localhost:6081
+
+![chromeDesktopNovnc](/docs/img/chromeDesktopNovnc.png)
+
 ***
 
 ### Run from Jenkins with Selenium Grid
