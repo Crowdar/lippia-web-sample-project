@@ -41,6 +41,6 @@ Vagrant.configure("2") do |config|
    SHELL
     config.vm.provision :docker_compose, compose_version:"1.23.1", run: "always"
     config.vm.provision "compose", type: "shell", run: "always", inline: <<-SHELL
-	sudo docker-compose -f /home/vagrant/sync/docker-compose.yml up -d
+	sudo docker-compose -f /home/vagrant/sync/docker-compose.yml up
    SHELL
 end
