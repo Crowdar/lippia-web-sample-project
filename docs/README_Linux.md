@@ -197,7 +197,7 @@ Enter Jenkins console http://localhost:8080 with the following credentials
 ### Reports
 you can view this report by accesing to:
 
-- `[WORKSPACE_LOCATION]/docker/jenkins_home/workspace/nd-volume-needed-for-example-job/target/cucumber-report/example.html`
+- `http://localhost:8081`
 > "With each job build the report file will be replaced"
 
 ![Lippia Extent Report](/docs/img/reporteExtent.png)
