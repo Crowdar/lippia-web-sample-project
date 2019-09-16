@@ -198,6 +198,5 @@ Enter Jenkins console http://localhost:8080 with the following credentials
 you can view this report by accesing to:
 
 - `http://localhost:8081`
-> "With each job build the report file will be replaced"
 
 ![Lippia Extent Report](/docs/img/reporteExtent.png)
