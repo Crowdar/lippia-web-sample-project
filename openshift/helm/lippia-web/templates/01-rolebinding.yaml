@@ -19,7 +19,7 @@ metadata:
   name: {{ .Release.Namespace }}-rb-admin
   namespace: {{ .Release.Namespace }}
 subjects:
-- kind: SystemGroup
+- kind: Group
   name: system:authenticated
 roleRef:
   kind: ClusterRole
