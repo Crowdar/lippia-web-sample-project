@@ -24,14 +24,12 @@ spec:
         name: {{ .Release.Name }}-jenkins
     spec:
       containers:
-      - env:
-        - name: TZ
-          value: America/Argentina/Buenos_Aires   
-        - name: JENKINS_HOME
-          value: /var/jenkins_home/jenkins/jenkins_home
-        image: jenkinsci/blueocean:1.18.0
+      - name: {{ .Release.Name }}-jenkins
+        image: crowdar/jenkinsbo:demoweb
         imagePullPolicy: Always
-        name: {{ .Release.Name }}-jenkins
+        env:   
+        - name: JENKINS_HOME
+          value: /var/jenkins_home
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -48,7 +46,32 @@ spec:
         terminationMessagePolicy: File
         volumeMounts:
         - mountPath: /var/jenkins_home
-          name: vol-jenkins-home
+          name: vol-docker
+          subPath: ./docker/jenkins_home
+      - name: {{ .Release.Name }}-nginx
+        image: nginx:stable
+        imagePullPolicy: Always
+        env:
+        - name: TZ
+          value: America/Argentina/Buenos_Aires   
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          limits:
+            memory: 1Gi
+          requests:
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: vol-docker
+          subPath: ./docker/jenkins_home/reportsVolume
+        - mountPath: /etc/nginx/nginx.conf
+          name: vol-docker
+          subPath: ./docker/nginx/nginx.conf
+          readOnly: true
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -57,15 +80,15 @@ spec:
       serviceAccountName: sa-{{ .Release.Name }}
       terminationGracePeriodSeconds: 30
       volumes:
-      - name: vol-jenkins-home
+      - name: vol-docker
         emptyDir: {}
       initContainers:
       - command:
         - sh
         - -c
         - |
-          git clone https://bitbucket.org/crowdarautomation/lippia-web-example-project.git /var/jenkins_home;
-          chown 1000:1000 -R /var/jenkins_home
+          git clone https://bitbucket.org/crowdarautomation/lippia-web-sample-project.git /vol_docker;
+          chown 1000:1000 -R /vol_docker
         image: alpine/git
         imagePullPolicy: Always
         name: clone-repo
@@ -73,8 +96,8 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
-        - mountPath: /var/jenkins_home
-          name: vol-jenkins-home 
+        - mountPath: /vol_docker
+          name: vol-docker 
   test: false
   triggers:
   - type: ConfigChange
@@ -89,15 +112,11 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   ports:
-  - name: "8080"
+  - name: "tcp-8080"
     port: 8080
     protocol: TCP
     targetPort: 8080
-  - name: "8443"
-    port: 8443
-    protocol: TCP
-    targetPort: 8443
-  - name: "50000"
+  - name: "tcp-50000"
     port: 50000
     protocol: TCP
     targetPort: 50000
@@ -118,9 +137,47 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   port:
-    targetPort: "8080"
+    targetPort: "tcp-8080"
   to:
     kind: Service
     name: {{ .Release.Name }}-jenkins
+    weight: 100
+  wildcardPolicy: None
+---  
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    name: {{ .Release.Name }}-nginx
+  name: {{ .Release.Name }}-nginx
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+  - name: "tcp-80"
+    port: 8081
+    protocol: TCP
+    targetPort: 80
+  selector:
+    name: {{ .Release.Name }}-jenkins
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  creationTimestamp: null
+  labels:
+    name: {{ .Release.Name }}-nginx
+  name: {{ .Release.Name }}-nginx
+  namespace: {{ .Release.Namespace }}
+spec:
+  port:
+    targetPort: "tcp-80"
+  to:
+    kind: Service
+    name: {{ .Release.Name }}-nginx
     weight: 100
   wildcardPolicy: None

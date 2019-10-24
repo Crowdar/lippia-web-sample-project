@@ -21,7 +21,9 @@ spec:
         name: {{ .Release.Name }}-selenium-hub
     spec:
       containers:
-      - args:
+      - image: selenium/hub:3.141.59-palladium
+        imagePullPolicy: Always
+        name: {{ .Release.Name }}-selenium-hub
         env:
         - name: GRID_MAX_SESSION
           value: '20'
@@ -31,9 +33,6 @@ spec:
           value: '3000'
         - name: GRID_TIMEOUT
           value: '3000'
-        image: selenium/hub:3.141.59-palladium
-        imagePullPolicy: Always
-        name: {{ .Release.Name }}-selenium-hub
         ports:
         - containerPort: 4444
           protocol: TCP
@@ -42,8 +41,6 @@ spec:
             memory: 1Gi
           requests:
             memory: 512Mi
-      #  securityContext:
-      #    runAsUser: 15000
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
@@ -67,7 +64,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   ports:
-  - name: "4444"
+  - name: "tcp-4444"
     port: 4444
     protocol: TCP
     targetPort: 4444
@@ -88,7 +85,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   port:
-    targetPort: "4444"
+    targetPort: "tcp-4444"
   to:
     kind: Service
     name: {{ .Release.Name }}-selenium-hub
