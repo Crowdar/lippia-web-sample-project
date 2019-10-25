@@ -23,22 +23,33 @@ spec:
         name: {{ .Release.Name }}-chrome
     spec:
       containers:
-      - args:
-        env:
-        - name: HUB_HOST
-          value: {{ .Release.Name }}-selenium-hub
-        - name: HUB_PORT
-          value: '4444'
-        - name: NODE_MAX_INSTANCES
-          value: '1'
-        - name: NODE_MAX_SESSION
-          value: '1'
-        image: selenium/node-chrome:3.141.59-palladium
+      - name: {{ .Release.Name }}-chrome
+        image: elgalu/selenium:3.141.59-p21
         imagePullPolicy: Always
-        name: {{ .Release.Name }}-chrome
+        env:
+        - name: NOVNC
+          value: 'true'
+        - name: SELENIUM_HUB_HOST
+          value: {{ .Release.Name }}-selenium-hub
+        - name: SELENIUM_HUB_PORT
+          value: '4444'
+        - name: SCREEN_WIDTH
+          value: '1300'
+        - name: SCREEN_HEIGHT
+          value: '999'    
+        - name: VIDEO
+          value: 'false'                  
+        - name: GRID
+          value: 'false'
+        - name: CHROME
+          value: 'true'          
+        - name: FIREFOX
+          value: 'false' 
         ports:
         - containerPort: 5900
           protocol: TCP
+        - containerPort: 6081
+          protocol: TCP          
         resources:
           limits:
             memory: 2Gi
@@ -70,10 +81,14 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - name: "5900"
-    port: 5900
+  - name: "tcp-5900"
+    port: 25900
     protocol: TCP
     targetPort: 5900
+  - name: "tcp-6081"
+    port: 26080
+    protocol: TCP
+    targetPort: 6081
   selector:
     name: {{ .Release.Name }}-chrome
   sessionAffinity: None
