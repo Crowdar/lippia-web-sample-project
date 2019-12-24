@@ -1,30 +1,28 @@
 package com.crowdar.examples.pages;
 
-import com.crowdar.bdd.cukes.SharedDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class GoogleHomePage extends PageBaseGoogle{
+public class GoogleHomePage extends PageBaseGoogle {
 
-    private WebElement googleInput(){return getWebElement(By.xpath("//input[@class='gLFyf gsfi']"));}
-    private WebElement googleSearchBtn(){return getWebElement(By.name("btnK"));}
+    private final String INPUT_SEARCH_XPATH = "//input[@class='gLFyf gsfi']";
+    private final String SEARCH_BUTTON_NAME = "btnK";
 
-    public GoogleHomePage(SharedDriver driver){
+    public GoogleHomePage(RemoteWebDriver driver) {
         super(driver);
         this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
     }
 
-    public void go(){
-        navigateToIt();
+    public void go() {
+        navigateToCompleteURL();
     }
 
-    public void enterSearchCriteria(String palabra){
-        googleInput().clear();
-        googleInput().sendKeys(palabra);
+    public void enterSearchCriteria(String text) {
+        completeField(By.xpath(INPUT_SEARCH_XPATH), text);
     }
 
-    public void clickSearchButton(){
-        googleSearchBtn().click();
+    public void clickSearchButton() {
+        clickElement(By.name(SEARCH_BUTTON_NAME));
     }
 
 }
