@@ -127,7 +127,7 @@
 		<repository>
 			<id>crowdarRepo</id>
 			<name>crowdar-repository</name>
-			<url>http://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
 		</repository>
 	</repositories>
 
