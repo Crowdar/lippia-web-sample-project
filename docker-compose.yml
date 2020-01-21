@@ -1,56 +1,21 @@
 version: "3.3"
 services:
-
-  selenium-hub_web-sample:
-    image: selenium/hub:3.141.59-palladium
-    environment:
-      - GRID_MAX_SESSION=20
-      - GRID_DEBUG=true
-      - GRID_BROWSER_TIMEOUT=3000
-      - GRID_TIMEOUT=3000
-    ports:
-      - "4444:4444"
-
-  # chrome_web-sample:
-  #   image: selenium/node-chrome:3.141.59-palladium
-  #   volumes:
-  #     - /dev/shm:/dev/shm
-  #   depends_on:
-  #     - selenium-hub_web-sample
-  #   ports:
-  #       - 5901:5900
-  #   environment:
-  #     - HUB_HOST=selenium-hub_web-sample
-  #     - HUB_PORT=4444
-  #     - NODE_MAX_INSTANCES=1
-  #     - NODE_MAX_SESSION=1
-
-  chrome_web-sample:
-    image: elgalu/selenium:3.141.59-p21
-    depends_on:
-      - selenium-hub_web-sample
-    ports:
-      # VNC: See what's going on by connecting your VNC client to 0.0.0.0:5900
-      - 5900:25900
-      # noVNC: See what's going on by hitting http://0.0.0.0:6080 in your browser
-      #        Important: http://127.0.0.1:6080 works but http://localhost:6080 doesn't
-      - 6081:26080
+  zalenium:
+    image: "dosel/zalenium"
+    container_name: selenium-grid_web-sample
+    hostname: selenium-grid_web-sample
+    tty: true
     volumes:
-      - /dev/shm:/dev/shm
-    privileged: true
-    environment:
-      - NOVNC=true
-      - SELENIUM_HUB_HOST=selenium-hub_web-sample
-      - SELENIUM_HUB_PORT=4444
-      - SELENIUM_NODE_HOST={{CONTAINER_IP}}
-      - SCREEN_WIDTH=1300
-      - SCREEN_HEIGHT=999
-      - VIDEO=false
-      - GRID=false
-      - CHROME=true
-      - FIREFOX=false
-
-
+      - /tmp/videos:/home/seluser/videos
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    ports:
+      - 4444:4444
+    command: >
+      start --desiredContainers 1
+            --maxDockerSeleniumContainers 4
+            --timeZone "America/Argentina/Buenos_Aires"
+    
   jenkins_web-sample:
     image: crowdar/jenkinsbo:demoweb
     privileged: true
