@@ -193,3 +193,6 @@ You just need to open it and navigate for all the report page to earn the much i
     [`Getting started - Linux User`](docs/README_Linux.md)
 - If you are Windows user
     [`Getting started - Windows User`](docs/README_Windows.md)
+    
+    
+"This project is licensed under the terms of the MIT license."
