@@ -1,7 +1,8 @@
 package com.crowdar.examples.pages;
 
-import com.crowdar.core.pageObjects.PageBaseWeb;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.crowdar.core.pageObjects.PageBaseWeb;
 
 public class PageBaseGoogle extends PageBaseWeb {
 

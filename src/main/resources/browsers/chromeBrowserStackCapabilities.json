@@ -1,0 +1,12 @@
+{
+	"browserName": "BrowserStack",
+	"platform": "ANY", 
+	"browser": "Chrome",
+    "browser_version": "80.0 beta",
+    "os": "Windows",
+    "os_version": "10",
+    "resolution": "1024x768",
+    "name": "Bstack-[Java] Sample Test",
+	"goog:chromeOptions": {"args": ["disable-infobars", "--ignore-certificate-errors", "start-maximized"], 
+						   "extensions": []}
+} 

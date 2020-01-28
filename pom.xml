@@ -3,7 +3,7 @@
     <parent>
        <groupId>com.crowdar.lippia</groupId>
        <artifactId>root</artifactId>
-       <version>1.9.0</version>
+       <version>2.0.0</version>
     </parent>
 
     <artifactId>Lippia-web-example-project</artifactId>
@@ -18,13 +18,20 @@
         <crowdar.cucumber.filter>@Smoke</crowdar.cucumber.filter>
         <cucumber.runner>testng.xml</cucumber.runner>
         <crowdar.driverHub></crowdar.driverHub>
+                
         <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
         <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
+        
         <crowdar.extent.host.name>LocalMachine</crowdar.extent.host.name>
         <crowdar.extent.environment>Local</crowdar.extent.environment>
         <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
-        <crowdar.projectType>WEB_CHROME</crowdar.projectType>
+        
+        
+		<crowdar.projectType>GENERIC</crowdar.projectType>
         <crowdar.setupStrategy>web.DownloadLatestStrategy</crowdar.setupStrategy>
+        <crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilities.json</crowdar.driver.capabilities.json_path>
+		<crowdar.localDriverType>Chrome</crowdar.localDriverType>
+		
     </properties>
     <profiles>
         <profile>
@@ -33,24 +40,25 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <crowdar.cucumber.browser>CHROMEDYNAMIC</crowdar.cucumber.browser>
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags ~@Ignore --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
             </properties>
         </profile>
+        
         <profile>
             <id>GridSecuencial</id>
             <activation>
             </activation>
             <properties>
                 <cucumber.runner>testng.xml</cucumber.runner>
-                <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-                <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
+                
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
                 <crowdar.extent.environment>QA</crowdar.extent.environment>
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
+                
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
+                
                 <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
             </properties>
@@ -61,32 +69,36 @@
             </activation>
             <properties>
                 <cucumber.runner>testngParallel.xml</cucumber.runner>
-                <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-                <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
+                
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
                 <crowdar.extent.environment>QA</crowdar.extent.environment>
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
+                
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
+                
                 <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
             </properties>
         </profile>
+        
         <profile>
             <id>GridParallelHeadless</id>
             <activation>
             </activation>
             <properties>
                 <cucumber.runner>testngParallel.xml</cucumber.runner>
-                <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-                <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
+                
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
                 <crowdar.extent.environment>QA</crowdar.extent.environment>
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
+                
                 <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
+                
                 <crowdar.projectType>WEB_CHROME_HEADLESS</crowdar.projectType>
+
+                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
             </properties>
         </profile>
@@ -97,14 +109,15 @@
             </activation>
         </profile>
     </profiles>
-     <dependencies>
-       <dependency>
-                <groupId>com.crowdar.lippia</groupId>
-                <artifactId>core</artifactId>
-                <version>1.9.0</version>
+    
+    <dependencies>
+      	<dependency>
+			<groupId>com.crowdar.lippia</groupId>
+			<artifactId>core</artifactId>
+			<version>2.0.0</version>
         </dependency>
-
-     </dependencies>
+    </dependencies>
+     
     <build>
         <filters>
             <filter>src/main/resources/cucumber.properties</filter>

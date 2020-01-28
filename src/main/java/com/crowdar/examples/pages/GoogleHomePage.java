@@ -10,11 +10,10 @@ public class GoogleHomePage extends PageBaseGoogle {
 
     public GoogleHomePage(RemoteWebDriver driver) {
         super(driver);
-        this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
     }
 
     public void go() {
-        navigateToCompleteURL();
+        navigateTo(BASE_URL);
     }
 
     public void enterSearchCriteria(String text) {

@@ -1,0 +1,5 @@
+{
+	"browserName": "chrome",
+    "args": "[start-maximized, ignore-certificate-errors, disable-infobars]"
+}
+           
