@@ -5,9 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class GoogleSearchResultPage extends PageBaseGoogle {
+    private final String RESULTS_DIV_ID = "res";
 
     private WebElement stats() {
-        return getWebElement(By.id("resultStats"));
+        return getWebElement(By.id(RESULTS_DIV_ID));
     }
 
     public GoogleSearchResultPage(RemoteWebDriver driver) {
