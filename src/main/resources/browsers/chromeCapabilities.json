@@ -1,0 +1,13 @@
+{
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "args": [
+      "--ignore-certificate-errors",
+      "start-maximized",
+      "--disable-extensions --disable-extensions-file-access-check --disable-extensions-http-throttling"
+    ],
+    "extensions": [],
+    "excludeSwitches": ["enable-automation"]
+  },
+  "platform": "ANY"
+}

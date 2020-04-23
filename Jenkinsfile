@@ -8,7 +8,7 @@ pipeline {
 
     stage('Build') {
         steps {
-          sh 'mvn clean -P GridParallel test'
+          sh 'mvn clean -P Chrome,Grid,Parallel test'
         }
       }
 

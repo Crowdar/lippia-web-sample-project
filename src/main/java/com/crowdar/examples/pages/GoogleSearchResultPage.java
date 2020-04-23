@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class GoogleSearchResultPage extends PageBaseGoogle {
-    private final String RESULTS_DIV_ID = "res";
+    private final String RESULTS_DIV_ID = "result-stats";
 
     private WebElement stats() {
         return getWebElement(By.id(RESULTS_DIV_ID));

@@ -1,0 +1,5 @@
+{
+  "browserName": "firefox",
+  "args": "[start-maximized]",
+  "acceptInsecureCerts": true
+}
