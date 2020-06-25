@@ -7,17 +7,13 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class GoogleSearchResultPage extends PageBaseGoogle {
     private final String RESULTS_DIV_ID = "result-stats";
 
-    private WebElement stats() {
-        return getWebElement(By.id(RESULTS_DIV_ID));
-    }
-
     public GoogleSearchResultPage(RemoteWebDriver driver) {
         super(driver);
         this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
     }
 
     public String getStats() {
-        return stats().getText();
+        return getElementText(By.id(RESULTS_DIV_ID));
     }
 
 }

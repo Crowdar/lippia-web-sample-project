@@ -13,10 +13,6 @@ public class GoogleHomePage extends PageBaseGoogle {
         this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
     }
 
-    public void go() {
-        navigateToCompleteURL();
-    }
-
     public void enterSearchCriteria(String text) {
         completeField(By.xpath(INPUT_SEARCH_XPATH), text);
     }

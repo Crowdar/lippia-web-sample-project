@@ -3,7 +3,7 @@
 <suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="3" thread-count="3" configfailurepolicy="continue">
     <test name="Test 1" annotations="JDK" preserve-order="true">
         <classes>
-            <class name="CrowdTestNgParallelRunner"/>
+            <class name="com.crowdar.bdd.cukes.TestNGParallelRunner"/>
         </classes>
     </test>
 </suite>
