@@ -1,0 +1,14 @@
+image: maven:3.3.9-jdk-8
+
+pipelines:
+  branches:
+    master:  
+      - step:
+          name: Publish code to Github
+          services:
+            - docker
+          trigger: automatic
+          script:
+            - git remote add github https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Crowdar/lippia-web-sample-project.git
+            - git push -u github
+      
