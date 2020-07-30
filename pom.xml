@@ -3,7 +3,7 @@
     <parent>
        <groupId>com.crowdar.lippia</groupId>
        <artifactId>root</artifactId>
-       <version>1.9.0</version>
+       <version>3.1.0</version>
     </parent>
 
     <artifactId>Lippia-web-example-project</artifactId>
@@ -25,6 +25,8 @@
         <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
         <crowdar.projectType>WEB_CHROME</crowdar.projectType>
         <crowdar.setupStrategy>web.DownloadLatestStrategy</crowdar.setupStrategy>
+        <crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilities.json</crowdar.driver.capabilities.json_path>
+        <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags ~@Ignore --plugin com.crowdar.examples.report.CucumberReporter:</crowdar.cucumber.option>
     </properties>
     <profiles>
         <profile>
@@ -33,8 +35,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <crowdar.cucumber.browser>CHROMEDYNAMIC</crowdar.cucumber.browser>
-                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags ~@Ignore --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
+                <crowdar.cucumber.browser>WEB_CHROME</crowdar.cucumber.browser>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
             </properties>
         </profile>
@@ -49,7 +50,6 @@
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
                 <crowdar.extent.environment>QA</crowdar.extent.environment>
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
-                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
@@ -66,7 +66,6 @@
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
                 <crowdar.extent.environment>QA</crowdar.extent.environment>
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
-                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.driverHub>http://selenium-hub_web-sample:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
@@ -83,7 +82,6 @@
                 <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
                 <crowdar.extent.environment>QA</crowdar.extent.environment>
                 <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
-                <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/core --glue com/crowdar/bdd/cukes --tags ${crowdar.cucumber.filter} --tags ~@Ignore  --plugin com.crowdar.report.CucumberExtentReport</crowdar.cucumber.option>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.projectType>WEB_CHROME_HEADLESS</crowdar.projectType>
@@ -101,9 +99,13 @@
        <dependency>
                 <groupId>com.crowdar.lippia</groupId>
                 <artifactId>core</artifactId>
-                <version>1.9.0</version>
+                <version>3.1.0</version>
         </dependency>
-
+         <dependency>
+             <groupId>io.lippia.report</groupId>
+             <artifactId>extentreports-cucumber4-adapter</artifactId>
+             <version>1.1.0.10</version>
+         </dependency>
      </dependencies>
     <build>
         <filters>
