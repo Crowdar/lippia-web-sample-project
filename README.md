@@ -223,59 +223,12 @@ You just need to open it and navigate for all the report page to earn the much i
    
 #### Cards template:
    ![cards_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/cards_report.png)
-   
-## Chrome driver options file:   
- - Added the ability to set up the options for the chromedriver in order to have all of the properties setted. For example the user is allowed to set the headless value.
-
-```
- {
-  "browserName": "chrome",
-  "goog:chromeOptions": {"args": ["disable-infobars","--headless","--window-size=1440x900", "--no-sandbox", "--disable-dev-shm-usage" , "--ignore-certificate-errors", "--start-maximized", "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"],
-    "extensions": [],
-    "prefs": {"printing.enabled": false}
-  },
-  "platform": "ANY",
-  "recordVideo":"false"
-}
-```
-
-Also as you can see in this file you can set up the record video property to get the evidence of the each flow in a video
-
 
 ## Project type options:
-- The project type option allows the user to say Lippia which library would need to download. For this project is setted the WEB_CHROME one that uses the library for this webdriver.
+- The project type option allows the user to say Lippia which library would need to download. For this project is setted the API one that uses the library for this kind of project.
   This option can be changed in the pom.xml file
-  You can get more information checking the readme from lippia-core project.
+  You can get more information checking the readme from lippia-core project.  		
+
+  API
+        crowdar.projectType=API  
   
-  ProjectTypes for web project: 		
-
- 	WEB_CHROME
-        crowdar.projectType=WEB_CHROME
-        crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/chromeCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy
-
- 	WEB_FIREFOX
-        crowdar.projectType=WEB_FIREFOX
-        crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/firefoxCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy
-
- 	WEB_EDGE
-        crowdar.projectType=WEB_EDGE
-        crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/edgeCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy
-
- 	WEB_IE
-        crowdar.projectType=WEB_IE
-        crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/ieCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy
-
- 	WEB_SAFARI
-        crowdar.projectType=WEB_SAFARI
-        crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/safariCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy
-  
-  
-## Project type options:
-- The project type option allows the user to say Lippia which library would need to download. For this project is setted the API one that only have all library needed for this kind of project.
-  This option can be changed in the pom.xml file
-  You can get more information checking the readme from lippia-core project.
