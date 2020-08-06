@@ -272,10 +272,5 @@ Also as you can see in this file you can set up the record video property to get
  	WEB_SAFARI
         crowdar.projectType=WEB_SAFARI
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/safariCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy
-  
-  
-## Project type options:
-- The project type option allows the user to say Lippia which library would need to download. For this project is setted the API one that only have all library needed for this kind of project.
-  This option can be changed in the pom.xml file
-  You can get more information checking the readme from lippia-core project.
+        crowdar.setupStrategy=web.DownloadLatestStrategy 
+
