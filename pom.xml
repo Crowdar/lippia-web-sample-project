@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-       <groupId>com.crowdar.lippia</groupId>
-       <artifactId>root</artifactId>
-       <version>3.1.0</version>
+        <groupId>io.lippia</groupId>
+        <artifactId>root</artifactId>
+        <version>3.1.0.1</version>
     </parent>
 
     <artifactId>Lippia-web-example-project</artifactId>
@@ -18,15 +18,10 @@
         <crowdar.cucumber.filter>@Smoke</crowdar.cucumber.filter>
         <cucumber.runner>testng.xml</cucumber.runner>
         <crowdar.driverHub></crowdar.driverHub>
-        <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-        <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
-        <crowdar.extent.host.name>LocalMachine</crowdar.extent.host.name>
-        <crowdar.extent.environment>Local</crowdar.extent.environment>
-        <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
         <crowdar.projectType>WEB_CHROME</crowdar.projectType>
         <crowdar.setupStrategy>web.DownloadLatestStrategy</crowdar.setupStrategy>
         <crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilities.json</crowdar.driver.capabilities.json_path>
-        <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags ~@Ignore --plugin com.crowdar.examples.report.CucumberReporter:</crowdar.cucumber.option>
+        <crowdar.cucumber.option>src/test/resources/features --glue / --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags 'not @Ignore' --plugin pretty</crowdar.cucumber.option>
     </properties>
     <profiles>
         <profile>
@@ -40,16 +35,20 @@
             </properties>
         </profile>
         <profile>
+            <id>LocalHeadless</id>
+            <properties>
+                <crowdar.cucumber.browser>WEB_CHROME</crowdar.cucumber.browser>
+                <cucumber.runner>testngParallel.xml</cucumber.runner>
+                <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
+                <crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilitiesHeadless.json</crowdar.driver.capabilities.json_path>
+            </properties>
+        </profile>
+        <profile>
             <id>GridSecuencial</id>
             <activation>
             </activation>
             <properties>
                 <cucumber.runner>testng.xml</cucumber.runner>
-                <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-                <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
-                <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
-                <crowdar.extent.environment>QA</crowdar.extent.environment>
-                <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
@@ -61,11 +60,6 @@
             </activation>
             <properties>
                 <cucumber.runner>testngParallel.xml</cucumber.runner>
-                <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-                <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
-                <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
-                <crowdar.extent.environment>QA</crowdar.extent.environment>
-                <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.driverHub>http://selenium-hub_web-sample:4444/wd/hub</crowdar.driverHub>
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
@@ -77,11 +71,6 @@
             </activation>
             <properties>
                 <cucumber.runner>testngParallel.xml</cucumber.runner>
-                <crowdar.extent.report.path>cucumber-reports</crowdar.extent.report.path>
-                <crowdar.extent.report.name>CucumberExampleReport</crowdar.extent.report.name>
-                <crowdar.extent.host.name>Jenkins</crowdar.extent.host.name>
-                <crowdar.extent.environment>QA</crowdar.extent.environment>
-                <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.projectType>WEB_CHROME_HEADLESS</crowdar.projectType>
@@ -97,15 +86,10 @@
     </profiles>
      <dependencies>
        <dependency>
-                <groupId>com.crowdar.lippia</groupId>
-                <artifactId>core</artifactId>
-                <version>3.1.0</version>
+            <groupId>io.lippia</groupId>
+            <artifactId>core</artifactId>
+            <version>3.1.0.1</version>
         </dependency>
-         <dependency>
-             <groupId>io.lippia.report</groupId>
-             <artifactId>extentreports-cucumber4-adapter</artifactId>
-             <version>1.1.0.10</version>
-         </dependency>
      </dependencies>
     <build>
         <filters>
@@ -113,9 +97,9 @@
         </filters>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
+               <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M4</version>
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>${cucumber.runner}</suiteXmlFile>
