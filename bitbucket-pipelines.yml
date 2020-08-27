@@ -1,4 +1,4 @@
-image: crowdar/lippia:3.1.0.1
+image: crowdar/lippia:3.1.2.2
 
 pipelines:
   branches:
@@ -9,6 +9,7 @@ pipelines:
             - docker
           trigger: automatic
           script:
+            - mvn clean test
             - export PROJECT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)
             - git tag $PROJECT_VERSION
             - git push origin $PROJECT_VERSION
