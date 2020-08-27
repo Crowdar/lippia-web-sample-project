@@ -1,0 +1,13 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+before_script:
+  - docker info
+
+build:
+  stage: build
+  script:
+    - docker ps -a
+ 
