@@ -1,0 +1,9 @@
+{
+  "browserName": "chrome",
+  "goog:chromeOptions": {"args": ["disable-infobars", "--no-sandbox", "--disable-dev-shm-usage" , "--test-type", "--ignore-certificate-errors", "--start-maximized", "--headless", "--disable-gpu"],
+    "extensions": [],
+    "prefs": {"printing.enabled": false}
+  },
+  "platform": "ANY",
+  "recordVideo":"false"
+}

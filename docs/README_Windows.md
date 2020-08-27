@@ -2,9 +2,6 @@
 
 ## System Requirements :
 + Windows Professional
-+ JDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html   
-	  https://openjdk.java.net/install/   
-+ Maven 3.X: https://maven.apache.org/download.cgi   
 + Vagrant 2.2.x: https://www.vagrantup.com/downloads.html
 + Virtual Box https://www.virtualbox.org/wiki/Downloads
 
@@ -16,8 +13,8 @@
     ``` $ cd lippia-web-example-project ```
 ## Strategies to run
 ***
-- [Local](#local) (running tests building project with maven from command line)
-- [Stack](#sarasa) (running docker-compose with the help of Vagrant and just clicking on "Create Job" in Jenkins)  
+- [Local](#localHeadless) (running tests building project with docker-compose from command line)
+- [Stack](#remote) (running docker-compose)   
 
 ### Local strategy  
 - To run local strategy see:   (Has no changes to Linux users)    
