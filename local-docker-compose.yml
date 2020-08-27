@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+    lippia:
+       image: crowdar/lippia:3.1.0.1          
+       volumes:  
+            - .:/opt/workspace/automation
+       user: "${UID}:${GID}"
+       working_dir: /opt/workspace/automation
+       command: mvn clean test -P LocalHeadless -Dcucumber.tags=@Smoke

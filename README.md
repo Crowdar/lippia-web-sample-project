@@ -175,18 +175,6 @@ Feature: As a potential client i need to search in google to find a web site
     Then The client verify that results are shown properly
 ```
 
-
-### Reports 
-
-By default Lippia expose Test results using Extent Report Community Edition (https://github.com/extent-framework)
-In order to see test results this project includes extent report that show you the result of each run. This kind of reporting is really easy to understand. 
-You just need to open it and navigate for all the report page to earn the much information as you can for every run.
-
-![Lippia Extent Report](/docs/img/reporteExtent.png)
-
-* * *
-* * *
-
 # Getting started
     
 - If you are Linux user 
