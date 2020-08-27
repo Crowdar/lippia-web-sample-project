@@ -1,4 +1,4 @@
-image: lippia:3.1.0.1
+image: crowdar/lippia:3.1.0.1
 
 pipelines:
   branches:
