@@ -9,5 +9,6 @@ before_script:
 build:
   stage: build
   script:
-    - docker ps -a
+    -  docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+
  
