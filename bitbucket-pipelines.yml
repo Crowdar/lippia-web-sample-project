@@ -9,6 +9,9 @@ pipelines:
             - docker
           trigger: automatic
           script:
+            - export PROJECT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)
+            - git tag $PROJECT_VERSION
+            - git push origin $PROJECT_VERSION
             - git remote add github https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Crowdar/lippia-web-sample-project.git
             - git push -u github
       
