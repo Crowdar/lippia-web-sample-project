@@ -1,7 +1,4 @@
 image: docker/compose
-
-services:
-  - docker/compose
   
 build:
   stage: build
