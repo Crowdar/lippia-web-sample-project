@@ -1,10 +1,9 @@
-image: docker/compose
+image: crowdar/lippia:3.1.2.2
 
 services:
-  - docker/compose
+  - crowdar/lippia:3.1.2.2
   
 build:
   stage: build
   script:
-    - ls -l
-    - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+    - mvn clean test -PLocalHeadless -Dcucumber.tags=@Smoke
