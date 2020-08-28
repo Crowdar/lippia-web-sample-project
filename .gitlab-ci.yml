@@ -1,6 +1,10 @@
 image: docker/compose
+
+services:
+  - docker/compose
   
 build:
   stage: build
   script:
+    - ls -l
     - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
