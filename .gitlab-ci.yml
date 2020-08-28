@@ -1,0 +1,9 @@
+image: crowdar/lippia:3.1.2.2
+
+services:
+  - crowdar/lippia:3.1.2.2
+  
+build:
+  stage: build
+  script:
+    - mvn clean test -PLocalHeadless -Dcucumber.tags=@Smoke
