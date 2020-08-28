@@ -6,5 +6,5 @@ services:
             - .:/opt/workspace/runner
        working_dir: /opt/workspace/runner
        environment:
-            - CUSTOM_COMMAND=mvn clean test -PLocalHeadless -Dcucumber.tags=@Smoke       
+            - CUSTOM_COMMAND=mvn clean test -P LocalHeadless -Dcucumber.tags=@Smoke       
             - WORKSPACE=/opt/workspace/runner  

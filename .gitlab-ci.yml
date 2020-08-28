@@ -1,11 +1,12 @@
 image: docker/compose
 
 services:
-  - docker:dind
+  - docker/compose
   
 build:
   stage: build
   script:
-    -  docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+    - cat pom.xml
+    - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
 
  
