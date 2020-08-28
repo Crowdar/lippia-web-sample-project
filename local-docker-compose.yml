@@ -10,6 +10,7 @@ services:
             - WORKSPACE=/opt/workspace/runner
        command: bash -c "
                     pwd &&
+                    ls / &&
                     ls -l &&
                     ./entrypoint.sh
                     " 
