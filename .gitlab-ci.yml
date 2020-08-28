@@ -6,7 +6,4 @@ services:
 build:
   stage: build
   script:
-    - cat pom.xml
     - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
-
- 

@@ -7,4 +7,8 @@ services:
        working_dir: /opt/workspace/runner
        environment:
             - CUSTOM_COMMAND=mvn clean test -P LocalHeadless -Dcucumber.tags=@Smoke       
-            - WORKSPACE=/opt/workspace/runner  
+            - WORKSPACE=/opt/workspace/runner
+       command: bash -c "
+                    cat pom.xml &&
+                    ./entrypoint.sh
+                    " 
