@@ -6,6 +6,6 @@ services:
             - .:/opt/workspace/runner
        working_dir: /opt/workspace/runner
        environment:
-            - GIT_REPO=http://ebaldizzoni:kyVLHx-gexn8WRhjyAkm@gitlab-web/ebaldizzoni/pipeline.git
+            - GIT_REPO=http://ebaldizzoni:kyVLHx-gexn8WRhjyAkm@localhost/ebaldizzoni/pipeline.git
             - CUSTOM_COMMAND=mvn clean test -PLocalHeadless -Dcucumber.tags=@Smoke       
             - WORKSPACE=/opt/workspace/runner  
