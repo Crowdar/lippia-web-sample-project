@@ -17,7 +17,7 @@ services:
                   --timeZone "America/Argentina/Buenos_Aires"
 
     lippia_zalenium:
-       image: crowdar/lippia:3.1.0.1
+       image: crowdar/lippia:3.2.1.1
        depends_on:
             - zalenium
        volumes:  

@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     lippia:
-       image: crowdar/lippia:3.1.2.2
+       image: crowdar/lippia:3.2.1.1
        environment:
             - CUSTOM_COMMAND=mvn clean test -PLocalHeadless -Dcucumber.tags=@Smoke  
        
