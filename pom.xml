@@ -3,14 +3,14 @@
     <parent>
         <groupId>io.lippia</groupId>
         <artifactId>root</artifactId>
-        <version>3.1.2.2</version>
+        <version>3.2.1.1</version>
     </parent>
 
     <artifactId>Lippia-web-example-project</artifactId>
     <url>http://maven.apache.org</url>
     <packaging>jar</packaging>
     <name>Lippia-web-example-project</name>
-    <version>3.1.2.2</version>
+    <version>3.2.1.1</version>
 
 
     <properties>
@@ -89,7 +89,7 @@
        <dependency>
             <groupId>io.lippia</groupId>
             <artifactId>core</artifactId>
-            <version>3.1.2.2</version>
+            <version>3.2.1.1</version>
         </dependency>
      </dependencies>
     <build>
