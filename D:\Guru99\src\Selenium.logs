@@ -1,8 +1,0 @@
-15:38:17,675  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:20 - ------ Starting -----The client search by "automation"-----
-15:38:17,675  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:20 - ------ Starting -----The client search by "crowdar"-----
-15:38:17,675  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:20 - ------ Starting -----The client search by "docker"-----
-15:38:22,340  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:35 - ------ Ending -----The client search by "crowdar"-----
-15:38:22,418  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:20 - ------ Starting -----The client search by "vagrant"-----
-15:38:23,272  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:35 - ------ Ending -----The client search by "docker"-----
-15:38:24,252  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:35 - ------ Ending -----The client search by "automation"-----
-15:38:25,537  INFO com.crowdar.bdd.cukes.hooks.BasicHook<strong>{1}</strong>:35 - ------ Ending -----The client search by "vagrant"-----
