@@ -43,7 +43,6 @@
             <id>LocalHeadless</id>
             <properties>
                 <crowdar.cucumber.browser>WEB_CHROME</crowdar.cucumber.browser>
-                <cucumber.runner>testngParallel.xml</cucumber.runner>
                 <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
                 <crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilitiesHeadless.json</crowdar.driver.capabilities.json_path>
             </properties>
@@ -98,7 +97,7 @@
         <dependency>
             <groupId>io.lippia.report</groupId>
             <artifactId>cucumber4-adapter</artifactId>
-            <version>1.2</version>
+            <version>1.3</version>
         </dependency>
         <dependency>
             <groupId>io.lippia.report</groupId>
@@ -120,8 +119,7 @@
                         <suiteXmlFile>${cucumber.runner}</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
-						<LIPPIA_RS_API_HOST>http://rsapi.automation.crowdaronline.com</LIPPIA_RS_API_HOST>
-						<LIPPIA_RS_API_PORT>8086</LIPPIA_RS_API_PORT>
+						<LIPPIA_RS_API_HOST>https://rsapi.automation.crowdaronline.com</LIPPIA_RS_API_HOST>
 	                    <LIPPIA_RS_PROJECT_NAME>Web Sample</LIPPIA_RS_PROJECT_NAME>
 	                    <LIPPIA_RS_REPORT_NAME>Local Headless - build</LIPPIA_RS_REPORT_NAME>
                 	</systemPropertyVariables>
