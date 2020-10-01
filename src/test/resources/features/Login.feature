@@ -11,14 +11,12 @@ Scenario: El cliente inicia sesión en el sitio de compras
   And el cliente hace click en el boton SignIn1
   Then el cliente verifica que fue redireccionado a la pantalla del My account
 
-    When el cliente ingresa el nombre del producto: Faded Short Sleeve T-shirts
-    And el cliente hace click en buscar
-    Then el cliente verifica que fue redireccionado a la pantalla del Resultado de busqueda
-
+  When el cliente ingresa el nombre del producto: Faded Short Sleeve T-shirts
+  And el cliente hace click en buscar
+  Then el cliente verifica que fue redireccionado a la pantalla del Resultado de busqueda
 
   When el Cliente selecciona el producto
   Then el cliente verifica que fue redireccionado exitosamente a la pantalla del Producto
-
 
   When el cliente hace click en el botón Add to chart
   Then el cliente verifica que el producto se agregó al carrito
