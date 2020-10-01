@@ -41,7 +41,7 @@ public class ShopSteps extends PageSteps {
 
     @Then("el cliente verifica que el producto se agregó al carrito")
     public void elClienteVerificaQueElProductoSeAgregóAlCarrito() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(50000);
         Injector._page(ShopHomePage.class).verifyScreen1("Product successfully added to your shopping cart");
     }
 
