@@ -12,11 +12,10 @@
     <name>Lippia-web-example-project</name>
     <version>3.1.2.2</version>
 
-
     <properties>
         <crowd.project.name>Lippia-web-example-project</crowd.project.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <crowdar.cucumber.filter>@Smoke</crowdar.cucumber.filter>
+        <crowdar.cucumber.filter>@Login</crowdar.cucumber.filter>
         <cucumber.runner>testng.xml</cucumber.runner>
         <crowdar.driverHub></crowdar.driverHub>
         <crowdar.projectType>WEB_CHROME</crowdar.projectType>
@@ -24,6 +23,7 @@
         <crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilities.json</crowdar.driver.capabilities.json_path>
         <crowdar.cucumber.option>src/test/resources/features --glue / --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags 'not @Ignore' --plugin pretty</crowdar.cucumber.option>
     </properties>
+
     <profiles>
         <profile>
             <id>Local</id>
@@ -78,20 +78,27 @@
                 <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
             </properties>
         </profile>
-
         <profile>
             <id>Production</id>
             <activation>
             </activation>
         </profile>
     </profiles>
-     <dependencies>
+
+    <dependencies>
        <dependency>
             <groupId>io.lippia</groupId>
             <artifactId>core</artifactId>
             <version>3.1.2.2</version>
         </dependency>
-     </dependencies>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <filters>
             <filter>src/main/resources/cucumber.properties</filter>

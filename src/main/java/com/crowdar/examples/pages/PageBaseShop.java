@@ -3,11 +3,11 @@ package com.crowdar.examples.pages;
 import com.crowdar.core.pageObjects.PageBaseWeb;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class PageBaseGoogle extends PageBaseWeb {
+public class PageBaseShop extends PageBaseWeb {
 
-    public PageBaseGoogle(RemoteWebDriver driver) {
+    public PageBaseShop(RemoteWebDriver driver) {
         super(driver);
-        BASE_URL = "http://www.google.com.ar";
+        BASE_URL = "http://automationpractice.com/index.php";
     }
 
 
