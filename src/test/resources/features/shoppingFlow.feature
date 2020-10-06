@@ -47,5 +47,5 @@ Feature: Como cliente quiero
     Examples:
       | email                           | password | category | nomArticulo                 | size | quantity | color  | paymentMethod |
       | testing.crowdar@testing.net.com | 12345    | WOMEN    | Blouse                      | L    | 3        | Orange | check         |
-      #| testing.crowdar@testing.net.com | 12345    | DRESSES  | Printed Dress               | S    | 20       | Blue   | bank wire     |
-      #| testing.crowdar@testing.net.com | 12345    | T-SHIRTS | Faded Short Sleeve T-shirts | M    | 7        | Blue   | check         |
+      | testing.crowdar@testing.net.com | 12345    | DRESSES  | Printed Dress               | S    | 20       | Blue   | bank wire     |
+      | testing.crowdar@testing.net.com | 12345    | T-SHIRTS | Faded Short Sleeve T-shirts | M    | 7        | Blue   | check         |

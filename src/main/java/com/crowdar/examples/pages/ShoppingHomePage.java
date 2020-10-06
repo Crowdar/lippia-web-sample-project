@@ -33,7 +33,9 @@ public class ShoppingHomePage extends PageBaseShopping {
             case "I confirm my order":
                 Injector._page(OrderSummaryPage.class).clickConfirmOrderBtn();
                 break;
-                //es posible agregar un default con un exception
+            default:
+                System.out.println("La opción que busca no está configurada");
+                break;
         }
     }
 
@@ -98,6 +100,9 @@ public class ShoppingHomePage extends PageBaseShopping {
                 break;
             case "ORDER CONFIRMATION":
                 Injector._page(OrderConfirmationPage.class).verifyOrderConfirmationPage();
+                break;
+            default:
+                System.out.println("La opción que busca no está configurada");
                 break;
 
 
