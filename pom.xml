@@ -16,7 +16,7 @@
     <properties>
         <crowd.project.name>Lippia-web-example-project</crowd.project.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <crowdar.cucumber.filter>@Smoke</crowdar.cucumber.filter>
+        <crowdar.cucumber.filter>@Emanuel</crowdar.cucumber.filter>
         <cucumber.runner>testng.xml</cucumber.runner>
         <crowdar.driverHub></crowdar.driverHub>
         <crowdar.projectType>WEB_CHROME</crowdar.projectType>
