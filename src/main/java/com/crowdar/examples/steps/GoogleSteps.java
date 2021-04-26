@@ -16,7 +16,6 @@ public class GoogleSteps extends PageSteps {
 
     @When("The client search for word (.*)")
     public void search(String criteria) {
-    	driver.switchTo().frame(0);
         Injector._page(GoogleHomePage.class).enterSearchCriteria(criteria);
         Injector._page(GoogleHomePage.class).clickSearchButton();
 

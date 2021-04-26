@@ -1,6 +1,6 @@
 {
   "browserName": "chrome",
-  "goog:chromeOptions": {"args": ["disable-infobars", "--no-sandbox", "--disable-dev-shm-usage" , "--test-type", "--ignore-certificate-errors", "--start-maximized", "--headless", "--disable-gpu"],
+  "goog:chromeOptions": {"args": ["disable-infobars", "--no-sandbox", "--disable-dev-shm-usage" , "--test-type", "--ignore-certificate-errors", "--start-maximized", "--headless", "--disable-gpu" , "--use-fake-ui-for-media-stream" , "--disable-user-media-security=true"],
     "extensions": [],
     "prefs": {"printing.enabled": false}
   },
