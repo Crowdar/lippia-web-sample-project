@@ -1,8 +1,8 @@
 {
   "browserName": "chrome",
-  "goog:chromeOptions": {"args": ["disable-infobars", "--no-sandbox", "--disable-dev-shm-usage" , "--test-type", "--ignore-certificate-errors", "--start-maximized", "--headless", "--disable-gpu", "--no-default-browser-check"],
+  "goog:chromeOptions": {"args": ["disable-infobars", "--no-sandbox", "--disable-dev-shm-usage" , "--test-type", "--ignore-certificate-errors", "--start-maximized", "--headless", "--disable-gpu"],
     "extensions": [],
-    "prefs": {"profile.default_content_settings.cookies": 2}
+    "prefs": {"printing.enabled": false}
   },
   "platform": "ANY",
   "recordVideo":"false"
