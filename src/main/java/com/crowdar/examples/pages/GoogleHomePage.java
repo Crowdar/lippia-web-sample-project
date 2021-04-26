@@ -11,6 +11,7 @@ public class GoogleHomePage extends PageBaseGoogle {
     public GoogleHomePage(RemoteWebDriver driver) {
         super(driver);
         this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
+        isPopUpDisplayed();
     }
 
     public void go() {
@@ -18,13 +19,16 @@ public class GoogleHomePage extends PageBaseGoogle {
     }
 
     public void enterSearchCriteria(String text) {
-    	isElementPresentAndDisplayed(By.xpath("//*[contains(text(),'I agree')]"));
-    	clickElement(By.xpath("//*[contains(text(),'I agree')]"));
         completeField(By.xpath(INPUT_SEARCH_XPATH), text);
     }
 
     public void clickSearchButton() {
         clickElement(By.name(SEARCH_BUTTON_NAME));
     }
-
+    
+    public void isPopUpDisplayed() {
+    	if(isElementPresentAndDisplayed(By.xpath("//*[contains(text(),'I agree')]"))){;
+    		clickElement(By.xpath("//*[contains(text(),'I agree')]"));
+    	}
+    }
 }
