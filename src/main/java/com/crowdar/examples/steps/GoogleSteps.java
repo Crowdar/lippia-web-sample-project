@@ -5,9 +5,6 @@ import com.crowdar.core.PageSteps;
 import com.crowdar.examples.pages.GoogleHomePage;
 import com.crowdar.examples.pages.GoogleSearchResultPage;
 import io.cucumber.java.en.*;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class GoogleSteps extends PageSteps {
@@ -19,8 +16,6 @@ public class GoogleSteps extends PageSteps {
 
     @When("The client search for word (.*)")
     public void search(String criteria) {
-    	WebElement agree = driver.findElement(By.id("introAgreeButton"));
-        agree.click();
         Injector._page(GoogleHomePage.class).enterSearchCriteria(criteria);
         Injector._page(GoogleHomePage.class).clickSearchButton();
 
