@@ -18,7 +18,7 @@ public class GoogleHomePage extends PageBaseGoogle {
     }
 
     public void enterSearchCriteria(String text) {
-    	clickElement(By.xpath("//*[@title='I agree']"));
+    	clickElement(By.xpath("//*[@id=\"introAgreeButton\"]/span/span"));
         completeField(By.xpath(INPUT_SEARCH_XPATH), text);
     }
 
