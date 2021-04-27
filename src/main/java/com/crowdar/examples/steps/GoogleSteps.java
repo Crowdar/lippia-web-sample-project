@@ -23,7 +23,6 @@ public class GoogleSteps extends PageSteps {
 
     @Then("The client verify that results are shown properly")
     public void statVerfication() {
-        Assert.assertTrue(!Injector._page(GoogleSearchResultPage.class).getStats().isEmpty());
-
+        Assert.assertTrue(Injector._page(GoogleSearchResultPage.class).getStats());
     }
 }
