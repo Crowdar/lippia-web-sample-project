@@ -7,6 +7,7 @@ public class GoogleHomePage extends PageBaseGoogle {
 
     private final String INPUT_SEARCH_XPATH = "//input[@class='gLFyf gsfi']";
     private final String SEARCH_BUTTON_NAME = "btnK";
+    private final String AGREE_BUTTON_XPATH = "//*[contains(text(),'I agree')]";
 
     public GoogleHomePage(RemoteWebDriver driver) {
         super(driver);
@@ -15,6 +16,7 @@ public class GoogleHomePage extends PageBaseGoogle {
 
     public void go() {
         navigateToCompleteURL();
+        isPopUpDisplayed();
     }
 
     public void enterSearchCriteria(String text) {
@@ -24,5 +26,10 @@ public class GoogleHomePage extends PageBaseGoogle {
     public void clickSearchButton() {
         clickElement(By.name(SEARCH_BUTTON_NAME));
     }
-
+    
+    public void isPopUpDisplayed() {
+    	if(isElementPresentAndDisplayed(By.xpath(AGREE_BUTTON_XPATH))){;
+    		clickElement(By.xpath(AGREE_BUTTON_XPATH));
+    	}
+    }
 }
