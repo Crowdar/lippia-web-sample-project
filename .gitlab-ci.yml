@@ -15,7 +15,7 @@ Testing 2/2:
   stage: test
   script:
     - mkdir public
-    - mv target/reports/* public
+    - cp target/reports/* public
   artifacts:
     when: always
     paths:
