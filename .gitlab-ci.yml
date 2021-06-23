@@ -10,6 +10,10 @@ Testing 1/2:
   script:
     - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
   allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - target/reports
 
 Testing 2/2:    
   stage: test
