@@ -9,6 +9,10 @@ Testing 1/2:
   stage: test
   script:
     - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+  allow_failure: true
+
+Testing 2/2:    
+  stage: test
     - mkdir public
     - mv target/reports/* public
   artifacts:
@@ -16,6 +20,7 @@ Testing 1/2:
     paths:
       - public
 #      - target/reports/
+
 #Testing 2/2:
 #  script: 
 #    - echo 'another test process'
