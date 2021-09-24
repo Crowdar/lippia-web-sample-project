@@ -1,13 +1,13 @@
 # Lippia Web sample project
 
-This project has the intention of show in a practical way how to use Lippia Automation Framework to build automated tests using Gherkin and Page-Object pattern. This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
+This project has the intention of showing a way practically how to use Lippia Automation Framework to build automated tests by using Gherkin and Page-Object Model pattern. This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
 
 ***
 
 
 ## Docker stack
 
-The following project includes the basic Docker Lippia Containers to run this  web sample project. You can choose to run the code from your favourite IDE, run from console or from Jenkins using the Docker Stack.
+The following project includes the basic Docker Lippia Containers to run this  web sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins using the Docker Stack.
 To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
 
 ![Lippia Extent Report](docs/img/architecture_web_lippia.png)
@@ -61,7 +61,7 @@ In this example, *GoogleHomePage* is the first web page the framework will inter
 |-------|----------------|
 |PageBaseGoogle    | Define base URL to navigate. |
 |GoogleHomePage.java   | PageObject: between each element in the webpage *GoogleHomePage* you want to interact with. You need to add one new file for each page you want to navigate in your tests. |
-|GoogleSteps.java   | StepOpject: Code to support the behaviour of each **step** coded into the feature files for the *GoogleHomePage* web page. This code executes the interaction between the Framework and the web application and match the steps with the code who run interactions. |
+|GoogleSteps.java   | StepObject: Code to support the behaviour of each **step** coded into the feature files for the *GoogleHomePage* web page. This code executes the interaction between the Framework and the web application, and match the steps with the code who run interactions. |
 |googleSearch.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
 
 ## Page base    
@@ -191,14 +191,14 @@ Feature: As a potential client i need to search in google to find a web site
 ## Main Features: 
 - Added multiple reports of extent reports
 - Added the feature to handle the chrome options by a json file
-- Include project type properties that allows to decide wich library would need for the project
+- Include project type properties that allows to decide which library would need for the project
 - Added the dependency for lippia report server 
 - Cucumber version updated
 
 
 ## Multiple reports templates:
- - With this version of Lippia the user have the possibility to choose which kind of template for html reports is the best for the project requirements.
-   The user only need to turn on the flag in the extent.properties file located in src/test/resources.
+ - With this version of Lippia the user has the possibility to choose which kind of template for html reports is the best for the project requirements.
+   The user only needs to turn on the flag in the extent.properties file located in src/test/resources.
    
    
 ### Some examples of this are
@@ -231,7 +231,7 @@ Also as you can see in this file you can set up the record video property to get
 
 
 ## Project type options:
-- The project type option allows the user to say Lippia which library would need to download. For this project is setted the WEB_CHROME one that uses the library for this webdriver.
+- The project type option allows the user to say Lippia which library would need to download. For this project is set the WEB_CHROME one that uses the library for this webdriver.
   This option can be changed in the pom.xml file
   You can get more information checking the readme from lippia-core project.
   
@@ -260,5 +260,5 @@ Also as you can see in this file you can set up the record video property to get
  	WEB_SAFARI
         crowdar.projectType=WEB_SAFARI
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/safariCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy 
+        crowdar.setupStrategy=web.DownloadLatestStrategy  
 
