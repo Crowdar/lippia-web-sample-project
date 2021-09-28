@@ -99,7 +99,7 @@ This sample project includes the required components as binaries, docker contain
     + To run the tests with maven, we must execute the following command:   
 
     ```
-    $ mvn clean test -PSecuencial
+    $ mvn clean test
     ```
 
 - ## Running with Docker
