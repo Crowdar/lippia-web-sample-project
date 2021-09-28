@@ -26,13 +26,8 @@ On each declared step you can insert the calls defined from service classes -->
 + docker 18.09+: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
 + docker compose 1.24+: https://docs.docker.com/compose/install/ _OPTIONAL_ 
 
-# Getting started
-
-This project has the intention of showing a way practically how to use Lippia Automation Framework to build automated tests by using Gherkin and Page-Object Model pattern.  
-This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
 
 "This project is licensed under the terms of the MIT license."
-
 
 # Update Version Lippia 3
 
@@ -42,6 +37,12 @@ This sample project includes the required components as binaries, docker contain
 - Include project type properties that allows to decide which library would need for the project
 - Added the dependency for lippia report server 
 - Cucumber version updated
+
+
+# Getting started
+
+This project has the intention of showing a way practically how to use Lippia Automation Framework to build automated tests by using Gherkin and Page-Object Model pattern.  
+This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
 
 
 - ## Running with Maven
