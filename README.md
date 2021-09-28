@@ -1,16 +1,150 @@
 # Lippia Web sample project
 
-This project has the intention of showing a way practically how to use Lippia Automation Framework to build automated tests by using Gherkin and Page-Object Model pattern. This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
+<!--## Architecture
 
-***
+![Lippia Architecture Web](docs/img/architecture_web_lippia.png)
+
+- Through Spring rest client, Lippia supports web tests, being able to reuse definitions from other tests as well as including this behavior in tests of other types such as mobile, API, etc.
+
+- We believe that the best approach to automate testing from conception to deployment is to use BDD (Behaviour Driven Development) to include not just Developers, but Testers and Business Analysts, and that is why...   
+
+The scenarios can be written using BDD methodology. 
+    
+    Given as a precondition
+    
+    When as actions
+    
+    Then as validations
+    
+    
+On each declared step you can insert the calls defined from service classes -->
+
+## System Requirements: 
++ jdk: https://docs.oracle.com/en/java/javase/index.html 
++ maven: https://maven.apache.org/download.cgi 
++ git client: https://www.atlassian.com/git/tutorials/install-git 
++ docker 18.09+: https://docs.docker.com/install/linux/docker-ce/ubuntu/  _OPTIONAL_ 
++ docker compose 1.24+: https://docs.docker.com/compose/install/ _OPTIONAL_ 
+
+# Getting started
+
+This project has the intention of showing a way practically how to use Lippia Automation Framework to build automated tests by using Gherkin and Page-Object Model pattern.  
+This sample project includes the required components as binaries, docker containers and configuration files to simply download and run a set of sample tests in your local computer, using the Lippia container stack described bellow.
+
+"This project is licensed under the terms of the MIT license."
 
 
-## Docker stack
+# Update Version Lippia 3
 
-The following project includes the basic Docker Lippia Containers to run this  web sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins using the Docker Stack.
-To install and start a local instalation with Docker containers go to **Getting started** at the end of this guide. 
+## Main Features: 
+- Added multiple reports of extent reports
+- Added the feature to handle the chrome options by a json file
+- Include project type properties that allows to decide which library would need for the project
+- Added the dependency for lippia report server 
+- Cucumber version updated
 
-![Lippia Extent Report](docs/img/architecture_web_lippia.png)
+
+- ## Running with Maven
+
+  + ### First Step
+
+    + Download and unzip the source repository for this guide, or clone it using Git:   
+    ```
+    $ git clone https://gitlab.com/lippia/products/samples/lippia-web-sample-project.git
+    ```
+
+    + Go to root directory:   
+    ```
+    $ cd lippia-web-sample-project
+    ```   
+
+  + ### Second Step
+
+    If you want to run tests locally, you need maven as a minimum requirement   
+    + Make sure you have installed maven correctly   
+
+    ```
+    $ mvn --version
+
+      OUTPUT:
+        Apache Maven 3.8.2 (ea98e05a04480131370aa0c110b8c54cf726c06f)
+        Maven home: /opt/apache-maven-3.8.2
+        Java version: 13.0.5.1, vendor: Debian, runtime: /usr/lib/jvm/java-13-openjdk-amd64
+        Default locale: en_US, platform encoding: UTF-8
+        OS name: "linux", version: "5.10.0-6parrot1-amd64", arch: "amd64", family: "unix"
+    ```
+
+    If you don't see a similar output:
+    + Make sure you have the maven path configured   
+    #### Linux user
+    ```
+    $ grep -Ew '(.*)(M2_HOME)' ~/.bashrc
+
+      OUTPUT:
+        M2_HOME=/opt/apache-maven-3.8.2
+        PATH=$PATH:$M2_HOME/bin
+    ```   
+    #### Windows user
+    ```
+    $ set
+
+      OUTPUT:
+        M2_HOME=C:\Program Files\apache-maven-3.8.2
+        PATH=%PATH%;%M2_HOME%\bin;
+    ```
+
+  + ### Third Step
+
+    + To run the tests with maven, we must execute the following command:   
+
+    ```
+    $ mvn clean test -PSecuencial
+    ```
+
+- ## Running with Docker
+
+    ## Docker stack
+
+    The following project includes the basic Docker Lippia Containers to run this Web sample project. You can choose the code from your favourite IDE, to run from console or from Jenkins by using the Docker Stack.
+
+    Note that if you don't have installed docker & docker-compose, [Click here](#system-requirements)
+
+    + ### First Step
+      - Make sure you have installed docker-engine correctly   
+      ```
+      $ docker --version
+        OUTPUT:
+          Docker version 19.03.15, build 99e3ed8919
+      ```   
+    
+    + ### Second Step
+      - Make sure you have installed docker-compose correctly
+      ```
+      $ docker-compose --version
+        OUTPUT:
+          docker-compose version 1.29.2, build 5becea4c
+      ```   
+
+    + ### Third Step   
+        #### Execute tests in you local machine   
+        
+        - Go to root project folder and you will find a pom.xml file   
+        ```
+        $ cd lippia-web-sample-project
+        ```   
+        
+        - Run the following command:   
+        ```
+        $ sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+
+          OUTPUT:
+            Creating network "lippia-api-sample-project_default" with the default driver
+            Creating lippia-api-sample-project_lippia_1 ... done
+            Attaching to lippia-api-sample-project_lippia_1
+            lippia_1  | Running custom Command mvn clean test -PSecuencial -Dcucumber.tags=@Success
+            ...
+        ```   
+    
 
 ## Project structure
 
@@ -175,26 +309,24 @@ Feature: As a potential client i need to search in google to find a web site
     Then The client verify that results are shown properly
 ```
 
-# Getting started
-    
-- If you are Linux user 
-    [`Getting started - Linux User`](docs/README_Linux.md)
-- If you are Windows user
-    [`Getting started - Windows User`](docs/README_Windows.md)
-    
-    
-"This project is licensed under the terms of the MIT license."
+# Reports[](url)
 
+We believe that the reports should express the results of our tests in the most legible, detailed and pleasant way possible, so that in this way, our clients have at their disposal a report on the operation and behavior of their product, as well as the performance of the team. That is why Lippia, in addition to supporting the integration with **ExtentReport**, provides a **ReportServer** for each client.   
+Next, we will see the structure of the project and from where we can access them.
 
-# Update Version Lippia 3
-
-## Main Features: 
-- Added multiple reports of extent reports
-- Added the feature to handle the chrome options by a json file
-- Include project type properties that allows to decide which library would need for the project
-- Added the dependency for lippia report server 
-- Cucumber version updated
-
+### Reports are generated in the folder called **target**, which will be generated once the execution of the test suite is finished.   
+Note that the following structure is part of the report generated with ExtentReport library.
+```
+├── lippia-web-sample-project
+|   ├── docs
+|   |   └── ...
+|   ├── src
+|   |   └── ...
+│   ├── target
+│   |   └── reports
+|   |       └── index.html
+|   └── ...
+```
 
 ## Multiple reports templates:
  - With this version of Lippia the user has the possibility to choose which kind of template for html reports is the best for the project requirements.
@@ -260,5 +392,5 @@ Also as you can see in this file you can set up the record video property to get
  	WEB_SAFARI
         crowdar.projectType=WEB_SAFARI
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/safariCapabilities.json
-        crowdar.setupStrategy=web.DownloadLatestStrategy  
+        crowdar.setupStrategy=web.DownloadLatestStrategy 
 
