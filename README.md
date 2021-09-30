@@ -134,7 +134,10 @@ This sample project includes the required components as binaries, docker contain
         $ cd lippia-web-sample-project
         ```   
         
-        - Run the following command:   
+        - Run the following command: 
+
+        In case the command "**sudo**" is not used in Windows.
+
         ```
         $ sudo docker-compose up --abort-on-container-exit --exit-code-from lippia_zalenium
 
