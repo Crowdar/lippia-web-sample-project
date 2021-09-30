@@ -136,11 +136,12 @@ This sample project includes the required components as binaries, docker contain
         
         - Run the following command:   
         ```
-        $ sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+        $ sudo docker-compose up --abort-on-container-exit --exit-code-from lippia_zalenium
 
           OUTPUT:
-            Starting lippia-web-sample-project_zalenium_1 ... done
-            Starting lippia-web-sample-project_lippia_zalenium_1 ... done
+            Creating network "lippia-web-sample-project_default" with the default driver
+            Creating lippia-web-sample-project_zalenium_1 ... done
+            Creating lippia-web-sample-project_lippia_zalenium_1 ... done
             Attaching to lippia-web-sample-project_zalenium_1, lippia-web-sample-project_lippia_zalenium_1
             ...
         ```   
