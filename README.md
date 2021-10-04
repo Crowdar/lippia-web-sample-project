@@ -332,6 +332,9 @@ Note that the following structure is part of the report generated with ExtentRep
 |   └── ...
 ```
 
+### Graphic example   
+![ExtentReport example](docs/images/extentReportExample.png)
+
 ## Multiple reports templates:
  - With this version of Lippia the user has the possibility to choose which kind of template for html reports is the best for the project requirements.
    The user only needs to turn on the flag in the extent.properties file located in src/test/resources.
@@ -398,3 +401,56 @@ Also as you can see in this file you can set up the record video property to get
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/safariCapabilities.json
         crowdar.setupStrategy=web.DownloadLatestStrategy 
 
+## Runners
+***
+
+The test cases are executed using **TestNG** class. This class is the main entry point for running tests in the TestNG framework. By creating their own TestNG object and invoke it on a testng.xml.
+
+|Attribute | Description|
+|name|The name of this suite. It is a **mandatory** attribute.|
+|verbose|Whether TestNG should run different threads to run this suite.|
+|parallel|Whether TestNG should run different threads to run this suite.
+|thread-count|The number of threads to use, if parallel mode is enabled (ignored other-wise).|
+|annotations|The type of annotations you are using in your tests.|
+|time-out|The default timeout that will be used on all the test methods found in this test.|
+
+### testng.xml
+fola lippia-web-sample-project\testng.xml
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BDD Test Suite" verbose="1" parallel="tests" thread-count="1" configfailurepolicy="continue">
+    <test name="Login and Update Profile Test" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="CrowdTestNgRunner" />
+        </classes>
+    </test>
+</suite>
+
+```
+
+### testngParallel.xml
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="3" thread-count="3" configfailurepolicy="continue">
+    <test name="Test 1" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="CrowdTestNgParallelRunner"/>
+        </classes>
+    </test>
+</suite>
+
+```
+
+This file captures your entire testing and makes it easy to describe all your test suites and their parameters in one file, which you can check in your code repository or e-mail to coworkers.
+
+|Path   |Description     |
+|-------|----------------|
+|test\java\\\*Runner.java|Folder with all the **runner files** containing **TestNG Runner** and **TestNG Parallel Runner** |
+
+
+|File   | Description    |
+|-------|----------------|
+|CrowdTestNgParallelRunner.java| Parallel Runner: to execute tests various scenarios at the same time in local. |
+|CrowdTestNgRunner.java| Runner: to excute tests scenarios one by one in local. |
