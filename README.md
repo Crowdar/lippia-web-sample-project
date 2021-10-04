@@ -150,6 +150,46 @@ This sample project includes the required components as binaries, docker contain
         ```   
     
 
+# Reports[](url)
+
+We believe that the reports should express the results of our tests in the most legible, detailed and pleasant way possible, so that in this way, our clients have at their disposal a report on the operation and behavior of their product, as well as the performance of the team. That is why Lippia, in addition to supporting the integration with **ExtentReport**, provides a **ReportServer** for each client.   
+Next, we will see the structure of the project and from where we can access them.
+
+### Reports are generated in the folder called **target**, which will be generated once the execution of the test suite is finished.   
+Note that the following structure is part of the report generated with ExtentReport library.
+```
+├── lippia-web-sample-project
+|   ├── docs
+|   |   └── ...
+|   ├── src
+|   |   └── ...
+│   ├── target
+│   |   └── reports
+|   |       └── index.html
+|   └── ...
+```
+
+### Graphic example   
+![ExtentReport example](docs/images/extentReportExample.png)
+
+## Multiple reports templates:
+ - With this version of Lippia the user has the possibility to choose which kind of template for html reports is the best for the project requirements.
+   The user only needs to turn on the flag in the extent.properties file located in src/test/resources.
+   
+   
+### Some examples of this are
+   
+#### Avenstack template:
+   ![aventstack_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/aventstack_report.png)
+   
+#### BDD template:
+   ![bbd_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/bbd_report.png)
+   
+#### Cards template:
+   ![cards_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/cards_report.png)
+
+
+
 ## Project structure
 
 A typical Lippia Test Automation project usually looks like this 
@@ -313,43 +353,6 @@ Feature: As a potential client i need to search in google to find a web site
     Then The client verify that results are shown properly
 ```
 
-# Reports[](url)
-
-We believe that the reports should express the results of our tests in the most legible, detailed and pleasant way possible, so that in this way, our clients have at their disposal a report on the operation and behavior of their product, as well as the performance of the team. That is why Lippia, in addition to supporting the integration with **ExtentReport**, provides a **ReportServer** for each client.   
-Next, we will see the structure of the project and from where we can access them.
-
-### Reports are generated in the folder called **target**, which will be generated once the execution of the test suite is finished.   
-Note that the following structure is part of the report generated with ExtentReport library.
-```
-├── lippia-web-sample-project
-|   ├── docs
-|   |   └── ...
-|   ├── src
-|   |   └── ...
-│   ├── target
-│   |   └── reports
-|   |       └── index.html
-|   └── ...
-```
-
-### Graphic example   
-![ExtentReport example](docs/images/extentReportExample.png)
-
-## Multiple reports templates:
- - With this version of Lippia the user has the possibility to choose which kind of template for html reports is the best for the project requirements.
-   The user only needs to turn on the flag in the extent.properties file located in src/test/resources.
-   
-   
-### Some examples of this are
-   
-#### Avenstack template:
-   ![aventstack_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/aventstack_report.png)
-   
-#### BDD template:
-   ![bbd_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/bbd_report.png)
-   
-#### Cards template:
-   ![cards_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/cards_report.png)
    
 ## Chrome driver options file:   
  - Added the ability to set up the options for the chromedriver in order to have all of the properties setted. For example the user is allowed to set the headless value.
