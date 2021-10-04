@@ -406,7 +406,7 @@ Also as you can see in this file you can set up the record video property to get
 
 The test cases are executed using **TestNG** class. This class is the main entry point for running tests in the TestNG framework. By creating their own TestNG object and invoke it on a testng.xml.
 
-|Attribute | Description |  
+|**Attribute** | **Description** |  
 |name   | The name of this suite. It is a **mandatory** attribute. |  
 |verbose   | Whether TestNG should run different threads to run this suite. |  
 |parallel   | Whether TestNG should run different threads to run this suite.
