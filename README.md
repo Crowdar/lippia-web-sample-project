@@ -424,7 +424,7 @@ The test cases are executed using **TestNG** class. This class is the main entry
 |time-out   | The default timeout that will be used on all the test methods found in this test. |  
 
 ### testng.xml  
-folder==> lippia-web-sample-project\testng.xml
+path==> lippia-web-sample-project\testng.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
@@ -439,7 +439,7 @@ folder==> lippia-web-sample-project\testng.xml
 ```
 
 ### testngParallel.xml  
-folder==> lippia-web-sample-project\testngParallel.xml
+path==> lippia-web-sample-project\testngParallel.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
