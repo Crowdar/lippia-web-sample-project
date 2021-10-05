@@ -185,13 +185,13 @@ Note that the following structure is part of the report generated with ExtentRep
 ### Some examples of this are
    
 #### Avenstack template:   
-   ![aventstack_report] (docs/images/aventstack_report.png)
+   ![aventstack_report](docs/images/aventstack_report.png)
    
 #### BDD template:   
-   ![bbd_report] (docs/images/bbd_report.png)
+   ![bbd_report](docs/images/bbd_report.png)
    
 #### Cards template:   
-   ![cards_report] (docs/images/cards_report.png)
+   ![cards_report](docs/images/cards_report.png)
 
 
 
