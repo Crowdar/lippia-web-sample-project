@@ -423,8 +423,8 @@ The test cases are executed using **TestNG** class. This class is the main entry
 |annotations   | The type of annotations you are using in your tests. |  
 |time-out   | The default timeout that will be used on all the test methods found in this test. |  
 
-### testng.xml
-fola lippia-web-sample-project\testng.xml
+### testng.xml  
+folder==> lippia-web-sample-project\testng.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
@@ -438,7 +438,8 @@ fola lippia-web-sample-project\testng.xml
 
 ```
 
-### testngParallel.xml
+### testngParallel.xml  
+folder==> lippia-web-sample-project\testngParallel.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
