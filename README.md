@@ -169,8 +169,13 @@ Note that the following structure is part of the report generated with ExtentRep
 |   └── ...
 ```
 
-### Graphic example   
+<!--
+### Graphic example 
+```
+~@ignore for now
+```  
 ![ExtentReport example](docs/images/extentReportExample.png)
+-->
 
 ## Multiple reports templates:
  - With this version of Lippia the user has the possibility to choose which kind of template for html reports is the best for the project requirements.
@@ -180,13 +185,13 @@ Note that the following structure is part of the report generated with ExtentRep
 ### Some examples of this are
    
 #### Avenstack template:
-   ![aventstack_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/aventstack_report.png)
+   ![aventstack_report] (docs/images/aventstack_report.png)
    
 #### BDD template:
-   ![bbd_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/bbd_report.png)
+   ![bbd_report] (docs/images/bbd_report.png)
    
 #### Cards template:
-   ![cards_report] (https://bitbucket.org/crowdarautomation/lippia-web-sample-project/raw/91f94d530c4b87c88731a59e6285843926543b58/docs/img/cards_report.png)
+   ![cards_report] (docs/images/cards_report.png)
 
 
 
