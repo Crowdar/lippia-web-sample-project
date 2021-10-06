@@ -1,4 +1,4 @@
-# Lippia Web sample project
+`# Lippia Web sample project
 
 <!--## Architecture
 
@@ -464,3 +464,44 @@ This file captures your entire testing and makes it easy to describe all your te
 |-------|----------------|
 |CrowdTestNgParallelRunner.java| Parallel Runner: to execute tests various scenarios at the same time in local. |
 |CrowdTestNgRunner.java| Runner: to excute tests scenarios one by one in local. |
+
+### pom.xml
+
+A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project. It contains default values for most projects. Examples for this is the build directory, which is target; the source directory, which is **src/main/java**; the test source directory, which is **src/test/java**; and so on. When executing a task or goal, Maven looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the goal.
+
+```
+      <profiles>
+        <profile>
+            <id>Local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <crowdar.cucumber.browser>WEB_CHROME</crowdar.cucumber.browser>
+                <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>GridSecuencial</id>
+            <activation>
+            </activation>
+            <properties>
+                <cucumber.runner>testng.xml</cucumber.runner>
+                <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
+                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
+                <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
+            </properties>
+        </profile>
+        <profile>
+            <id>GridParallel</id>
+            <activation>
+            </activation>
+            <properties>
+                <cucumber.runner>testngParallel.xml</cucumber.runner>
+                <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
+                <crowdar.driverHub>http://selenium-hub_web-sample:4444/wd/hub</crowdar.driverHub>
+                <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
+            </properties>
+        </profile>
+        
+```
