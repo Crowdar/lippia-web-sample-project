@@ -1,9 +1,8 @@
 {
-  "browserName": "chrome",
-  "goog:chromeOptions": {"args": ["disable-infobars", "--no-sandbox", "--disable-dev-shm-usage" , "--test-type", "--ignore-certificate-errors", "--start-maximized"],
-    "extensions": [],
-    "prefs": {"printing.enabled": false}
-  },
-  "platform": "ANY",
-  "recordVideo":"false"
-}
+	"browserName": "chrome",
+	"goog:chromeOptions": {"args": ["disable-infobars", "--ignore-certificate-errors", "start-maximized"], 
+						   "extensions": [],
+						   "prefs": {"printing.enabled": false}
+	}, 
+	"platform": "ANY"
+} 

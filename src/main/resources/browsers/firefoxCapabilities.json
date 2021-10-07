@@ -1,0 +1,5 @@
+{
+	"browserName": "firefox", 
+	"platform": "ANY",
+	"tz": "America/Argentina/Buenos_Aires"
+} 
