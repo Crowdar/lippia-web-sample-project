@@ -426,8 +426,8 @@ Also as you can see in this file you can set up the record video property to get
 |   |   │     │     │    ├── CrowdTestNgParallelRunner
 |   |   │     │     │    └── CrowdTestNgRunner
 │   │   │     │     │     
-│   ├── testng.xml
 │   ├── testngParallel.xml
+│   ├── testngSecuencial.xml
 |   |       
 |   |
 ```
@@ -444,15 +444,15 @@ The test cases are executed using **TestNG** class. This class is the main entry
 |annotations   | The type of annotations you are using in your tests. |  
 |time-out   | The default timeout that will be used on all the test methods found in this test. |  
 
-### testng.xml  
+### testngSecuencial.xml  
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BDD Test Suite" verbose="1" parallel="tests" thread-count="1" configfailurepolicy="continue">
-    <test name="Login and Update Profile Test" annotations="JDK" preserve-order="true">
+<suite name="BDD Test Suite" verbose="10" parallel="tests" thread-count="1" configfailurepolicy="continue">
+    <test name="TestNg Secuencial runner Tests" annotations="JDK" preserve-order="true">
         <classes>
-            <class name="CrowdTestNgRunner" />
+            <class name="com.crowdar.bdd.cukes.TestNGSecuencialRunner"/>
         </classes>
     </test>
 </suite>
@@ -464,10 +464,10 @@ The test cases are executed using **TestNG** class. This class is the main entry
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="3" thread-count="3" configfailurepolicy="continue">
-    <test name="Test 1" annotations="JDK" preserve-order="true">
+<suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="1" thread-count="1" configfailurepolicy="continue">
+    <test name="TestNg parellel runner Tests" annotations="JDK" preserve-order="true">
         <classes>
-            <class name="CrowdTestNgParallelRunner"/>
+            <class name="com.crowdar.bdd.cukes.TestNGParallelRunner"/>
         </classes>
     </test>
 </suite>
@@ -490,48 +490,19 @@ This file captures your entire testing and makes it easy to describe all your te
 
 A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project. It contains default values for most projects. Examples for this is the build directory, which is target; the source directory, which is **src/main/java**; the test source directory, which is **src/test/java**; and so on. When executing a task or goal, Maven looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the goal.
 
-
-
-```
-      <profiles>
-        <profile>
-            <id>GridSecuencial</id>
-            <activation>
-            </activation>
-            <properties>
-                <cucumber.runner>testng.xml</cucumber.runner>
-                <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
-                <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
-            </properties>
-        </profile>
-        <profile>
-            <id>GridParallel</id>
-            <activation>
-            </activation>
-            <properties>
-                <cucumber.runner>testngParallel.xml</cucumber.runner>
-                <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-                <crowdar.driverHub>http://selenium-hub_web-sample:4444/wd/hub</crowdar.driverHub>
-                <crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
-            </properties>
-        </profile>
-        
-```
 ### How to select Sequential or Parallel Runner:
  
 **Sequential Runner:**  
-	  
-- In the pom.xml file, it looks for the POM in the current directory which is <cucumber.runner></cucumber.runner> and assign the value of "testng.xml".  
-	  
+    
+- In the pom.xml file, it looks for the POM in the current directory which is <runner></runner> and assign the value of "testngSecuencial.xml".  
+    
 - This would be as follows:   
-			  **<cucumber.runner>testng.xml</cucumber.runner>**  
+        **<runner>testngSecuencial.xml</runner>>**  
 
 **Parallel Runner:**  
-	  
+    
 - In the pom.xml file, it looks for the POM in the current directory which is <cucumber.runner></cucumber.runner> and assign the value of "testingParalel.xml"  
-	  
+    
 - This would be as follows:  
-			  **<cucumber.runner>testngParallel.xml</cucumber.runner>**
-
+        **<runner>testngParallel.xml</runner>**
 
