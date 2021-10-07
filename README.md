@@ -518,5 +518,16 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
         </profile>
         
 ```
-For intance When executing a test from **CrowdTestNgRunner**, Maven looks for the POM in the current directory which is **<cucumber.runner>testng.xml</cucumber.runner>**. It reads the POM, gets the needed configuration information, then executes test.  
+###How to select Sequential or Parallel Runner:
+ 
+**Sequential Runner:**
+	  In the pom.xml file, it looks for the POM in the current directory which is <cucumber.runner></cucumber.runner> and assign the value of "testng.xml". 
+	  This would be as follows: 
+			  **<cucumber.runner>testng.xml</cucumber.runner>**
+
+**Parallel Runner:**
+	  In the pom.xml file, it looks for the POM in the current directory which is <cucumber.runner></cucumber.runner> and assign the value of "testingParalel.xml"
+	  This would be as follows: 
+			  **<cucumber.runner>testngParallel.xml</cucumber.runner>**
+
 
