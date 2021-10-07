@@ -411,6 +411,27 @@ Also as you can see in this file you can set up the record video property to get
 
 ## Runners
 ***
+```
+├── lippia-web-sample-project
+|   ├── docs
+|   |   └── ...
+|   ├── src
+|   |   ├── main
+│   |   │     ├── java
+│   |   │     │     └── ...
+│   |   │     ├── resources 
+│   |   │     │     └── ...
+|   |   │     ├── test
+|   |   │     │     ├── java
+|   |   │     │     │    ├── CrowdTestNgParallelRunner.java
+|   |   │     │     │    └── CrowdTestNgRunner.java
+│   │   │     │     │     
+│   ├── testng.xml
+│   ├── testngParallel.xml
+|   |       
+|   |
+```
+
 
 The test cases are executed using **TestNG** class. This class is the main entry point for running tests in the TestNG framework. By creating their own TestNG object and invoke it on a testng.xml.
 
@@ -424,7 +445,7 @@ The test cases are executed using **TestNG** class. This class is the main entry
 |time-out   | The default timeout that will be used on all the test methods found in this test. |  
 
 ### testng.xml  
-path==> lippia-web-sample-project\testng.xml
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
@@ -439,7 +460,7 @@ path==> lippia-web-sample-project\testng.xml
 ```
 
 ### testngParallel.xml  
-path==> lippia-web-sample-project\testngParallel.xml
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
@@ -469,18 +490,10 @@ This file captures your entire testing and makes it easy to describe all your te
 
 A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project. It contains default values for most projects. Examples for this is the build directory, which is target; the source directory, which is **src/main/java**; the test source directory, which is **src/test/java**; and so on. When executing a task or goal, Maven looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the goal.
 
+
+
 ```
       <profiles>
-        <profile>
-            <id>Local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <crowdar.cucumber.browser>WEB_CHROME</crowdar.cucumber.browser>
-                <crowdar.json.path>src/test/resources/json/</crowdar.json.path>
-            </properties>
-        </profile>
         <profile>
             <id>GridSecuencial</id>
             <activation>
@@ -505,3 +518,5 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
         </profile>
         
 ```
+For intance When executing a test from **CrowdTestNgRunner**, Maven looks for the POM in the current directory which is **<cucumber.runner>testng.xml</cucumber.runner>**. It reads the POM, gets the needed configuration information, then executes test.  
+
