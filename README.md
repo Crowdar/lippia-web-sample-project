@@ -423,8 +423,8 @@ Also as you can see in this file you can set up the record video property to get
 │   |   │     │     └── ...
 |   |   │     ├── test
 |   |   │     │     ├── java
-|   |   │     │     │    ├── CrowdTestNgParallelRunner.java
-|   |   │     │     │    └── CrowdTestNgRunner.java
+|   |   │     │     │    ├── CrowdTestNgParallelRunner
+|   |   │     │     │    └── CrowdTestNgRunner
 │   │   │     │     │     
 │   ├── testng.xml
 │   ├── testngParallel.xml
