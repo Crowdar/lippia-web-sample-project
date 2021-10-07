@@ -518,7 +518,7 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
         </profile>
         
 ```
-###How to select Sequential or Parallel Runner:
+### How to select Sequential or Parallel Runner:
  
 **Sequential Runner:**  
 	  
