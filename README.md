@@ -475,16 +475,16 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
  
 **Sequential Runner:**  
     
-- In the pom.xml file, it looks for the POM in the current directory which is "<runner></runner>" and assign the value of "testngSecuencial.xml".  
+- In the pom.xml file, it looks for the POM in the current directory which is > <runner></runner>>  and assign the value of "testngSecuencial.xml".  
     
 - This would be as follows:
 ```  
-        **<runner>testngSecuencial.xml</runner>>** 
+        **<runner>testngSecuencial.xml</runner>** 
 ```         
 
 **Parallel Runner:**  
     
-- In the pom.xml file, it looks for the POM in the current directory which is "<runner></runner>" and assign the value of "testingParalel.xml"  
+- In the pom.xml file, it looks for the POM in the current directory which is > <runner></runner>>  and assign the value of "testingParalel.xml"  
     
 - This would be as follows:  
 ```
