@@ -200,130 +200,127 @@ Note that the following structure is part of the report generated with ExtentRep
 A typical Lippia Test Automation project usually looks like this 
 
 ```
-	.
+  .
 ├── main
-│   ├── java
-│   │   └── com
-│   │       └── crowdar
-│   │           └── examples
-│   │               ├── pages
-│   │               │   ├── GoogleHomePage.java
-│   │               │   ├── GoogleSearchResultPage.java
-│   │               │   ├── PageBaseGoogle.java
-│   │               └── steps
-│   │                   └── GoogleSteps.java
-│   └── resources
-│       ├── config.properties
-│       ├── cucumber.properties
-│       └── webdrivermanager.properties
-└── test
-    ├── java
-    │   ├── CrowdTestNgParallelRunner.java
-    │   ├── CrowdTestNgRunner.java
-    │   └── com
-    │       └── crowdar
-    │           └── Hooks.java
-    └── resources
-        └── features
-            └── googleSearch.feature
+│  ├── java
+│  │ └── lippia.web
+│  │      ├── contants
+│  │      │ └── GoogleConstants
+│  │      ├── reporters 
+│  │      │ └──CucumberReporter
+│  │      ├── services        
+│  │      │ ├── GoogleHomeService
+│  │      │ └── GoogleSearchResultService
+│  │      └── steps     
+│  │             └── GoogleSearchSteps
+│  └── resources
+│     ├── browsers
+│     ├── config.properties
+│     ├── cucumber.properties
+│     ├── extent.properties
+│     └── log4j.properties
+├── test
+│ └── resources
+│   └── web.features
+│    └── googleSearch.feature
 ```
+
 
 Folder's description:
 
-|Path   |Description    |
+|Path   |Description     |
 |-------|----------------|
-|main\java\\...\examples\pages\\\*.java|Folder with all the **PageObjects** matching steps with java code|
-|main\java\\...\examples\steps\\\*Steps.java|Folder with all the **steps** wich match with Gherkin Test Scenarios |
-|test\resources\features\\\*.feature|Folder with all the **feature files** containing **Test Scenarios** and **Sample Data** |
+|main\java\\...\contants\\\*.java|Folder with all the **web elements' locators** matching steps with java code|
+|main\java\\...\services\\\*.java|Folder with all the **PageObjects** matching steps with java code|
+|main\java\\...\steps\\\*Steps.java|Folder with all the **steps** which match with Gherkin Test Scenarios |
+|test\resources\web.features\\\*.feature|Folder with all the **feature files** containing **Test Scenarios** and **Sample Data** |
 |main\resources|Folder with all configuration needed to run Lippia |
 
-In this example, *GoogleHomePage* is the first web page the framework will interact with. The **steps** defined in *GoogleSteps.java* to execute the *Test Scenarios* defined in Gherkin language. 
-
+In this example, *GoogleHomeService* is the first web page the framework will interact with. The **steps** defined in *GoogleSearchSteps* to execute the *Test Scenarios* defined in Gherkin language. 
 
 |File   | Description    |
 |-------|----------------|
-|PageBaseGoogle    | Define base URL to navigate. |
-|GoogleHomePage.java   | PageObject: between each element in the webpage *GoogleHomePage* you want to interact with. You need to add one new file for each page you want to navigate in your tests. |
-|GoogleSteps.java   | StepObject: Code to support the behaviour of each **step** coded into the feature files for the *GoogleHomePage* web page. This code executes the interaction between the Framework and the web application, and match the steps with the code who run interactions. |
+|GoogleConstants    | Constants : Define web elements' locators. And between each element in the webpage *GoogleHomeService & GoogleSearchResultService * you want to interact with. |
+|GoogleHomeService    | Define base URL to navigate. And between each element in the webpage *GoogleHomeService * you want to interact with. You need to add one new file for each page you want to navigate in your tests. |
+|GoogleSearchResultService.java   | Where making assertion and getting results.   |
+|GoogleSteps.java   | StepObject: Code to support the behaviour of each **step** coded into the feature files for the *GoogleHomeService & GoogleSearchResultService* web page. This code executes the interaction between the Framework and the web application, and match the steps with the code who run interactions. |
 |googleSearch.feature| Feature file: Definition of the **Test Scenarios** with all the **steps** written in Cucumber format (http)|
 
-## Page base    
+## Constants
 ***
 ```
-public class PageBaseGoogle extends CucumberPageBase {
+public class GoogleConstants {
 
-    public PageBaseGoogle(SharedDriver driver){
-        super( driver);
-        BASE_URL = "http://www.google.com.ar";
-    }
+    public static final String INPUT_SEARCH_XPATH = "xpath://input[@class='gLFyf gsfi']";
+    public static final String SEARCH_BUTTON_NAME = "name:btnK";
+    public static final String STATS_ID = "id:rcnt";
+
+
 }
 ```
 
 
-## Page Object    
-***    
+## Services
+***
 ```
-public class GoogleHomePage extends PageBaseGoogle{
+public class GoogleHomeService extends ActionManager {
 
-    private WebElement googleInput(){return getWebElement(By.xpath("//input[@class='gLFyf gsfi']"));}
-    private WebElement googleSearchBtn(){return getWebElement(By.name("btnK"));}
-
-    public GoogleHomePage(SharedDriver driver){
-        super(driver);
-        this.url = ""; //here you can define the custom paths For example:"/search" --> www.googe.com/search
+    public static void navegarWeb(){
+        navigateTo(PropertyManager.getProperty("web.base.url"));
     }
 
-    public void go(){
-        navigateToIt();
+    public static void enterSearchCriteria(String text) {
+        setInput(GoogleConstants.INPUT_SEARCH_XPATH, text);
     }
 
-    public void enterSearchCriteria(String palabra){
-        googleInput().clear();
-        googleInput().sendKeys(palabra);
+    public static void clickSearchButton() {
+        click(GoogleConstants.SEARCH_BUTTON_NAME);
     }
-
-    public void clickSearchButton(){
-        googleSearchBtn().click();
-    }
-
 }
+
+public class GoogleSearchResultService extends ActionManager {
+
+    private static WebElement stats() {
+        return getElement(GoogleConstants.STATS_ID);
+    }
+
+    public static String getStats() {
+        return stats().getText();
+    }
+
+    public static void verifyResults(){
+        Assert.assertFalse(getStats().isEmpty());
+    }
+}
+
 ```
+
 
 ## Step Object   
 ***
     
 ```
-public class GoogleSteps extends PageSteps {
-
-    private GoogleHomePage homePage;
-    private GoogleSearchResultPage searchResultPage;
-
-    public GoogleSteps(SharedDriver driver){
-        super(driver);
-        homePage = new GoogleHomePage(driver);
-        searchResultPage= new GoogleSearchResultPage(driver);
-    }
+public class GoogleSearchSteps extends PageSteps {
 
     @Given("The client is in google page")
-    public void home(){
-    	homePage.go();
+    public void home() {
+        GoogleHomeService.navegarWeb();
     }
 
-    @When("The client search for word (.*)")
-    public void search(String criteria){
-    	homePage.enterSearchCriteria(criteria);
-    	homePage.clickSearchButton();
-
+    @When("^The client search for word (.*)$")
+    public void search(String criteria) {
+        GoogleHomeService.enterSearchCriteria(criteria);
+        GoogleHomeService.clickSearchButton();
     }
 
     @Then("The client verify that results are shown properly")
-    public void statVerfication(){
-    	Assert.assertTrue(!searchResultPage.getStats().isEmpty());
-	
+    public void statVerfication() {
+        GoogleSearchResultService.verifyResults();
+
     }
+
 }
 ```
-
 
 ## Feature File
 ***
@@ -338,73 +335,68 @@ Feature: As a potential client i need to search in google to find a web site
     Given The client is in google page
     When The client search for word crowdar
     Then The client verify that results are shown properly
-    
+
   @Smoke
-  Scenario: The client search by "automation"
+  Scenario: The client search by "A utomation"
     Given The client is in google page
-    When The client search for word automation
+    When The client search for word Automation
     Then The client verify that results are shown properly
-    
+
   @Smoke
-  Scenario: The client search by "docker"
+  Scenario: The client search by "Docker"
     Given The client is in google page
-    When The client search for word docker
+    When The client search for word Docker
     Then The client verify that results are shown properly
-	
+
   @Smoke
-  Scenario: The client search by "vagrant"
+  Scenario: The client search by "Lippia"
     Given The client is in google page
-    When The client search for word vagrant
+    When The client search for word Lippia
     Then The client verify that results are shown properly
 ```
 
-   
 ## Chrome driver options file:   
  - Added the ability to set up the options for the chromedriver in order to have all of the properties setted. For example the user is allowed to set the headless value.
 
 ```
  {
   "browserName": "chrome",
-  "goog:chromeOptions": {"args": ["disable-infobars","--headless","--window-size=1440x900", "--no-sandbox", "--disable-dev-shm-usage" , "--ignore-certificate-errors", "--start-maximized", "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36"],
-    "extensions": [],
-    "prefs": {"printing.enabled": false}
-  },
-  "platform": "ANY",
-  "recordVideo":"false"
-}
+  "goog:chromeOptions": {"args": ["disable-infobars", "--ignore-certificate-errors", "start-maximized"], 
+               "extensions": [],
+               "prefs": {"printing.enabled": false}
+  }, 
+  "platform": "ANY"
+} 
 ```
-
-Also as you can see in this file you can set up the record video property to get the evidence of the each flow in a video
-
 
 ## Project type options:
 - The project type option allows the user to say Lippia which library would need to download. For this project is set the WEB_CHROME one that uses the library for this webdriver.
   This option can be changed in the pom.xml file
   You can get more information checking the readme from lippia-core project.
   
-  ProjectTypes for web project: 		
+  ProjectTypes for web project:     
 
- 	WEB_CHROME
+  WEB_CHROME
         crowdar.projectType=WEB_CHROME
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/chromeCapabilities.json
         crowdar.setupStrategy=web.DownloadLatestStrategy
 
- 	WEB_FIREFOX
+  WEB_FIREFOX
         crowdar.projectType=WEB_FIREFOX
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/firefoxCapabilities.json
         crowdar.setupStrategy=web.DownloadLatestStrategy
 
- 	WEB_EDGE
+  WEB_EDGE
         crowdar.projectType=WEB_EDGE
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/edgeCapabilities.json
         crowdar.setupStrategy=web.DownloadLatestStrategy
 
- 	WEB_IE
+  WEB_IE
         crowdar.projectType=WEB_IE
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/ieCapabilities.json
         crowdar.setupStrategy=web.DownloadLatestStrategy
 
- 	WEB_SAFARI
+  WEB_SAFARI
         crowdar.projectType=WEB_SAFARI
         crowdar.projectType.driverCapabilities.jsonFile=src/main/resources/browsers/safariCapabilities.json
         crowdar.setupStrategy=web.DownloadLatestStrategy 
@@ -413,23 +405,23 @@ Also as you can see in this file you can set up the record video property to get
 ***
 ```
 ├── lippia-web-sample-project
-|   ├── docs
-|   |   └── ...
-|   ├── src
-|   |   ├── main
-│   |   │     ├── java
-│   |   │     │     └── ...
-│   |   │     ├── resources 
-│   |   │     │     └── ...
-|   |   │     ├── test
-|   |   │     │     ├── java
-|   |   │     │     │    ├── CrowdTestNgParallelRunner
-|   |   │     │     │    └── CrowdTestNgRunner
-│   │   │     │     │     
+│   ├── docs
+│   │   └── ...
+│   ├── src
+│   │   ├── main
+│   ├── java
+│   │     └── ...
+│   ├── resources 
+│   │     └── ...
+│   ├── test
+│   │     ├── resources
+│   │     │ └── ...
+│   │ 
+│   ├── pom.xml
 │   ├── testngParallel.xml
 │   ├── testngSecuencial.xml
-|   |       
-|   |
+│          
+│  
 ```
 
 
@@ -471,20 +463,9 @@ The test cases are executed using **TestNG** class. This class is the main entry
         </classes>
     </test>
 </suite>
-
 ```
 
 This file captures your entire testing and makes it easy to describe all your test suites and their parameters in one file, which you can check in your code repository or e-mail to coworkers.
-
-|Path   |Description     |
-|-------|----------------|
-|test\java\\\*Runner.java|Folder with all the **runner files** containing **TestNG Runner** and **TestNG Parallel Runner** |
-
-
-|File   | Description    |
-|-------|----------------|
-|CrowdTestNgParallelRunner.java| Parallel Runner: to execute tests various scenarios at the same time in local. |
-|CrowdTestNgRunner.java| Runner: to excute tests scenarios one by one in local. |
 
 ### pom.xml
 
@@ -501,8 +482,7 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
 
 **Parallel Runner:**  
     
-- In the pom.xml file, it looks for the POM in the current directory which is <cucumber.runner></cucumber.runner> and assign the value of "testingParalel.xml"  
+- In the pom.xml file, it looks for the POM in the current directory which is <runner></runner> and assign the value of "testingParalel.xml"  
     
 - This would be as follows:  
         **<runner>testngParallel.xml</runner>**
-
