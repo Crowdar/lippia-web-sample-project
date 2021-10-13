@@ -479,7 +479,7 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
     
 - This would be as follows:
 ```  
-        **<runner>testngSecuencial.xml</runner>** 
+        <runner>testngSecuencial.xml</runner>
 ```         
 
 **Parallel Runner:**  
@@ -488,5 +488,5 @@ A Project Object Model or POM is the fundamental unit of work in Maven. It is an
     
 - This would be as follows:  
 ```
-        **<runner>testngParallel.xml</runner>**
+        <runner>testngParallel.xml</runner>
 ```        
