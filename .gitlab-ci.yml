@@ -1,9 +1,36 @@
-image: crowdar/lippia:3.1.2.2
-
-services:
-  - crowdar/lippia:3.1.2.2
-  
-build:
-  stage: build
+image: tmaier/docker-compose:latest
+ 
+#Build-app:
+#  stage: build
+#  script:
+#    - echo 'deploying app in QA server'
+    
+Testing:
+  stage: test
   script:
-    - mvn clean test -PLocalHeadless -Dcucumber.tags=@Smoke
+    - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
+  allow_failure: true
+  artifacts:
+    when: always
+    paths:
+      - target/reports/
+
+Pages:
+  stage: deploy
+  dependencies:
+    - Testing
+  script:
+    - mv target/reports/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+
+#Testing 2/2:
+#  script: 
+#    - echo 'another test process'
+ 
+#Deploy:
+#  stage: deploy
+#  script: 
+#    - echo 'deploying app in custom server'

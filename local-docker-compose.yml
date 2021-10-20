@@ -1,7 +1,10 @@
 version: "3.3"
 services:
     lippia:
-       image: crowdar/lippia:3.2.1.1
+       image: crowdar/lippia:3.2.3.2
+       volumes:  
+            - .:/opt/workspace/automation
+       working_dir: /opt/workspace/automation
        environment:
-            - CUSTOM_COMMAND=mvn clean test -PLocalHeadless -Dcucumber.tags=@Smoke  
+            - CUSTOM_COMMAND=mvn clean test -Plocal,chromeHeadless  
        
