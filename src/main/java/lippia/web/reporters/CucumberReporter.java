@@ -1,11 +1,9 @@
-package com.crowdar.examples.report;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import com.crowdar.driver.DriverManager;
+package lippia.web.reporters;
 
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberGenericAdapter;
+import com.crowdar.driver.DriverManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class CucumberReporter extends ExtentCucumberGenericAdapter {
 
@@ -15,7 +13,7 @@ public class CucumberReporter extends ExtentCucumberGenericAdapter {
 
     @Override
     public String getScreenshotBase64() {
-		return  ((TakesScreenshot) DriverManager.getDriverInstance()).getScreenshotAs(OutputType.BASE64);
+        return  ((TakesScreenshot) DriverManager.getDriverInstance()).getScreenshotAs(OutputType.BASE64);
     }
 
     @Override
