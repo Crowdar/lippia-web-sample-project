@@ -1,4 +1,4 @@
-`# Lippia Web sample project
+# Lippia Web sample project
 
 <!--## Architecture
 
