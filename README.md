@@ -202,27 +202,29 @@ A typical Lippia Test Automation project usually looks like this
 ```
   .
 ├── main
-│  ├── java
-│  │ └── lippia.web
-│  │      ├── contants
-│  │      │ └── GoogleConstants
-│  │      ├── reporters 
-│  │      │ └──CucumberReporter
-│  │      ├── services        
-│  │      │ ├── GoogleHomeService
-│  │      │ └── GoogleSearchResultService
-│  │      └── steps     
-│  │             └── GoogleSearchSteps
-│  └── resources
-│     ├── browsers
-│     ├── config.properties
-│     ├── cucumber.properties
-│     ├── extent.properties
-│     └── log4j.properties
+│     ├── java
+│     │     └── lippia
+│     │           └──web
+│     │               ├── contants
+│     │               │       └── GoogleConstants
+│     │               ├── reporters 
+│     │               │       └──CucumberReporter
+│     │               ├── services        
+│     │               │       ├── GoogleHomeService
+│     │               │       └── GoogleSearchResultService
+│     │               └── steps     
+│     │                       └── GoogleSearchSteps
+│     └── resources
+│           └── browsers
+│                 ├── config.properties
+│                 ├── cucumber.properties
+│                 ├── extent.properties
+│                 └── log4j.properties
 ├── test
-│ └── resources
-│   └── web.features
-│    └── googleSearch.feature
+│     └── resources
+│             └── web
+│                   └──features
+│                         └── googleSearch.feature
 ```
 
 
