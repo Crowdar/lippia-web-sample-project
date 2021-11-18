@@ -1,4 +1,4 @@
 import com.crowdar.bdd.cukes.TestNGParallelRunner;
 
-public class ApiExampleProjectParalellTestRunner extends TestNGParallelRunner {
+public class WebParallelTestRunner extends TestNGParallelRunner {
 }
