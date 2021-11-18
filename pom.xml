@@ -17,7 +17,6 @@
 	<properties>
 		<maven.build.timestamp.format>yyyyMMdd_HHmm</maven.build.timestamp.format>
 
-		<runner>testngSecuencial.xml</runner>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- defult configuration chrome local -->
@@ -91,6 +90,27 @@
 				<crowdar.setupStrategy>web.SeleniumGridStrategy</crowdar.setupStrategy>
 				<!-- you can set your seleniumGrid url -->
 				<crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
+			</properties>
+		</profile>
+
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<!--   Profiles related to Runners ejecutions         -->
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+		<profile> 
+			<id>secuencial</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<runner>testngSecuencial.xml</runner>
+			</properties>
+		</profile>
+
+		<profile> 
+			<id>parallel</id>
+			<properties>
+				<runner>testngParallel.xml</runner>
 			</properties>
 		</profile>
 
