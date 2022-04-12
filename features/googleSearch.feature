@@ -2,7 +2,7 @@
 Feature: googleSearch
 
   @Smoke @LIPWEB_000002
-  Scenario: The client search by "Automation"
+  Scenario: The client search by "A utomation"
     Given The client is in google page
     When The client search for word Automation
     Then The client verify that results are shown properly
