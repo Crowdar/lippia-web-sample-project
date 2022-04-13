@@ -30,7 +30,7 @@
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
 		<cucumber.tags>--tags '@Smoke'</cucumber.tags>
 		<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter:</cucumber.reporters>
-		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
+		<crowdar.cucumber.option>features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
 		<web-app.url>http://www.google.com.ar</web-app.url>
