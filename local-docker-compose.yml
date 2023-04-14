@@ -6,5 +6,5 @@ services:
             - .:/opt/workspace/automation
        working_dir: /opt/workspace/automation
        environment:
-            - CUSTOM_COMMAND=mvn clean test -Plocal,chromeHeadless  
+            - CUSTOM_COMMAND=mvn clean test -Plocal,chromeHeadless,secuencial
        
