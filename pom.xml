@@ -28,7 +28,7 @@
 
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
-		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
+		<cucumber.hooks>--glue	lippia/web/hooks</cucumber.hooks>
 		<cucumber.tags>--tags '@Smoke'</cucumber.tags>
 		<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter:</cucumber.reporters>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
