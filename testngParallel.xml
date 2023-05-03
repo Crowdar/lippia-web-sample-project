@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="1" thread-count="1" configfailurepolicy="continue">
+<suite name="BDD Test Suite" verbose="1" parallel="methods" data-provider-thread-count="2" thread-count="2" configfailurepolicy="continue">
     <test name="TestNg parellel runner Tests" annotations="JDK" preserve-order="true">
         <classes>
             <class name="com.crowdar.bdd.cukes.TestNGParallelRunner"/>
