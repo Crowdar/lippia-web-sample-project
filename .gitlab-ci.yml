@@ -1,12 +1,10 @@
-image: tmaier/docker-compose:latest
- 
-#Build-app:
-#  stage: build
-#  script:
-#    - echo 'deploying app in QA server'
-    
+stages:
+  - Test
+  - Publish
+
 Testing:
-  stage: test
+  stage: Test
+  image: docker:latest
   variables:
     DOCKER_HOST: tcp://localhost:2375/
     DOCKER_DRIVER: overlay2
@@ -19,15 +17,17 @@ Testing:
   script:
     - docker-compose -f local-docker-compose.yml up --abort-on-container-exit --exit-code-from lippia
   allow_failure: true
-  #artifacts:
-  #  paths:
-  #    - target/reports/
 
-#Testing 2/2:
-#  script: 
-#    - echo 'another test process'
- 
-#Deploy:
-#  stage: deploy
-#  script: 
-#    - echo 'deploying app in custom server'
+  artifacts:
+    paths:
+      - target/reports/
+
+GitHub publish:
+  stage: Publish
+  image: crowdar/pipeline:2.0.1
+  script:
+    - git remote add github https://$GITHUB_USER:$GITHUB_TOKEN@github.com/Crowdar/lippia-web-sample-project.git
+    - git checkout master
+    - git push -u github master
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
