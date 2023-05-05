@@ -83,6 +83,7 @@
 			</properties>
 		</profile>
 
+	<packaging>jar</packaging>
 
 		<profile>
 			<id>stack_local</id>
