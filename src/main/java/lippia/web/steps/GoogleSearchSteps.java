@@ -19,7 +19,7 @@ public class GoogleSearchSteps extends PageSteps {
     }
 
     @Then("The client verify that results are shown properly")
-    public void statVerfication() {
+    public void statVerification() {
         GoogleSearchResultService.verifyResults();
 
     }
