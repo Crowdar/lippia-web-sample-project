@@ -48,6 +48,7 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+
 			<properties>
 				<crowdar.projectType>WEB_CHROME</crowdar.projectType>
 				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilities.json</crowdar.driver.capabilities.json_path>
@@ -56,6 +57,7 @@
 
 		<profile>
 			<id>firefox</id>
+
 			<properties>
 				<crowdar.projectType>WEB_FIREFOX</crowdar.projectType>
 				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/firefoxCapabilities.json</crowdar.driver.capabilities.json_path>
