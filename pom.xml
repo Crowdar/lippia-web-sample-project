@@ -29,8 +29,10 @@
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
 		<cucumber.tags>@Smoke</cucumber.tags>
-		<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter: </cucumber.reporters>
-		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
+		<pretty.plugin>--plugin pretty</pretty.plugin>
+		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
+		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
+		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report} ${test-manager.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
 		<web-app.url>http://www.google.com.ar</web-app.url>
@@ -119,7 +121,11 @@
 			<artifactId>core</artifactId>
 			<version>3.3.0.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.lippia.report</groupId>
+			<artifactId>ltm-cucumber4-adapter</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>io.lippia.report</groupId>
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
@@ -134,12 +140,18 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.1</version>
+				<version>3.0.0-M4</version>
 				<configuration>
+					<useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
 						<suiteXmlFile>${runner}</suiteXmlFile>
 					</suiteXmlFiles>
-					<testFailureIgnore>false</testFailureIgnore>
+					<systemPropertyVariables>
+						<TEST_MANAGER_API_HOST>https://runs.dev.lippia.io</TEST_MANAGER_API_HOST>
+						<TEST_MANAGER_API_PORT></TEST_MANAGER_API_PORT>
+						<TEST_MANAGER_RUN_NAME>[Demo] Run #1 7es7 Adapter Injector</TEST_MANAGER_RUN_NAME>
+						<TEST_MANAGER_PROJECT_CODE>GESHTJ</TEST_MANAGER_PROJECT_CODE>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 		</plugins>
