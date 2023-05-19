@@ -20,8 +20,4 @@ public class GoogleSearchResultService extends ActionManager {
     public static void verifyResults(){
         Assert.assertFalse(getStats().isEmpty());
     }
-
-    public static void verifyIncorrectResults() {
-        Assert.assertTrue(getStats().isEmpty());
-    }
 }

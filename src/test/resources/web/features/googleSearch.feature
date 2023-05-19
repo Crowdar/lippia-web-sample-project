@@ -20,6 +20,6 @@ Feature: As a potential client i need to search in google to find a web site
 
   @Smoke
   Scenario: The client search by "Lippia"
-    Given The client is on google page
+    Given The client isn't on google page
     When The client search for word Lippia
-    Then The client verify that results are shown incorrectly
+    Then The client verify that results are shown properly
