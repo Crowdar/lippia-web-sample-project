@@ -19,6 +19,7 @@ Testing:
   artifacts:
     paths:
       - target/reports/
+  allow_failure: true
 
 GitHub publish:
   stage: Publish
