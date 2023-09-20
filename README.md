@@ -51,7 +51,7 @@ This sample project includes the required components as binaries, docker contain
 
     + Download and unzip the source repository for this guide, or clone it using Git:   
     ```
-    $ git clone https://gitlab.com/lippia/products/samples/lippia-web-sample-project.git
+    $ git clone https://github.com/Crowdar/lippia-web-sample-project.git
     ```
 
     + Go to root directory:   
