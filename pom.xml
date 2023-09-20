@@ -32,7 +32,7 @@
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
-		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report} ${test-manager.report}</crowdar.cucumber.option>
+		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
 		<web-app.url>http://www.google.com.ar</web-app.url>
@@ -151,6 +151,9 @@
 						<TEST_MANAGER_API_PORT></TEST_MANAGER_API_PORT>
 						<TEST_MANAGER_RUN_NAME>[Demo] Run #1 7es7 Adapter Injector</TEST_MANAGER_RUN_NAME>
 						<TEST_MANAGER_PROJECT_CODE>GESHTJ</TEST_MANAGER_PROJECT_CODE>
+						<TEST_MANAGER_USERNAME></TEST_MANAGER_USERNAME>
+						<TEST_MANAGER_PASSWORD></TEST_MANAGER_PASSWORD>
+
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
