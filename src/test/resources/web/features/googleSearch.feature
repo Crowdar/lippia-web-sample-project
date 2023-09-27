@@ -1,25 +1,16 @@
-Feature: As a potential client i need to search in google to find a web site
+@Busqueda
+Feature: El cliente quiere hacer uns busqueda en el buscador de google
 
-  @Smoke
-  Scenario: The client search by "crowdar"
-    Given The client is on google page
-    When The client search for word crowdar
-    Then The client verify that results are shown properly
+  Scenario Outline: El cliente necesita hacer una busqueda
+    Given El cliente se encuentra en el buscador
+    When El cliente hace la <Busqueda>
+    Then El cliente puede ver su busqueda
 
-  @Smoke
-  Scenario: The client search by "Automation"
-    Given The client is on google page
-    When The client search for word Automation
-    Then The client verify that results are shown properly
+    Examples:
+      | Busqueda        |
+      | Crowdar Academy |
+      | Calidad         |
+      | Software        |
+      | Testing         |
 
-  @Smoke
-  Scenario: The client search by "Docker"
-    Given The client is on google page
-    When The client search for word Docker
-    Then The client verify that results are shown properly
 
-  @Smoke
-  Scenario: The client search by "Lippia"
-    Given The client isn't on google page
-    When The client search for word Lippia
-    Then The client verify that results are shown properly
