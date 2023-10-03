@@ -9,7 +9,8 @@ public class shopMenu extends PageSteps {
 
 
     @Given("The user enter the URL {string}")
-    public void theUserEnterTheURL(String arg0) {
+    public void home(String url) {
+        ShopMenuService.navegarWeb(url);
     }
 
     @When("the user click on Shop menu button")

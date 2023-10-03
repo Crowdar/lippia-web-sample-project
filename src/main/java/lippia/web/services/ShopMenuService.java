@@ -11,6 +11,9 @@ import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class ShopMenuService extends ActionManager {
 
+    public static void navegarWeb(String url){
+        navigateTo(url);
+    }
 
     public static void goShop() {
         WebActionManager.click(ShopConstants.SHOP_MENU_BUTTON);
@@ -19,6 +22,10 @@ public class ShopMenuService extends ActionManager {
     public static void goHome() {
         WebActionManager.click(HomeMenuConstants.HOM_MENU_BUTTON);
     }
+
+
+
+
 }
 
 
