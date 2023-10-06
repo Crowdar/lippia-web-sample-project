@@ -16,15 +16,9 @@ public class ShopMenuService extends ActionManager {
     }
 
     public static void goShop() {
+
         WebActionManager.click(ShopConstants.SHOP_MENU_BUTTON);
     }
-
-    public static void goHome() {
-        WebActionManager.click(HomeMenuConstants.HOM_MENU_BUTTON);
-    }
-
-
-
 
 }
 
