@@ -4,7 +4,7 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.HomeMenuConstants;
 
-public class HomeMenuService extends ActionManager {
+public class HomeMenuService {
 
     public static void goHome() {
 
