@@ -1,11 +1,8 @@
 package lippia.web.services;
 
-import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
-import lippia.web.constants.HomeMenuConstants;
 import lippia.web.constants.ShopConstants;
-import lippia.web.constants.HomeMenuConstants;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
