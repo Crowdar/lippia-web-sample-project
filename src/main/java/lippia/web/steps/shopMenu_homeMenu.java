@@ -4,7 +4,7 @@ import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.*;
 import lippia.web.services.HomeMenuService;
 import lippia.web.services.ShopMenuService;
-import lippia.web.services.ShopService;
+import lippia.web.services.HomeBanners;
 
 
 public class shopMenu_homeMenu extends PageSteps {
@@ -32,7 +32,7 @@ public class shopMenu_homeMenu extends PageSteps {
     @Then("the user verifies that the Home page has three Sliders only")
     public void theUserVerifiesThatTheHomePageHasThreeSlidersOnly() {
 
-        ShopService.verifyPage();
+        HomeBanners.verifyPage();
 
 
 
