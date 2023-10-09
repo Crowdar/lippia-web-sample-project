@@ -34,6 +34,7 @@ public class shopMenu extends PageSteps {
     }
 
     private static final String FILTER_BY_POPULARITY = "xpath://*[@id='content']/form/select/option[2]";
+
     @Then("the user can view the popular products only")
 
 

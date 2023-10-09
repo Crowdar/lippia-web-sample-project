@@ -6,7 +6,7 @@ import lippia.web.constants.DropdownConstants;
 public class DropdownService {
 
     public static void clickShopDropdown(String arg0) {
-        WebActionManager.setDropdownByIndex(DropdownConstants.DROPDOWN_BUTTON, 2);
+        WebActionManager.setDropdownByIndex(DropdownConstants.DROPDOWN_BUTTON, 1);
     }
 
 
