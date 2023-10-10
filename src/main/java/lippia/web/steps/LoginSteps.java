@@ -4,8 +4,8 @@ import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lippia.web.services.IngresarLoginService;
 import lippia.web.services.LoginService;
-import lippia.web.services.MyAccount;
 
 public class LoginSteps extends PageSteps {
 
@@ -16,7 +16,7 @@ public class LoginSteps extends PageSteps {
 
     @When("^Ingreso de su username (.*) y password (.*)$")
     public void valores(String username,String password) {
-        MyAccount.ingresarLogin(username, password);
+        IngresarLoginService.ingresarLogin(username, password);
     }
 
     @Then("El cliente se logea exitosamente")

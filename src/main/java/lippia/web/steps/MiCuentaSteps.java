@@ -5,8 +5,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lippia.web.services.IngresarLoginService;
 import lippia.web.services.MiCuentaService;
-import lippia.web.services.MyAccount;
+
 
 public class MiCuentaSteps extends PageSteps {
 
@@ -16,7 +17,7 @@ public class MiCuentaSteps extends PageSteps {
     }
     @When("^El cliente ingresa usuario (.*) y password (.*)$")
         public void valores(String username,String password) {
-        MyAccount.ingresarLogin(username, password);
+        IngresarLoginService.ingresarLogin(username, password);
     }
     @And("El cliente clickea sobre My Account")
     public void dash() {
