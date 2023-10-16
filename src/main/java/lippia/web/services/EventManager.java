@@ -7,6 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class EventManager extends ActionManager {
     public static void scrollHastaElemento(WebDriver driver, WebElement element) {
         if (driver instanceof JavascriptExecutor) {
@@ -37,4 +40,22 @@ public class EventManager extends ActionManager {
             return false;
         }
     }
+
+    public static String extractPrefix(String email) {
+        int atIndex = email.indexOf('@');
+        if (atIndex != -1) {
+            return email.substring(0, atIndex);
+        } else {
+            // Manejar el caso en que no se encuentra el símbolo "@" en el correo electrónico
+            return null; // o lanzar una excepción, dependiendo de tus necesidades
+        }
+    }
 }
+
+
+
+
+
+
+
+

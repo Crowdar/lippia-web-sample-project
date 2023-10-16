@@ -23,4 +23,9 @@ public class SuperiorBarNavigationBarService extends ActionManager {
         WebActionManager.click( SHOP_MENU_BUTTON );
 
     }
+
+    public static void clickMyAccount() {
+        WebActionManager.waitClickable(MY_ACCOUNT_BUTTON);
+        WebActionManager.click( MY_ACCOUNT_BUTTON );
+    }
 }

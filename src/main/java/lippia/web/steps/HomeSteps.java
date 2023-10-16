@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import lippia.web.services.EventManager;
 import lippia.web.services.HomeService;
+import lippia.web.services.MyAccountService;
 import lippia.web.services.ShopService;
 
 public class HomeSteps extends PageSteps {
@@ -39,4 +40,5 @@ public class HomeSteps extends PageSteps {
     public void theClienteClicksOnOptionNumber(String option) {
         ShopService.selectDropDownOption(option);
     }
+
 }

@@ -28,7 +28,7 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	lippia/web/hooks</cucumber.hooks>
-		<cucumber.tags>--tags '@Slider'</cucumber.tags>
+		<cucumber.tags>--tags '@IncorrectValuesLogin'</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter:</cucumber.reporters>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
@@ -174,4 +174,4 @@
 	</repositories>
 
 
-</project
+</project>
