@@ -13,9 +13,9 @@ public class Basic {
             DriverManager.getDriverInstance().register( new DriverValidatorListener() );
     }
 
-    @After( order = 0 )
+    /*@After( order = 0 )
     public void afterScenario( Scenario scenario ) throws InterruptedException {
         Thread.sleep(300);
         DriverManager.getDriverInstance().getWrappedDriver().quit();
-    }
+    }*/
 }
