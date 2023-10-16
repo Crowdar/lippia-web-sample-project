@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.lippia</groupId>
 		<artifactId>root</artifactId>
-		<version>3.3.0.0</version>
+		<version>3.2.3.8</version>
 	</parent>
 
 	<groupId>Lippia-Web-Example-Project</groupId>
@@ -16,6 +16,7 @@
 
 	<properties>
 		<maven.build.timestamp.format>yyyyMMdd_HHmm</maven.build.timestamp.format>
+		<runner>testngSecuencial.xml</runner>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- defult configuration chrome local -->
@@ -23,19 +24,18 @@
 		<crowdar.driver.capabilities.json_path></crowdar.driver.capabilities.json_path>
 		<crowdar.setupStrategy></crowdar.setupStrategy>
 		<crowdar.driverHub></crowdar.driverHub>
-		<runner></runner>
 
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
-		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>@Smoke</cucumber.tags>
+		<cucumber.hooks>--glue	lippia/web/hooks</cucumber.hooks>
+		<cucumber.tags>--tags '@IncorrectValuesLogin'</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
-		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
-		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
-		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
+		<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter:</cucumber.reporters>
+		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
+
 
 		<!-- client project custom properties -->
-		<web-app.url>http://www.google.com.ar</web-app.url>
+		<web-app.url>https://practice.automationtesting.in/</web-app.url>
 
 	</properties>
 	<profiles>
@@ -119,17 +119,22 @@
 		<dependency>
 			<groupId>io.lippia</groupId>
 			<artifactId>core</artifactId>
-			<version>3.3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.lippia.report</groupId>
-			<artifactId>ltm-cucumber4-adapter</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>3.2.3.8</version>
 		</dependency>
 		<dependency>
 			<groupId>io.lippia.report</groupId>
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
 			<version>1.1.0.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
 		</dependency>
 	</dependencies>
 	<build>
