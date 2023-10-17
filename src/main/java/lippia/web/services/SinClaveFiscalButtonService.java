@@ -2,19 +2,20 @@ package lippia.web.services;
 
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
-import lippia.web.constants.ShopConstants;
+import lippia.web.constants.ButtonSinClaveFiscal;
+
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
-public class ShopMenuService extends ActionManager {
+public class SinClaveFiscalButtonService extends ActionManager {
 
     public static void navegarWeb(String url){
         navigateTo(url);
     }
 
-    public static void goShop() {
+    public static void goSinClaveFiscalButton() {
 
-        WebActionManager.click(ShopConstants.SHOP_MENU_BUTTON);
+        WebActionManager.click(ButtonSinClaveFiscal.SIN_CLAVE_FISCAL_BUTTON);
     }
 
 
