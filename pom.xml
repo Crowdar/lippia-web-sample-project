@@ -8,7 +8,7 @@
 	</parent>
 
 	<groupId>Lippia-Web-Example-Project</groupId>
-	<artifactId>LippiaWebExampleProject</artifactId>
+	<artifactId>upgrade_tecnologico_rentax_v2023</artifactId>
 	<version>1.0.0</version>
 	<name>crowdar_automation_web</name>
 
@@ -28,14 +28,14 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>@Smoke</cucumber.tags>
+		<cucumber.tags>@Boton_sin_clave_fiscal</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
-		<web-app.url>http://www.google.com.ar</web-app.url>
+		<web-app.url>http://practice.automationtesting.in/</web-app.url>
 
 	</properties>
 	<profiles>
