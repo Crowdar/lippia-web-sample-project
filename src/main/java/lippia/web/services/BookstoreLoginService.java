@@ -12,7 +12,7 @@ import java.util.List;
 
 import static com.crowdar.driver.DriverManager.getDriverInstance;
 
-public class BookstoreMyAccountService extends ActionManager {
+public class BookstoreLoginService extends ActionManager {
 
     public static void webNavigation(){
         navigateTo(PropertyManager.getProperty("web.base.url"));
@@ -20,7 +20,7 @@ public class BookstoreMyAccountService extends ActionManager {
 
     public static void homePageValidation(){
         waitVisibility(BookstoreConstants.NEW_ARRIVALS_TITLE);
-        junit.framework.Assert.assertEquals( "new arrivals" , getText(BookstoreConstants.NEW_ARRIVALS_TITLE) );
+        Assert.assertEquals( "new arrivals" , getText(BookstoreConstants.NEW_ARRIVALS_TITLE) );
     }
 
     public static void navbarButtonClick(String boton) {
@@ -44,7 +44,7 @@ public class BookstoreMyAccountService extends ActionManager {
             contador++;
         }
 
-        junit.framework.Assert.assertEquals(contador, cantidad);
+        Assert.assertEquals(contador, cantidad);
 
 
     }
@@ -52,7 +52,7 @@ public class BookstoreMyAccountService extends ActionManager {
     public static void arrivalsValidation(int cantidad){
         waitVisibility(BookstoreConstants.ARRIVAL_PRODUCTS);
         List<WebElement> list = getElements(BookstoreConstants.ARRIVAL_PRODUCTS);
-        junit.framework.Assert.assertEquals(list.size(), cantidad);
+        Assert.assertEquals(list.size(), cantidad);
     }
     public static void cerrarPublicidad() {
 
@@ -88,13 +88,13 @@ public class BookstoreMyAccountService extends ActionManager {
         String urlCompleta = "";
         String urlBase = "https://practice.automationtesting.in/";
         urlCompleta = urlBase.concat(url).concat("/");
-        junit.framework.Assert.assertEquals(urlCompleta , urlActual);
+        Assert.assertEquals(urlCompleta , urlActual);
     }
 
 
     public static void addButtonValidation() {
         waitVisibility(BookstoreConstants.ADD_BUTTON);
-        junit.framework.Assert.assertTrue(isVisible(BookstoreConstants.ADD_BUTTON));
+        Assert.assertTrue(isVisible(BookstoreConstants.ADD_BUTTON));
     }
 
     public static boolean isVisible(String locatorElement, String... locatorReplacementValue) {
@@ -122,13 +122,13 @@ public class BookstoreMyAccountService extends ActionManager {
     public static void errorValidation(String errormsg) {
         waitVisibility(BookstoreConstants.LOGIN_ERROR_MSG);
         String errorObtenido = getText(BookstoreConstants.LOGIN_ERROR_MSG);
-        junit.framework.Assert.assertEquals(errormsg , errorObtenido);
+        Assert.assertEquals(errormsg , errorObtenido);
     }
 
     public static void loginFormValidation() {
         waitVisibility(BookstoreConstants.LOGIN_FORM);
-        junit.framework.Assert.assertTrue(isVisible(BookstoreConstants.LOGIN_FORM));
-        junit.framework.Assert.assertTrue(isVisible(BookstoreConstants.LOGIN_BUTTON));
+        Assert.assertTrue(isVisible(BookstoreConstants.LOGIN_FORM));
+        Assert.assertTrue(isVisible(BookstoreConstants.LOGIN_BUTTON));
     }
 
     public static void navbarLinkClick(String link) {
@@ -141,7 +141,7 @@ public class BookstoreMyAccountService extends ActionManager {
 
     public static void pageValidation() {
         waitVisibility(BookstoreConstants.PAGE_CONTENT);
-        junit.framework.Assert.assertTrue(getText(BookstoreConstants.PAGE_CONTENT).contains("Hello testuser01-automation"));
+        Assert.assertTrue(getText(BookstoreConstants.PAGE_CONTENT).contains("Hello testuser01-automation"));
     }
 
     public static void viewOrders() {
@@ -149,4 +149,3 @@ public class BookstoreMyAccountService extends ActionManager {
         Assert.assertTrue(isVisible(BookstoreConstants.ORDERS_TABLE));
     }
 }
-
