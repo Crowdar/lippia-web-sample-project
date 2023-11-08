@@ -1,4 +1,4 @@
-@Bookstore @Prueba
+@Bookstore
 Feature: As a visitor from the bookstore page I want to navigate the home page properly
 
 
@@ -26,4 +26,4 @@ Feature: As a visitor from the bookstore page I want to navigate the home page p
     And The client scrolls down on the home page
     And The client clicks on the first arrival image
     Then Verifies that Add To Basket Button is visible to the client
-    And Verifies that the client navigates to selenium-ruby page
+    And Verifies that the client navigates to product/selenium-ruby page
