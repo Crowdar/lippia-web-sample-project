@@ -77,5 +77,25 @@ public class BookstoreSteps extends PageSteps {
     public void displaysTheLoginFormForRetryingLogin() {
         BookstoreHomeService.loginFormValidation();
     }
+
+    @And("^The client clicks on (.*) link")
+    public void theClientClicksOnDownloadsLink(String link) {
+        BookstoreHomeService.navbarLinkClick(link);
+    }
+
+    @Then("Verifies that the Dashboard is visible for the client")
+    public void verifiesThatTheDashboardIsVisibleForTheClient() {
+        BookstoreHomeService.pageValidation();
+    }
+
+    @Then("Verifies that the Orders are visible for the client")
+    public void verifiesThatTheOrdersAreVisibleForTheClient() {
+        BookstoreHomeService.viewOrders();
+    }
+
+    @Then("Verifies that the client has successfully logout")
+    public void verifiesThatTheClientHasSuccessfullyLogout() {
+        BookstoreHomeService.loginFormValidation();
+    }
 }
 

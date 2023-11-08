@@ -88,22 +88,15 @@ public class BookstoreHomeService extends WebActionManager {
     public static void urlValidation(String url) {
         String urlActual = getDriverInstance().getCurrentUrl();
         String urlCompleta = "";
-
-        if (urlActual.contains("product")) {
-            String urlBase = "https://practice.automationtesting.in/product/";
-            urlCompleta = urlBase.concat(url).concat("/");
-        }else{
-            String urlBase = "https://practice.automationtesting.in/";
-            urlCompleta = urlBase.concat(url).concat("/");
-        }
-
+        String urlBase = "https://practice.automationtesting.in/";
+        urlCompleta = urlBase.concat(url).concat("/");
         Assert.assertEquals(urlCompleta , urlActual);
     }
 
 
     public static void addButtonValidation() {
         waitVisibility(BookstoreConstants.ADD_BUTTON);
-        Assert.assertEquals(true , isVisible(BookstoreConstants.ADD_BUTTON));
+        Assert.assertTrue(isVisible(BookstoreConstants.ADD_BUTTON));
     }
 
     public static boolean isVisible(String locatorElement, String... locatorReplacementValue) {
@@ -136,8 +129,26 @@ public class BookstoreHomeService extends WebActionManager {
 
     public static void loginFormValidation() {
         waitVisibility(BookstoreConstants.LOGIN_FORM);
-        Assert.assertEquals(true , isVisible(BookstoreConstants.LOGIN_FORM));
-        Assert.assertEquals(true , isVisible(BookstoreConstants.LOGIN_BUTTON));
+        Assert.assertTrue(isVisible(BookstoreConstants.LOGIN_FORM));
+        Assert.assertTrue(isVisible(BookstoreConstants.LOGIN_BUTTON));
+    }
+
+    public static void navbarLinkClick(String link) {
+        String locator = String.format(BookstoreConstants.NAVBAR_LINK, link);
+        waitVisibility(locator);
+        cerrarPublicidad();
+        click(locator,false);
+
+    }
+
+    public static void pageValidation() {
+        waitVisibility(BookstoreConstants.PAGE_CONTENT);
+        Assert.assertTrue(getText(BookstoreConstants.PAGE_CONTENT).contains("Hello testuser01-automation"));
+    }
+
+    public static void viewOrders() {
+        waitVisibility(BookstoreConstants.PAGE_CONTENT);
+        Assert.assertTrue(isVisible(BookstoreConstants.ORDERS_TABLE));
     }
 }
 

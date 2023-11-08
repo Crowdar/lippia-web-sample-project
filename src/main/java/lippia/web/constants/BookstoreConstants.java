@@ -15,6 +15,12 @@ public class BookstoreConstants {
     public static final String PASS_INPUT = "id:password";
     public static final String LOGIN_BUTTON = "xpath://*[@id=\"customer_login\"]/div[1]/form/p[3]/input[3]";
     public static final String LOGIN_ERROR_MSG = "xpath://*[@id=\"page-36\"]/div/div[1]/ul";
+    public static final String NAVBAR_LINK = "xpath://nav[@class=\"woocommerce-MyAccount-navigation\"]/ul/li/a[contains(text(),\"%s\")]";
+    public static final String PAGE_CONTENT = "xpath://*[@id=\"page-36\"]/div/div[1]/div";
+    public static final String ORDERS_TABLE = "xpath://*[@id=\"page-36\"]/div/div[1]/div/table";
+
+
+
 
 
 
