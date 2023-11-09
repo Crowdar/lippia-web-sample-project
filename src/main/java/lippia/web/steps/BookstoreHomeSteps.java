@@ -5,97 +5,34 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lippia.web.constants.BookstoreConstants;
-import lippia.web.listener.CerrarPublicidad;
 import lippia.web.services.BookstoreHomeService;
-import lippia.web.services.BookstoreMyAccountService;
 
-public class BookstoreSteps extends PageSteps {
-
-    @Given("^The client is on bookstore page$")
-    public void home() {
-        BookstoreHomeService.webNavigation();
-        BookstoreHomeService.homePageValidation();
-    }
-
-    @When("^The client clicks on (.*) on the menu bar$")
-    public void theClientClicksOnShopOnTheMenuBar(String boton) {
-        BookstoreHomeService.navbarButtonClick(boton);
-    }
+public class BookstoreHomeSteps extends PageSteps {
 
     @Then("^Verifies the Home Page has (.*) arrivals")
-    public void verifiesTheHomePageHasArrivals(int cantidad) {
-    BookstoreHomeService.arrivalsValidation(cantidad);
+    public void verifyArrivals(int cantidad) {
+        BookstoreHomeService.arrivalsValidation(cantidad);
     }
 
     @And("The client scrolls down on the home page")
-    public void theClientScrollsDownOnTheHomePage() {
-    BookstoreHomeService.scrolluntil();
+    public void scrollHomePage() {
+        BookstoreHomeService.scrolluntil();
     }
 
     @Then("^Verifies the Home Page has (.*) sliders")
-    public void verifiesTheHomePageHasThreeSliders(int cantidad) {
+    public void verifySliders(int cantidad) {
         BookstoreHomeService.carouselImgValidation(cantidad);
     }
 
     @And("The client clicks on the first arrival image")
-    public void theClientClicksOnTheFirstArrivalImage() {
+    public void arrivalsImgClick() {
         BookstoreHomeService.clickeableImgValidation();
     }
 
     @Then("Verifies that Add To Basket Button is visible to the client")
-    public void verifiesThatAddToBasketButtonIsVisibleToTheClient() {
+    public void verifyAddToTheBasketButton() {
         BookstoreHomeService.addButtonValidation();
     }
 
-    @And("^The client enters (.*) in username textbox")
-    public void theClientEntersTestuserAutomationYopmailComInUsernameTextbox(String email) {
-        BookstoreHomeService.enterUser(email);
-    }
-
-    @And("^The client enters (.*) in Password textbox")
-    public void theClientEntersTestinmgInPasswordTextbox(String pass) {
-        BookstoreHomeService.enterPass(pass);
-    }
-
-    @And("The client clicks on login button")
-    public void theClientClicksOnLoginButton() {
-        BookstoreHomeService.loginButtonClick();
-    }
-
-    @And("^Verifies that the client navigates to (.*) page")
-    public void verifiesThatTheClientNavigatesToPage(String url) {
-        BookstoreHomeService.urlValidation(url);
-    }
-
-    @Then("^Displays a message error with the text (.*)")
-    public void displaysAMessageErrorWithTheText(String errormsg) {
-        BookstoreHomeService.errorValidation(errormsg);
-    }
-
-    @And("Displays the login form for retrying login")
-    public void displaysTheLoginFormForRetryingLogin() {
-        BookstoreHomeService.loginFormValidation();
-    }
-
-    @And("^The client clicks on (.*) link")
-    public void theClientClicksOnDownloadsLink(String link) {
-        BookstoreHomeService.navbarLinkClick(link);
-    }
-
-    @Then("Verifies that the Dashboard is visible for the client")
-    public void verifiesThatTheDashboardIsVisibleForTheClient() {
-        BookstoreHomeService.pageValidation();
-    }
-
-    @Then("Verifies that the Orders are visible for the client")
-    public void verifiesThatTheOrdersAreVisibleForTheClient() {
-        BookstoreHomeService.viewOrders();
-    }
-
-    @Then("Verifies that the client has successfully logout")
-    public void verifiesThatTheClientHasSuccessfullyLogout() {
-        BookstoreHomeService.loginFormValidation();
-    }
 }
 
