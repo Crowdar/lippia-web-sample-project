@@ -15,7 +15,7 @@ public class MiCuentaSteps extends PageSteps {
     public void home() {
         MiCuentaService.navegarWeb();
     }
-    @When("^El cliente ingresa usuario (.*) y password (.*)$")
+    //@When("^El cliente ingresa usuario (.*) y password (.*)$")
         public void valores(String username,String password) {
         IngresarLoginService.ingresarLogin(username, password);
     }

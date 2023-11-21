@@ -3,6 +3,7 @@ package lippia.web.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import lippia.web.constants.RegistroConstants;
+import lippia.web.constants.MainLoginConstants;
 import org.apache.commons.lang.RandomStringUtils;
 import org.testng.Assert;
 
@@ -12,24 +13,24 @@ public class RegistroService extends ActionManager {
 
     public static void navegarWeb(){
         navigateTo(PropertyManager.getProperty("web.base.url"));
-        click(RegistroConstants.MY_ACCOUNT);
+        click(MainLoginConstants.MY_ACCOUNT);
     }
 
     public static void flujoExitosoEmail(String mail){
         String generateString= RandomStringUtils.randomAlphabetic(7);
         String email= generateString+mail;
-        setInput(RegistroConstants.EMAIL, email);
+        setInput(MainLoginConstants.EMAIL, email);
     }
 
     public static void flujoExitosoContraseña(String password){
-        setInput(RegistroConstants.PASSWORD, password);
-        click(RegistroConstants.BOTON_REGISTRO);
+        setInput(MainLoginConstants.PASSWORD_REG, password);
+        click(MainLoginConstants.BOTON_REGISTRO);
     }
 
     public static  void dirigirLoginyCuenta(String email,String password){
-        setInput(RegistroConstants.EMAIL, email);
-        setInput(RegistroConstants.PASSWORD, password);
-        click(RegistroConstants.BOTON_REGISTRO);
+        setInput(MainLoginConstants.EMAIL, email);
+        setInput(MainLoginConstants.PASSWORD_REG, password);
+        click(MainLoginConstants.BOTON_REGISTRO);
     }
 
     public static void verificar_Registro_Exitoso() {
