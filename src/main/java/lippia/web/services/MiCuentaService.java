@@ -9,27 +9,16 @@ import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class MiCuentaService extends ActionManager {
 
-    public static void navegarWeb(){
-        navigateTo(PropertyManager.getProperty("web.base.url"));
+    public static void detalles() {
+        click(MiCuentaConstants.DETALLES);
     }
 
-    public static void ingresarDashboard() {
-        click(MiCuentaConstants.MY_ACCOUNT);
+    public static void verificacionDetalles() {
+        Assert.assertTrue(ActionManager.waitPresence(MiCuentaConstants.VERIFICAR_DETALLES).isDisplayed());
     }
 
-    public static void verificarDashboard() {
-        Assert.assertTrue(ActionManager.waitPresence(MiCuentaConstants.VERIFICAR_DASHBOARD).isDisplayed());
-    }
 
-    public static void ingresarOrdenes() {
-        click(MiCuentaConstants.ORDENES);
-    }
-
-    public static void verificarOrdenes() {
-        Assert.assertTrue(ActionManager.waitPresence(MiCuentaConstants.VERIFICAR_ORDENES).isDisplayed());
-    }
-
-    public static void Logout() {
+    public static void logout() {
         click(MiCuentaConstants.LOGOUT);
     }
 

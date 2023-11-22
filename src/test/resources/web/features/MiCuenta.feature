@@ -1,19 +1,14 @@
 @MiCuenta
-Feature: El cliente se encuentra en su cuenta
+Feature: Mi Cuenta
 
   Background:
     Given El cliente se encuentra en el login
-    When El cliente ingresa usuario germancorreoprueba@gmail.com y password 123456crowdar
+    When El cliente ingresa su usuario germancorreoprueba@gmail.com y password 123456crowdar e ingresa a su cuenta
 
-  @Dashboard
+  @Detalles
   Scenario: El cliente ingresa a su Dashboard
-    And El cliente clickea sobre My Account
-    Then El cliente ve su Dashborad
-
-  @Ordenes
-  Scenario: El cliente ingresa a ver sus Ordenes
-    And El cliente se dirije a su Ordenes
-    Then El cliente ve sus Ordenes
+    And Se dirige a los detalles de su cuenta
+    Then El cliente ve los detalles de su cuenta
 
   @Logout
   Scenario: El cliente sale de su cuenta

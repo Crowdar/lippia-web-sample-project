@@ -2,7 +2,7 @@
 Feature: Login
 
     Background:
-        Given El cliente se dirige al login
+        Given El cliente se encuentra en el login
 
     @DistingueVariaciones @Fallido
     Scenario Outline: El cliente ingresa una variacion de datos a su cuenta

@@ -5,22 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
-import lippia.web.services.IngresarLoginService;
+import lippia.web.services.ComunService;
 import lippia.web.services.LoginService;
 import lippia.web.services.MiCuentaService;
 
 public class LoginSteps extends PageSteps {
-
-    @Given("El cliente se dirige al login")
-    public void home() {
-        LoginService.navegarWeb();
-    }
-
-    @When("^El cliente ingresa su usuario (.*) y password (.*) e ingresa a su cuenta$")
-    public void valores(String username,String password) {
-        IngresarLoginService.ingresarLogin(username, password);
-    }
-
     @Then("^El cliente ve un (.*) de error$")
     public void verificacionError(String error) {
         LoginService.verificarError(error);
@@ -28,7 +17,7 @@ public class LoginSteps extends PageSteps {
 
     @And("El cliente se desloguea")
     public void LogOut() {
-        MiCuentaService.Logout();
+        MiCuentaService.logout();
     }
 
     @And("El cliente vuelve atras")

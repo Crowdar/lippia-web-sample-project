@@ -14,26 +14,9 @@ public class RegistroSteps extends PageSteps {
         RegistroService.navegarWeb();
     }
 
-
-    @When("^El cliente registra su email (.*)$")
-    public void valoresRegistros(String mail) {
-        RegistroService.flujoExitosoEmail(mail);
-    }
-
-    @And("^Registra su password (.*)$")
-    public void valoresPassword(String password) {
-        RegistroService.flujoExitosoContraseña(password);
-    }
-
-
     @When("^El cliente ingresa su email (.*) y password (.*)$")
     public void valoresRegistros(String email,String password) {
-        RegistroService.dirigirLoginyCuenta(email, password);
-    }
-
-    @Then("El cliente se registra exitosamente")
-    public void verificacion_Exitosa() {
-        RegistroService.verificar_Registro_Exitoso();
+        RegistroService.valoresRegistros(email, password);
     }
 
     @Then("^El cliente observa el siguiente mensaje (.*)$")

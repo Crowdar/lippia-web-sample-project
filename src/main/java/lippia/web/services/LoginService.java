@@ -12,10 +12,6 @@ import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class LoginService extends ActionManager {
 
-    public static void navegarWeb(){
-        navigateTo(PropertyManager.getProperty("web.base.url"));
-    }
-
     public static void verificarError(String error){
         Assert.assertTrue(ActionManager.waitPresence(LoginConstants.VERIFICACION_ERROR,error).isDisplayed());
     }
