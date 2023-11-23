@@ -1,9 +1,9 @@
 @Registro
-Feature: El cliente se crea una cuenta
+Feature: Registro
 
   Background:
-    Given El cliente se dirige al registro
-
+    Given El cliente se encutra en la home page de practice.automationtesting.in
+    And Se dirige al Login
 
   Scenario Outline: El cliente no se puede registrar
     When El cliente ingresa su email <email> y password <password>

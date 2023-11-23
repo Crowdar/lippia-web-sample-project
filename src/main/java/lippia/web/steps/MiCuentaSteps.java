@@ -9,7 +9,7 @@ import lippia.web.services.MiCuentaService;
 
 public class MiCuentaSteps extends PageSteps {
     @And("Se dirige a los detalles de su cuenta")
-    public void Detalles() {
+    public void detalles() {
         MiCuentaService.detalles();
     }
 
@@ -18,14 +18,8 @@ public class MiCuentaSteps extends PageSteps {
         MiCuentaService.verificacionDetalles();
     }
 
-    @When("El cliente clickea en Logout")
-    public void logout() {
-        MiCuentaService.logout();
+    @When("Clickea en Sign Out para salir del sitio")
+    public void signOut() {
+        MiCuentaService.signOut();
     }
-
-    @Then("El cliente esta fuera de su cuenta")
-    public void verificacionLogout() {
-        MiCuentaService.verificarLogout();
-    }
-
 }
