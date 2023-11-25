@@ -9,9 +9,12 @@ Feature: HomePage
     And Se dirige a uno de los Arrivals
     And Observa el libro elegido
     And Agrega el libro a su cesta
-    When Procede a pasar a la pagina de pago
+    And El cliente ve agreado el libro con su precio
+    When Se dirige a la cesta con el libro agregado
     And El cliente ve los detalles de compra
-    And Se ven los valores totales, siempre total < subtotal por los impuestos
+    And Procede a pasar a la pagina de pago
+    And Ahora puede encontrar los valores total y subtotal
+    And El total siempre < subtotal por los impuestos
     And Procede a realizar el pago que le llevara a la pasarela de pago
 
     @Proceso
