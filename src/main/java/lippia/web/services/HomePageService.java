@@ -12,12 +12,10 @@ public class HomePageService extends ActionManager {
     public static void menuInicio(){
         click(HomePageConstants.INICIO);
     }
-
     public static void arrivalsVerificacion() {
         List<WebElement> listado =  getElementsByParent(HomePageConstants.ARRIVAL_PADRE,HomePageConstants.ARRIVALS_HIJOS);
         Assert.assertEquals(3, listado.size());
     }
-
     public  static void arrivalSeleccionado(){
         List<WebElement> BotonAgregar = getElements(HomePageConstants.BOTON_AGREGAR);
         WebElement PrimerBoton = BotonAgregar.get(0);

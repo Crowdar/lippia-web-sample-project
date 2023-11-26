@@ -31,10 +31,7 @@ public class HomePageSteps extends PageSteps {
     public void MenuItem() {
         ProductoService.menuItem();
     }
-    @Then("El cliente observa el formulario para agregar sus datos")
-    public void ValidacionFomulario() {
-        FormularioServices.validacionFomulario();
-    }
+
     @And("Puede agregar un descuento a su compra")
     public void Descuento() {
         FormularioServices.descuento();
