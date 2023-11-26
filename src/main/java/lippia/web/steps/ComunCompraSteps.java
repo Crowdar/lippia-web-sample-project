@@ -12,6 +12,10 @@ public class ComunCompraSteps extends PageSteps {
     public void MenuTienda() {
         ComunCompraService.menuTienda();
     }
+    @And("Procede a pasar al detalle de compra del libro")
+    public void MenuItem() {
+        ComunCompraService.menuItem();
+    }
     @When("Se ve el libro junto a los valores totales, siempre total < subtotal por los impuestos")
     public void VerificacionValores() {
         ComunCompraService.verificacionValores();
@@ -36,5 +40,4 @@ public class ComunCompraSteps extends PageSteps {
     public void DetalleCompra(){
         ComunCompraService.detalleCompra();
     }
-
 }

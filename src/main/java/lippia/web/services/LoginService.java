@@ -9,7 +9,6 @@ public class LoginService extends ActionManager {
     public static void verificarError(String error){
         Assert.assertTrue(ActionManager.waitPresence(LoginConstants.VERIFICACION_ERROR,error).isDisplayed());
     }
-
     public static void back() {
         DriverManager.getDriverInstance().getWrappedDriver().navigate().back();
     }

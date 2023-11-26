@@ -5,7 +5,6 @@ import lippia.web.constants.ComunLoginConstants;
 import lippia.web.constants.RegistroConstants;
 import org.testng.asserts.SoftAssert;
 
-
 public class ComunLoginService extends ActionManager{
     public static void loginPage(){
         click(ComunLoginConstants.MY_ACCOUNT);

@@ -9,20 +9,12 @@ import org.testng.Assert;
 
 public class FormularioServices extends ActionManager {
     public static void descuento() {
-        tiempo(1000);
+        AyudasServices.tiempo(1000);
         WebElement descuento = getElement(FormularioConstants.LINK_CUPON);
         new Actions(DriverManager.getDriverInstance()).moveToElement(descuento).click().build().perform();
 
-        tiempo(3000);
+        AyudasServices.tiempo(3000);
         Assert.assertTrue(isVisible(FormularioConstants.APLICAR_CUPON,FormularioConstants.INPUT_CUPON));
-    }
-
-    public static void tiempo(int espera) {
-        try {
-            Thread.sleep(espera);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
 

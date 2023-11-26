@@ -9,9 +9,16 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import static com.crowdar.core.actions.WebActionManager.navigateTo;
+
 public class ComunCompraService extends ActionManager {
     public static void menuTienda(){
         click(ComunCompraConstants.TIENDA);
+        String url = DriverManager.getDriverInstance().getCurrentUrl();
+        navigateTo(url.replace("/#google_vignette",""));
+    }
+    public static void menuItem() {
+        click(ComunCompraConstants.CARRITO);
     }
     public static void verificacionValores(){
         String Subtotal = getAttribute(ComunCompraConstants.SUBTOTAL, "innerText").substring(1,4);
@@ -49,10 +56,10 @@ public class ComunCompraService extends ActionManager {
         setInput(ComunCompraConstants.CIUDAD, ciudad);
         setInput(ComunCompraConstants.PROVINCIA, provincia);
         click(ComunCompraConstants.SELECIONAR_PROVINCIA);
-        FormularioServices.tiempo(2000);
+        AyudasServices.tiempo(2000);
         setInput(ComunCompraConstants.CP, cp);
         setInput(ComunCompraConstants.NOTA, nota);
-        FormularioServices.tiempo(2000);
+        AyudasServices.tiempo(2000);
 
         SoftAssert assertSoft = new SoftAssert();
         assertSoft.assertTrue(isPresent(ComunCompraConstants.FORMAS_DE_PAGO_TRANSFERENCIA));
@@ -65,7 +72,7 @@ public class ComunCompraService extends ActionManager {
         WebElement estate = getElement(ComunCompraConstants.CONFIRMACION);
         new Actions(DriverManager.getDriverInstance()).moveToElement(estate).click().build().perform();
         click(ComunCompraConstants.ATRIBUTOID_BOTON);
-        FormularioServices.tiempo(20000);
+        AyudasServices.tiempo(2000);
     }
     public static void detalleCompra() {
         String url = DriverManager.getDriverInstance().getCurrentUrl();

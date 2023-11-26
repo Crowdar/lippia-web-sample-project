@@ -4,9 +4,7 @@ import com.crowdar.core.actions.ActionManager;
 import lippia.web.constants.HomePageConstants;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import java.util.List;
-
 
 public class HomePageService extends ActionManager {
     public static void menuInicio(){

@@ -18,7 +18,7 @@ Feature: HomePage
       Then El cliente observa el formulario para agregar sus datos
       And Puede agregar un descuento a su compra
 
-    @ConfirmaciondeCompra
+    @ConfirmaciondeCompraDesdeProducto
     Scenario Outline: El cliente quire confirmar su compra
       Then El cliente rellena sus datos '<Nombre>' '<Apellido>' '<Empresa>' '<Email>' '<Telefono>' '<Pais>' '<Direccion>' '<Dpto>' '<Ciudad>' '<Provincia>' '<CP>' '<Nota>'
       And Confirmacion de compra

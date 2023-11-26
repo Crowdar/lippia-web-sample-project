@@ -1,7 +1,7 @@
 package lippia.web.steps;
+
 import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import lippia.web.services.HomePageService;
 import lippia.web.services.ProductoService;
 import lippia.web.services.FormularioServices;
@@ -27,11 +27,6 @@ public class HomePageSteps extends PageSteps {
     public void Agregar() {
         ProductoService.agregar();
     }
-    @And("Procede a pasar al detalle de compra del libro")
-    public void MenuItem() {
-        ProductoService.menuItem();
-    }
-
     @And("Puede agregar un descuento a su compra")
     public void Descuento() {
         FormularioServices.descuento();
