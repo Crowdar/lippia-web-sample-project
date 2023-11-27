@@ -11,7 +11,4 @@ public class MiCuentaService extends ActionManager {
     public static void verificacionDetalles() {
         Assert.assertTrue(ActionManager.waitPresence(MiCuentaConstants.VERIFICAR_DETALLES).isDisplayed());
     }
-    public static void signOut() {
-        click(MiCuentaConstants.SIGNOUT);
-    }
 }

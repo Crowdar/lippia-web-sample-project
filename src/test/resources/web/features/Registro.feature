@@ -6,15 +6,15 @@ Feature: Registro
     And Se dirige al Login
 
   Scenario Outline: El cliente no se puede registrar
-    When El cliente ingresa su email <email> y password <password>
-    Then El cliente observa el siguiente mensaje <mensaje>
+    When Ingresa su email <email> y password <password>
+    Then Observa el siguiente mensaje <mensaje>
 
     @ValoresVacios
     Examples:
       | email | password | mensaje                               |
       |       |          | Please provide a valid email address. |
 
-    @RegistroFallidoporContraseña
+    @FallidoporContraseña
     Examples:
       | email                  | password | mensaje                           |
       | correoprueba@gmail.com |          | Please enter an account password. |

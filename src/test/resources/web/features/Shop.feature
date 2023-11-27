@@ -3,7 +3,7 @@ Feature: Shop
 
   Background:
     Given El cliente se encutra en la home page de practice.automationtesting.in
-    And Se dirige al Menu Tienda
+    And Dirige al Menu Tienda
     And Seleciona un libro
     And Observa el precio del producto en el carrito
     And Procede a pasar al detalle de compra del libro
@@ -21,9 +21,6 @@ Feature: Shop
       | German | Jofre    | LegendSoftware | german@mail.com | 261277722 | Argentina | Calle falsa 123 | 2    | Mendoza | Mendoza   | 5500 | Nota |
 
   @Impuestos
-  Scenario Outline: El cliente observa diferentes impuestos
-    Then Ingresa un pais '<Pais>' observa diferente impuestos '<Impuesto>' segun pais
+  Scenario: El cliente observa diferentes impuestos
+    Then Ingresa 'India' como pais,observa un impuestos diferente es del '2'%
 
-    Examples:
-      | Pais  | Impuesto |
-      | India | 2        |

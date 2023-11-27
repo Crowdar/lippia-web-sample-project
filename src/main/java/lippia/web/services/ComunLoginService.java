@@ -9,13 +9,14 @@ public class ComunLoginService extends ActionManager{
     public static void loginPage(){
         click(ComunLoginConstants.MY_ACCOUNT);
     }
-
+    public static void salir() {
+        click(ComunLoginConstants.SALIR);
+    }
     public static void ingresarLogin(String login, String password) {
         setInput(ComunLoginConstants.LOGIN, login);
         setInput(ComunLoginConstants.PASSWORD_LOG, password);
         click(ComunLoginConstants.BOTON_LOGIN);
     }
-
     public static void verificacionLoginPage(){
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(isPresent(RegistroConstants.BOTON_REGISTRO));

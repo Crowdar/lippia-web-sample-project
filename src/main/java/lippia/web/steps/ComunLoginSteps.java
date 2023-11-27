@@ -11,7 +11,11 @@ public class ComunLoginSteps extends PageSteps {
     public void loginPage(){
         ComunLoginService.loginPage();
     }
-    @When("^El cliente ingresa su usuario (.*) y password (.*) e ingresa a su cuenta$")
+    @When("Sale del sitio")
+    public void salir() {
+        ComunLoginService.salir();
+    }
+    @When("^Ingresa su usuario (.*) y password (.*) e ingresa a su cuenta$")
     public void valores(String username,String password) {
         ComunLoginService.ingresarLogin(username, password);
     }

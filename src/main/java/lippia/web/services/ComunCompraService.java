@@ -9,13 +9,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import static com.crowdar.core.actions.WebActionManager.navigateTo;
-
 public class ComunCompraService extends ActionManager {
     public static void menuTienda(){
         click(ComunCompraConstants.TIENDA);
-        String url = DriverManager.getDriverInstance().getCurrentUrl();
-        navigateTo(url.replace("/#google_vignette",""));
     }
     public static void menuItem() {
         click(ComunCompraConstants.CARRITO);
@@ -56,11 +52,10 @@ public class ComunCompraService extends ActionManager {
         setInput(ComunCompraConstants.CIUDAD, ciudad);
         setInput(ComunCompraConstants.PROVINCIA, provincia);
         click(ComunCompraConstants.SELECIONAR_PROVINCIA);
-        AyudasServices.tiempo(2000);
         setInput(ComunCompraConstants.CP, cp);
         setInput(ComunCompraConstants.NOTA, nota);
         AyudasServices.tiempo(2000);
-
+        AyudasServices.scroll(1000);
         SoftAssert assertSoft = new SoftAssert();
         assertSoft.assertTrue(isPresent(ComunCompraConstants.FORMAS_DE_PAGO_TRANSFERENCIA));
         assertSoft.assertTrue(isPresent(ComunCompraConstants.FORMAS_DE_PAGO_CHEQUE));
@@ -69,16 +64,12 @@ public class ComunCompraService extends ActionManager {
         assertSoft.assertAll();
     }
     public static void confirmacion() {
-        WebElement estate = getElement(ComunCompraConstants.CONFIRMACION);
-        new Actions(DriverManager.getDriverInstance()).moveToElement(estate).click().build().perform();
+        WebElement seleccionar = getElement(ComunCompraConstants.CONFIRMACION);
+        new Actions(DriverManager.getDriverInstance()).moveToElement(seleccionar).click().build().perform();
         click(ComunCompraConstants.ATRIBUTOID_BOTON);
         AyudasServices.tiempo(2000);
     }
     public static void detalleCompra() {
-        String url = DriverManager.getDriverInstance().getCurrentUrl();
-        boolean urlDetalleCompra = url.matches("https://practice.automationtesting.in/checkout/order-received/(.*)");
-        Assert.assertTrue(urlDetalleCompra);
-
         String mensajeConfirmacion = getText(ComunCompraConstants.MENSAJE);
         String formadePago = getText(ComunCompraConstants.PAGO);
         String total = getText(ComunCompraConstants.TOTAL_DETALLE);

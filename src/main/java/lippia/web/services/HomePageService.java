@@ -15,11 +15,8 @@ public class HomePageService extends ActionManager {
         Assert.assertEquals(3, listado.size());
     }
     public  static void arrivalSeleccionado(){
-        List<WebElement> BotonAgregar = getElements(HomePageConstants.BOTON_AGREGAR);
-        WebElement PrimerBoton = BotonAgregar.get(0);
-        String AtributoID = PrimerBoton.getAttribute(HomePageConstants.ATRIBUTOID_LIBRO);
-        String SelecionaLibro = HomePageConstants.PRODUCTO_ID.replace("JutsuDeReemplazo", AtributoID);
-        click(SelecionaLibro);
+        AyudasServices.scroll(500);
+        click(HomePageConstants.PRODUCTO_ID);
     }
 }
 

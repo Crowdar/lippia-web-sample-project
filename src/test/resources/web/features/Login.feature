@@ -7,7 +7,7 @@ Feature: Login
 
     @DistingueVariaciones @Fallido
     Scenario Outline: El cliente ingresa una variacion de datos a su cuenta
-        When El cliente ingresa su usuario <username> y password <password> e ingresa a su cuenta
+        When Ingresa su usuario <username> y password <password> e ingresa a su cuenta
         Then El cliente ve un <mensaje> de error
 
         Examples:
@@ -16,8 +16,8 @@ Feature: Login
 
     @Authenficacion @Exitoso
     Scenario Outline: El cliente ingresa a su cuenta, se deslogea y regresa al home login
-        When El cliente ingresa su usuario <username> y password <password> e ingresa a su cuenta
-        And Clickea en Logout
+        When Ingresa su usuario <username> y password <password> e ingresa a su cuenta
+        And Sale del sitio
         And El cliente vuelve atras
         Then El cliente esta fuera de su cuenta
 
