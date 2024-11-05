@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.lippia</groupId>
 		<artifactId>root</artifactId>
-		<version>3.3.0.0</version>
+		<version>3.3.0.3</version>
 	</parent>
 
 	<groupId>Lippia-Web-Example-Project</groupId>
@@ -28,14 +28,14 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>@Smoke</cucumber.tags>
+		<cucumber.tags>@TestFabi</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
-		<web-app.url>http://www.google.com.ar</web-app.url>
+		<web-app.url>https://clockify.me</web-app.url>
 
 	</properties>
 	<profiles>
@@ -119,7 +119,7 @@
 		<dependency>
 			<groupId>io.lippia</groupId>
 			<artifactId>core</artifactId>
-			<version>3.3.0.0</version>
+			<version>3.3.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>io.lippia.report</groupId>
@@ -162,11 +162,8 @@
 
 	<repositories>
 		<repository>
-			<id>crowdarRepo</id>
-			<name>crowdar-repository</name>
-			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 	</repositories>
-
-
 </project>
