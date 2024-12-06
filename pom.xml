@@ -28,14 +28,19 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>@Smoke</cucumber.tags>
+		<cucumber.tags>@Login</cucumber.tags>
 		<pretty.plugin>--plugin pretty</pretty.plugin>
 		<cucumber.report>--plugin lippia.web.reporters.CucumberReporter:</cucumber.report>
 		<test-manager.report>--plugin lippia.web.reporters.TestManagerReporter:</test-manager.report>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${cucumber.report}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
-		<web-app.url>http://www.google.com.ar</web-app.url>
+		<web-app.url>https://preprod-web.zelmiralearning.com/login</web-app.url>
+		<web.user.email>d.andresperalta@outlook.com</web.user.email>
+		<web.user.password>Zelmira24$</web.user.password>
+
+		<web-app.url.superadmin>https://preprod-super-admin.zelmiralearning.com/login</web-app.url.superadmin>
+		<web-app.url.admin>https://preprod-admin.zelmiralearning.com/login</web-app.url.admin>
 
 	</properties>
 	<profiles>
@@ -162,9 +167,8 @@
 
 	<repositories>
 		<repository>
-			<id>crowdarRepo</id>
-			<name>crowdar-repository</name>
-			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 	</repositories>
 
