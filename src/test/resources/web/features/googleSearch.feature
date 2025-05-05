@@ -23,3 +23,9 @@ Feature: As a potential client i need to search in google to find a web site
     Given The client isn't on google page
     When The client search for word Lippia
     Then The client verify that results are shown properly
+
+  @EugeTp2
+  Scenario: cambio en la branch
+    Given estoy en el repositorio
+    When subo un cambio
+    Then visualizo el repo modificado en la branch
